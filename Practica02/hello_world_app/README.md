@@ -40,7 +40,7 @@ También se utiliza **Google Fonts** para cambiar el estilo del número mostrado
 
 El contador inicia en `0` y se muestra en color **azul**.
 
-![Contador en cero](evidencias/contador_cero.png)
+![Contador en cero](./img/imageTwo.png)
 
 ### Contador positivo
 
