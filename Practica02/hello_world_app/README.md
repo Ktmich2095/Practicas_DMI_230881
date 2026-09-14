@@ -27,6 +27,7 @@ El color cambia de la siguiente manera:
 | Mayor que `0` | Verde |
 | Menor que `0` | Rojo |
 
+
 La interfaz se actualiza utilizando `setState()`.
 
 También se utiliza **Google Fonts** para cambiar el estilo del número mostrado.
