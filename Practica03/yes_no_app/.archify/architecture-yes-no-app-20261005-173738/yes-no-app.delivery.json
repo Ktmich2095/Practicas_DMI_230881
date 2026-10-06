@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "3ee437e3-fd74-4a83-8f3e-3065b56303f5",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\candidate.json",
+  "output": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\yes-no-app.html",
+  "specification": {
+    "sha256": "2fb51ea9eec88fb53919afed846ebee789471134860e35868f286435830a2a4f",
+    "bytes": 26339
+  },
+  "artifact": {
+    "sha256": "c738c090bacdd0ea2f15a6f871461727c921f5238c89780f33020302eb86f803",
+    "bytes": 778226
+  }
+}

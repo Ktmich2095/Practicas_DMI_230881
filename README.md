@@ -30,3 +30,10 @@ Durante las prácticas se trabajará con diferentes conceptos y herramientas par
 | 2 | Mi Primera Aplicación Móvil con Flutter | Codificar una aplicación móvil utilizando Flutter y manejando `StatelessWidget` y `StatefulWidget`. | 25 firmas | ✅ Concluida | [Ver práctica](Practica02/hello_world_app/README.md) |
 | 3 | Chat de respuestas Sí/No | Desarrollar una aplicación de chat que consulte una API y muestre respuestas automáticas con GIF. | 30 firmas | ✅ Concluida | [Ver práctica](Practica03/yes_no_app/README.md) |
 
+---
+
+##  Diagramas de arquitectura
+
+Consulta la arquitectura de cada una de las aplicaciones desarrolladas:
+
+[🌐 Ver todos los diagramas](https://ktmich2095.github.io/Practicas_DMI_230881/)

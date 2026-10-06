@@ -1,0 +1,271 @@
+﻿{
+    "schema_version":  1,
+    "diagram_type":  "architecture",
+    "meta":  {
+                 "title":  "Counter Functions · Arquitectura",
+                 "subtitle":  "Flutter: arranque, presentación, estado local y dependencias verificadas",
+                 "output":  "arquitectura.html",
+                 "locale":  "es",
+                 "quality_profile":  "showcase"
+             },
+    "components":  [
+                       {
+                           "label":  "main()",
+                           "sources":  [
+                                           {
+                                               "line":  4,
+                                               "path":  "lib/main.dart"
+                                           }
+                                       ],
+                           "sublabel":  "runApp(MyApp())",
+                           "id":  "entry",
+                           "type":  "frontend"
+                       },
+                       {
+                           "label":  "MyApp",
+                           "sources":  [
+                                           {
+                                               "line":  9,
+                                               "path":  "lib/main.dart"
+                                           }
+                                       ],
+                           "sublabel":  "MaterialApp · home · ThemeData",
+                           "id":  "app",
+                           "type":  "frontend"
+                       },
+                       {
+                           "label":  "Pantalla contador",
+                           "sources":  [
+                                           {
+                                               "line":  4,
+                                               "path":  "lib/presentation/screens/counter/counter_screen.dart"
+                                           }
+                                       ],
+                           "sublabel":  "CounterFunctionsScreen · Scaffold",
+                           "id":  "screen",
+                           "type":  "frontend"
+                       },
+                       {
+                           "label":  "Controles",
+                           "sources":  [
+                                           {
+                                               "path":  "lib/presentation/screens/counter/counter_screen.dart"
+                                           }
+                                       ],
+                           "sublabel":  "CustomButton + IconButton · +1 / -1 / reset",
+                           "id":  "controls",
+                           "type":  "frontend"
+                       },
+                       {
+                           "label":  "setState()",
+                           "sources":  [
+                                           {
+                                               "path":  "lib/presentation/screens/counter/counter_screen.dart"
+                                           }
+                                       ],
+                           "sublabel":  "Callbacks onPressed en el State de la pantalla",
+                           "id":  "update",
+                           "type":  "frontend"
+                       },
+                       {
+                           "label":  "clickCounter",
+                           "sources":  [
+                                           {
+                                               "line":  14,
+                                               "path":  "lib/presentation/screens/counter/counter_screen.dart"
+                                           }
+                                       ],
+                           "sublabel":  "int = 0 · memoria local en _CounterFunctionsScreenState",
+                           "id":  "state",
+                           "type":  "frontend"
+                       },
+                       {
+                           "label":  "Google Fonts",
+                           "sources":  [
+                                           {
+                                               "line":  22,
+                                               "path":  "lib/main.dart"
+                                           },
+                                           {
+                                               "path":  "pubspec.yaml"
+                                           }
+                                       ],
+                           "sublabel":  "^8.2.1 · poppinsTextTheme()",
+                           "id":  "fonts",
+                           "type":  "dependency"
+                       },
+                       {
+                           "label":  "Flutter Material",
+                           "sources":  [
+                                           {
+                                               "line":  1,
+                                               "path":  "lib/main.dart"
+                                           },
+                                           {
+                                               "line":  1,
+                                               "path":  "lib/presentation/screens/counter/counter_screen.dart"
+                                           },
+                                           {
+                                               "path":  "pubspec.yaml"
+                                           }
+                                       ],
+                           "sublabel":  "SDK Flutter · widgets, State e iconos · Dart ^3.13.3",
+                           "id":  "flutter",
+                           "type":  "dependency"
+                       },
+                       {
+                           "label":  "Cupertino Icons",
+                           "sources":  [
+                                           {
+                                               "path":  "pubspec.yaml"
+                                           }
+                                       ],
+                           "sublabel":  "^1.0.8 · declarado, sin uso en lib/",
+                           "id":  "cupertino",
+                           "type":  "dependency"
+                       },
+                       {
+                           "label":  "Desarrollo",
+                           "sources":  [
+                                           {
+                                               "path":  "pubspec.yaml"
+                                           },
+                                           {
+                                               "path":  "test/widget_test.dart"
+                                           },
+                                           {
+                                               "path":  "analysis_options.yaml"
+                                           }
+                                       ],
+                           "sublabel":  "flutter_test SDK · flutter_lints ^6.0.0",
+                           "id":  "dev",
+                           "type":  "dependency"
+                       },
+                       {
+                           "label":  "Destinos Flutter",
+                           "sources":  [
+                                           {
+                                               "path":  "android/app/build.gradle.kts"
+                                           },
+                                           {
+                                               "path":  "ios/Runner/AppDelegate.swift"
+                                           },
+                                           {
+                                               "path":  "web/index.html"
+                                           },
+                                           {
+                                               "path":  "windows/runner/main.cpp"
+                                           },
+                                           {
+                                               "path":  "macos/Runner/AppDelegate.swift"
+                                           },
+                                           {
+                                               "path":  "linux/runner/main.cc"
+                                           }
+                                       ],
+                           "sublabel":  "Android · iOS · Web · Windows · macOS · Linux",
+                           "id":  "platforms",
+                           "type":  "platform"
+                       }
+                   ],
+    "connections":  [
+                        {
+                            "label":  "inicia",
+                            "from":  "entry",
+                            "to":  "app",
+                            "id":  "entry-app"
+                        },
+                        {
+                            "label":  "home",
+                            "from":  "app",
+                            "to":  "screen",
+                            "id":  "app-screen"
+                        },
+                        {
+                            "label":  "incluye",
+                            "from":  "screen",
+                            "to":  "controls",
+                            "id":  "screen-controls"
+                        },
+                        {
+                            "label":  "pulsación ejecuta callback",
+                            "from":  "controls",
+                            "to":  "update",
+                            "id":  "controls-update"
+                        },
+                        {
+                            "label":  "modifica",
+                            "from":  "update",
+                            "to":  "state",
+                            "id":  "update-state"
+                        },
+                        {
+                            "label":  "reconstrucción refleja estado",
+                            "from":  "state",
+                            "to":  "screen",
+                            "id":  "state-screen"
+                        },
+                        {
+                            "label":  "configura Poppins",
+                            "from":  "app",
+                            "to":  "fonts",
+                            "id":  "app-fonts"
+                        },
+                        {
+                            "label":  "usa",
+                            "from":  "app",
+                            "to":  "flutter",
+                            "id":  "app-flutter"
+                        },
+                        {
+                            "label":  "usa",
+                            "from":  "screen",
+                            "to":  "flutter",
+                            "id":  "screen-flutter"
+                        },
+                        {
+                            "label":  "soporte de ejecución",
+                            "from":  "flutter",
+                            "to":  "platforms",
+                            "id":  "flutter-platforms"
+                        }
+                    ],
+    "cards":  [
+                  {
+                      "title":  "Arranque",
+                      "dot":  "cyan",
+                      "items":  [
+                                    "main() inicia MyApp; MaterialApp define home y tema Poppins."
+                                ]
+                  },
+                  {
+                      "title":  "Presentación y estado",
+                      "dot":  "emerald",
+                      "items":  [
+                                    "Pantalla, callbacks y estado conviven en counter_screen.dart.",
+                                    "Los controles llaman setState; clickCounter vive solo en memoria."
+                                ]
+                  },
+                  {
+                      "title":  "Dependencias",
+                      "dot":  "violet",
+                      "items":  [
+                                    "Flutter y Google Fonts usados en lib/.",
+                                    "Cupertino Icons declarado sin uso en lib/.",
+                                    "flutter_test y flutter_lints son dependencias de desarrollo.",
+                                    "No hay lockfile: las versiones son restricciones declaradas."
+                                ]
+                  },
+                  {
+                      "title":  "Alcance y observaciones",
+                      "dot":  "amber",
+                      "items":  [
+                                    "No se encontraron backend, APIs ni base de datos en el código de aplicación.",
+                                    "Los seis destinos tienen archivos de plataforma; no se verificaron compilaciones.",
+                                    "main.dart contiene una llave final adicional.",
+                                    "widget_test.dart busca Icons.add; la pantalla usa Icons.plus_one.",
+                                    "Archify no está disponible en esta sesión. Se reutiliza el esquema local, sin validar contra Archify; los tipos dependency y platform requieren comprobar compatibilidad al importarlos."
+                                ]
+                  }
+              ]
+}

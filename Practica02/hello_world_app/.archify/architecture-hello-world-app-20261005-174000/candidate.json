@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Hello World App — Practice 02 Architecture",
+    "subtitle": "Flutter entry point, counter screen, state and controls",
+    "output": "Practica02/hello_world_app/.archify/architecture-hello-world-app-20261005-174000/hello-world-app.html",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/Ktmich2095/Practicas_DMI_230881.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "0268d6a69bf80ba9736edd187ba5284cd0904f20"
+    }
+  },
+  "components": [
+    {
+      "id": "flutter-entry-point",
+      "type": "frontend",
+      "label": "Flutter entry point",
+      "sublabel": "runApp(MyApp())",
+      "sources": [
+        {
+          "path": "Practica02/hello_world_app/lib/main.dart",
+          "line": 6,
+          "end_line": 6,
+          "label": "application launch"
+        }
+      ]
+    },
+    {
+      "id": "material-app",
+      "type": "frontend",
+      "label": "MaterialApp",
+      "sublabel": "Theme + home screen",
+      "sources": [
+        {
+          "path": "Practica02/hello_world_app/lib/main.dart",
+          "line": 16,
+          "end_line": 23,
+          "label": "application configuration"
+        }
+      ]
+    },
+    {
+      "id": "counter-screen",
+      "type": "frontend",
+      "label": "CounterFunctionsScreen",
+      "sublabel": "Scaffold + counter UI",
+      "sources": [
+        {
+          "path": "Practica02/hello_world_app/lib/presentation/screens/counter/counter_screen.dart",
+          "line": 4,
+          "end_line": 10,
+          "label": "screen widget"
+        },
+        {
+          "path": "Practica02/hello_world_app/lib/presentation/screens/counter/counter_screen.dart",
+          "line": 12,
+          "end_line": 99,
+          "label": "counter UI and actions"
+        }
+      ]
+    },
+    {
+      "id": "counter-state",
+      "type": "frontend",
+      "label": "Counter state",
+      "sublabel": "clickCounter int",
+      "sources": [
+        {
+          "path": "Practica02/hello_world_app/lib/presentation/screens/counter/counter_screen.dart",
+          "line": 12,
+          "end_line": 14,
+          "label": "state declaration"
+        },
+        {
+          "path": "Practica02/hello_world_app/lib/presentation/screens/counter/counter_screen.dart",
+          "line": 26,
+          "end_line": 93,
+          "label": "state mutations"
+        }
+      ]
+    },
+    {
+      "id": "custom-buttons",
+      "type": "frontend",
+      "label": "CustomButton controls",
+      "sublabel": "reset, decrement, increment",
+      "sources": [
+        {
+          "path": "Practica02/hello_world_app/lib/presentation/screens/counter/counter_screen.dart",
+          "line": 65,
+          "end_line": 94,
+          "label": "button actions"
+        },
+        {
+          "path": "Practica02/hello_world_app/lib/presentation/screens/counter/counter_screen.dart",
+          "line": 101,
+          "end_line": 124,
+          "label": "reusable button implementation"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "entry-to-app",
+      "from": "flutter-entry-point",
+      "to": "material-app",
+      "label": "starts"
+    },
+    {
+      "id": "app-to-screen",
+      "from": "material-app",
+      "to": "counter-screen",
+      "label": "home"
+    },
+    {
+      "id": "screen-to-state",
+      "from": "counter-screen",
+      "to": "counter-state",
+      "label": "owns"
+    },
+    {
+      "id": "state-to-controls",
+      "from": "counter-state",
+      "to": "custom-buttons",
+      "label": "updates through"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Application boundary",
+      "items": [
+        "The Flutter entry point launches MyApp.",
+        "MaterialApp configures the Poppins theme and the counter screen as the home."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Counter behavior",
+      "items": [
+        "CounterFunctionsScreen owns a mutable clickCounter value.",
+        "Reset, decrement, and increment actions update the same state."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Reusable controls",
+      "items": [
+        "CustomButton is a StatelessWidget that emits Material icons.",
+        "Each control receives a callback that changes the counter state."
+      ]
+    }
+  ]
+}

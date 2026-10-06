@@ -60,6 +60,12 @@ Al presionar el botón de reinicio, el contador vuelve a `0` y cambia nuevamente
 
 ![Reinicio](./img/imageTwo.png)
 
+### Diagrama de arquitectura
+
+![Diagrama de arquitectura](./img/imageFour.png)
+
+[Ver diagrama de arquitectura](https://ktmich2095.github.io/Practicas_DMI_230881/Practica02/hello_world_app/.archify/arquitectura/arquitectura.html)
+
 ---
 
 ## Resultado

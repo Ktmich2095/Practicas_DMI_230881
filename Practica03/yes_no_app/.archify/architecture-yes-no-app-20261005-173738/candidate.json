@@ -1,0 +1,475 @@
+{
+    "schema_version":  1,
+    "diagram_type":  "architecture",
+    "meta":  {
+                 "title":  "yes_no_app · Arquitectura del chat Flutter",
+                 "locale":  "es",
+                 "output":  ".archify/architecture-yes-no-app-20261005-173738/yes-no-app.html",
+                 "quality_profile":  "showcase",
+                 "legend":  {
+                                "entries":  {
+                                                "frontend":  {
+                                                                 "label":  "Interfaz Flutter"
+                                                             },
+                                                "backend":  {
+                                                                "label":  "Lógica local de Flutter"
+                                                            },
+                                                "external":  {
+                                                                 "label":  "Fuentes externas"
+                                                             }
+                                            }
+                            },
+                 "repository":  {
+                                    "url":  "https://github.com/Ktmich2095/Practicas_DMI_230881.git",
+                                    "revision":  "dc318e34cfe53af399dcc863b864195a083d4644",
+                                    "provider":  "github"
+                                }
+             },
+    "components":  [
+                       {
+                           "id":  "chat-ui",
+                           "type":  "frontend",
+                           "label":  "ChatScreen",
+                           "sublabel":  "Screens/Pages · única pantalla",
+                           "pos":  [
+                                       360,
+                                       300
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/screens/chat/chat_screen.dart",
+                                               "line":  40,
+                                               "end_line":  75
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/main.dart",
+                                               "line":  14,
+                                               "end_line":  22
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/widgets/chat/her_message_bubble.dart",
+                                               "line":  26,
+                                               "end_line":  82
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "chat-state",
+                           "type":  "backend",
+                           "label":  "ChatProvider",
+                           "sublabel":  "ChangeNotifier · memoria",
+                           "pos":  [
+                                       820,
+                                       300
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/providers/chat_provider.dart",
+                                               "line":  10,
+                                               "end_line":  70
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "answer-client",
+                           "type":  "backend",
+                           "label":  "GetYesNoMaybeAnswer",
+                           "sublabel":  "config/helpers · Dio",
+                           "pos":  [
+                                       820,
+                                       550
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/config/helpers/get_yes_no_maybe_answer.dart",
+                                               "line":  7,
+                                               "end_line":  21
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "response-model",
+                           "type":  "backend",
+                           "label":  "YesNoMaybeModel",
+                           "sublabel":  "Models · JSON → Message",
+                           "pos":  [
+                                       820,
+                                       800
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/infrastructure/models/yes_no_maybe_model.dart",
+                                               "line":  14,
+                                               "end_line":  41
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "yesno-api",
+                           "type":  "external",
+                           "label":  "API yesno.wtf",
+                           "sublabel":  "answer / forced / image",
+                           "pos":  [
+                                       820,
+                                       1060
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/config/helpers/get_yes_no_maybe_answer.dart",
+                                               "line":  17,
+                                               "end_line":  19
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/infrastructure/models/yes_no_maybe_model.dart",
+                                               "line":  14,
+                                               "end_line":  19
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "app-entry",
+                           "type":  "frontend",
+                           "label":  "main.dart · MyApp",
+                           "sublabel":  "MultiProvider + MaterialApp",
+                           "pos":  [
+                                       360,
+                                       80
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/main.dart",
+                                               "end_line":  24,
+                                               "line":  7
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/pubspec.yaml",
+                                               "end_line":  38,
+                                               "line":  29
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "app-theme",
+                           "type":  "frontend",
+                           "label":  "AppTheme",
+                           "sublabel":  "config/theme · Material 3",
+                           "pos":  [
+                                       820,
+                                       80
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/config/theme/app_theme.dart",
+                                               "end_line":  30,
+                                               "line":  14
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/main.dart",
+                                               "end_line":  22,
+                                               "line":  21
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "chat-widgets",
+                           "type":  "frontend",
+                           "label":  "Widgets del chat",
+                           "sublabel":  "Campo · burbujas · GIF",
+                           "pos":  [
+                                       360,
+                                       550
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/widgets/shared/message_field_box.dart",
+                                               "end_line":  46,
+                                               "line":  3
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/widgets/chat/my_message_bubble.dart",
+                                               "end_line":  33,
+                                               "line":  4
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/widgets/chat/her_message_bubble.dart",
+                                               "end_line":  82,
+                                               "line":  4
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "message-entity",
+                           "type":  "backend",
+                           "label":  "Message",
+                           "sublabel":  "Entidad · datos del chat",
+                           "pos":  [
+                                       360,
+                                       800
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/domain/entities/messages.dart",
+                                               "end_line":  42,
+                                               "line":  29
+                                           }
+                                       ]
+                       },
+                       {
+                           "id":  "remote-images",
+                           "type":  "external",
+                           "label":  "Imágenes remotas",
+                           "sublabel":  "GIF: imageUrl · avatar: Wikia",
+                           "pos":  [
+                                       40,
+                                       430
+                                   ],
+                           "size":  [
+                                        240,
+                                        80
+                                    ],
+                           "sources":  [
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/widgets/chat/her_message_bubble.dart",
+                                               "end_line":  82,
+                                               "line":  26
+                                           },
+                                           {
+                                               "path":  "Practica03/yes_no_app/lib/presentation/screens/chat/chat_screen.dart",
+                                               "end_line":  28,
+                                               "line":  21
+                                           }
+                                       ]
+                       }
+                   ],
+    "connections":  [
+                        {
+                            "id":  "send-text",
+                            "from":  "chat-ui",
+                            "to":  "chat-state",
+                            "label":  "sendMessage(text)",
+                            "variant":  "emphasis"
+                        },
+                        {
+                            "id":  "rebuild-ui",
+                            "from":  "chat-state",
+                            "to":  "chat-ui",
+                            "label":  "notifyListeners()",
+                            "variant":  "dashed"
+                        },
+                        {
+                            "id":  "conditional-answer",
+                            "from":  "chat-state",
+                            "to":  "answer-client",
+                            "label":  "Solo si termina en ?",
+                            "variant":  "emphasis"
+                        },
+                        {
+                            "id":  "http-answer",
+                            "from":  "answer-client",
+                            "to":  "yesno-api",
+                            "label":  "HTTPS GET · force",
+                            "variant":  "emphasis",
+                            "fromSide":  "right",
+                            "toSide":  "right",
+                            "via":  [
+                                        [
+                                            1110,
+                                            590
+                                        ],
+                                        [
+                                            1110,
+                                            1100
+                                        ]
+                                    ]
+                        },
+                        {
+                            "id":  "convert-json",
+                            "from":  "answer-client",
+                            "to":  "response-model",
+                            "label":  "fromJsonMap(JSON)"
+                        },
+                        {
+                            "id":  "reply-message",
+                            "from":  "answer-client",
+                            "to":  "chat-state",
+                            "label":  "Future\u003cMessage\u003e",
+                            "variant":  "dashed"
+                        },
+                        {
+                            "id":  "apply-theme",
+                            "from":  "app-theme",
+                            "to":  "app-entry",
+                            "label":  "theme()"
+                        },
+                        {
+                            "id":  "initial-screen",
+                            "from":  "app-entry",
+                            "to":  "chat-ui",
+                            "label":  "home: ChatScreen"
+                        },
+                        {
+                            "id":  "model-return",
+                            "from":  "response-model",
+                            "to":  "answer-client",
+                            "label":  "Devuelve Message",
+                            "variant":  "dashed"
+                        },
+                        {
+                            "id":  "create-entity",
+                            "from":  "response-model",
+                            "to":  "message-entity",
+                            "label":  "toMessageEntity()"
+                        },
+                        {
+                            "id":  "render-widgets",
+                            "from":  "chat-ui",
+                            "to":  "chat-widgets",
+                            "label":  "Construye widgets"
+                        },
+                        {
+                            "id":  "input-callback",
+                            "from":  "chat-widgets",
+                            "to":  "chat-ui",
+                            "label":  "onValue(text)",
+                            "variant":  "dashed"
+                        },
+                        {
+                            "id":  "avatar-load",
+                            "from":  "chat-ui",
+                            "to":  "remote-images",
+                            "label":  "Avatar · Image.network",
+                            "variant":  "dashed",
+                            "fromSide":  "left",
+                            "toSide":  "right"
+                        },
+                        {
+                            "id":  "gif-download",
+                            "from":  "chat-widgets",
+                            "to":  "remote-images",
+                            "label":  "GIF · Image.network",
+                            "variant":  "dashed",
+                            "fromSide":  "bottom",
+                            "toSide":  "bottom",
+                            "via":  [
+                                        [
+                                            480,
+                                            740
+                                        ],
+                                        [
+                                            160,
+                                            740
+                                        ],
+                                        [
+                                            160,
+                                            610
+                                        ]
+                                    ]
+                        }
+                    ],
+    "cards":  [
+                  {
+                      "dot":  "cyan",
+                      "title":  "Screens/Pages y Widgets",
+                      "items":  [
+                                    "main.dart registra ChatProvider mediante ChangeNotifierProvider y abre ChatScreen con AppTheme (líneas 14–22).",
+                                    "MessageFieldBox entrega texto mediante onValue; ChatScreen lo conecta a sendMessage. MyMessageBubble y HerMessageBubble reciben Message (chat_screen.dart:58–74).",
+                                    "HerMessageBubble carga el GIF con Image.network; ChatScreen carga el avatar remoto. Ambas cargas incluyen alternativa de error.",
+                                    "Widgets del chat agrupa MessageFieldBox, MyMessageBubble, HerMessageBubble y su widget privado _ImageBubble; todos existen en presentation/widgets/."
+                                ]
+                  },
+                  {
+                      "dot":  "violet",
+                      "title":  "Estado y respuesta",
+                      "items":  [
+                                    "ChatProvider agrega Message a messageList en memoria; el historial no se persiste (chat_provider.dart:14–58).",
+                                    "Solo los textos terminados en ? solicitan una respuesta. En ese caso se espera la API antes de notificar la actualización.",
+                                    "El cliente elige maybe, yes o no al azar y lo pasa en force; el texto de la pregunta no se envía (get_yes_no_maybe_answer.dart:12–17)."
+                                ]
+                  },
+                  {
+                      "dot":  "amber",
+                      "title":  "Services/APIs y fuentes externas",
+                      "items":  [
+                                    "La respuesta HTTP llega al cliente; YesNoMaybeModel interpreta answer, forced e image y produce Message en español con fecha y hora.",
+                                    "Las flechas representan llamadas y el retorno de Message; ChatProvider y el cliente ejecutan dentro de la app, sin servidor propio.",
+                                    "No hay captura de errores HTTP ni reintentos en el flujo actual (get_yes_no_maybe_answer.dart:11–21; chat_provider.dart:35–60).",
+                                    "El servicio es el helper GetYesNoMaybeAnswer en config/helpers. Imágenes remotas agrupa el servidor indicado por imageUrl para el GIF y static.wikia.nocookie.net para el avatar; Image.network realiza ambas cargas."
+                                ]
+                  },
+                  {
+                      "dot":  "slate",
+                      "title":  "Dependencias importantes",
+                      "items":  [
+                                    "Flutter SDK: interfaz y ejecución. Provider ^6.1.5+1: gestión de estado. Dio ^5.11.1: HTTP. Son bibliotecas ejecutadas dentro de la app (pubspec.yaml:29–38).",
+                                    "Dart requerido: ^3.13.3. Cupertino Icons ^1.0.8 está declarado sin uso directo en lib/. flutter_test y flutter_lints ^6.0.0 son dependencias de desarrollo (pubspec.yaml:22,36–49).",
+                                    "ChatScreen es la única pantalla. El código revisado no tiene capa repositories, base de datos ni persistencia.",
+                                    "YesNoMaybeModel interpreta el JSON y crea Message. El helper devuelve la entidad al Provider; el modelo no llama directamente al Provider."
+                                ]
+                  },
+                  {
+                      "dot":  "emerald",
+                      "title":  "Relaciones y flujo de datos",
+                      "items":  [
+                                    "1. MessageFieldBox entrega texto con onValue; ChatScreen llama a ChatProvider.sendMessage(text) (message_field_box.dart:24–45; chat_screen.dart:73–74).",
+                                    "2. ChatProvider crea Message y lo agrega a messageList. Si el texto termina en ?, llama a destinataryReply y espera getAnswer() (chat_provider.dart:35–57).",
+                                    "3. El helper envía HTTPS GET con force a yesno.wtf. El JSON de respuesta vuelve a Dio y se convierte con YesNoMaybeModel.fromJsonMap (get_yes_no_maybe_answer.dart:17–19).",
+                                    "4. toMessageEntity traduce la respuesta y crea Message con imageUrl, remitente, fecha y hora. El modelo devuelve la entidad al helper y este al Provider (yes_no_maybe_model.dart:27–41; get_yes_no_maybe_answer.dart:21).",
+                                    "5. Provider agrega la respuesta y llama a notifyListeners. La vista observa el estado, lee messageList y pasa cada Message a la burbuja correspondiente (chat_provider.dart:55–60; chat_screen.dart:43–60).",
+                                    "6. HerMessageBubble pasa imageUrl a _ImageBubble, que carga el GIF desde su servidor con Image.network. Es una descarga independiente de la petición JSON (her_message_bubble.dart:26–28,51–52)."
+                                ]
+                  }
+              ],
+    "boundaries":  [
+                       {
+                           "label":  "Aplicación Flutter · yes_no_app · ejecución local",
+                           "pad":  36,
+                           "wraps":  [
+                                         "app-entry",
+                                         "app-theme",
+                                         "chat-ui",
+                                         "chat-state",
+                                         "answer-client",
+                                         "response-model",
+                                         "message-entity",
+                                         "chat-widgets"
+                                     ],
+                           "kind":  "region"
+                       }
+                   ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\candidate.json",
+    "sha256": "01fe04c2711bff16e901ffb2e3f07e3b78011e75331fb83af7b18ef4a82fc462",
+    "bytes": 23642
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\yes-no-app.html",
+    "sha256": "08b0fc54392c4e94dbee503cc70122c4fb5687e2fad062a6f16f49db624d7d4d",
+    "bytes": 777024
+  },
+  "gates": {
+    "validate": "fail",
+    "deliver": "not-run",
+    "check": "not-run",
+    "browser-check": "not-run"
+  },
+  "failedStage": "validate",
+  "diagnostics": [
+    {
+      "code": "internal/unclassified",
+      "severity": "error",
+      "message": "Renderer failed before emitting a structured diagnostic.",
+      "subject": {},
+      "evidence": {
+        "exitCode": 1
+      }
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\review-3\\yes-no-app.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\review-3\\yes-no-app.finalize-summary.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-05T23:31:25.686Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1172,
+  "nextAction": {
+    "action": "edit-in-place",
+    "candidate": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\candidate.json",
+    "constraint": "Preserve all semantics and user-fixed geometry. Use references/architecture-layout-repair.md to choose a local repair or connected-scene reflow; edit the existing candidate.",
+    "then": "finalize-once"
+  }
+}

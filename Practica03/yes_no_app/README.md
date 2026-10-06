@@ -47,6 +47,12 @@ flutter run
 ![alt text](/Practica03/yes_no_app/img/imageThree.png)
 
 
+### Diagrama de arquitectura
+<img width="900" height="872" alt="image" src="https://github.com/user-attachments/assets/6eb48717-a957-406e-8e93-6fce2484636a" />
+
+Diagrama de Arquitectura
+
+[🏗️ Ver diagrama de arquitectura](https://ktmich2095.github.io/Practicas_DMI_230881/Practica03/yes_no_app/.archify/architecture-yes-no-app-20261005-173738/yes-no-app.html)
 
 ---
 

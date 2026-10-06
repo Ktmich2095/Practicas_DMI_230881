@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\candidate.json",
+    "sha256": "1df1e4cd57ff61c9ad9c3c4deec69c7e44171661adb84e948cfbbbdc36082de5",
+    "bytes": 26337
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\yes-no-app.html",
+    "sha256": "07f2e78ac6f2d732e11bed323a8d36cdc50c6c13ea3943f35672b456e17e7bad",
+    "bytes": 778223
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\layout-review-1\\yes-no-app.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\layout-review-1\\yes-no-app.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica03\\yes_no_app\\.archify\\architecture-yes-no-app-20261005-173738\\layout-review-1\\yes-no-app.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-05T23:31:25.686Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 4631,
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "routesOverSuggestedStretch": 1
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [],
+      "detours": [
+        {
+          "relationship": {
+            "id": "gif-download",
+            "from": "chat-widgets",
+            "to": "remote-images",
+            "label": "GIF · Image.network",
+            "collectionIndex": 13,
+            "artifactIndex": 14
+          },
+          "bends": 2,
+          "stretch": 1.511
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "chat-widgets → remote-images needs 2 bends: move node chat-widgets or remote-images so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}
