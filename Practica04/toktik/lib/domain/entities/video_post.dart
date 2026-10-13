@@ -1,14 +1,24 @@
-class VideoPost {
-  
-  final String caption;
-  final String videoUrl;
-  final int likes;
-  final int views;
+import 'video_source.dart';
 
-  VideoPost({
+class VideoPost {
+  final String caption, videoUrl, creator, source;
+  final String? providerId, sourcePage, license;
+  final VideoSource origin;
+  final int? width, height;
+  final int likes, views;
+  String get id => providerId ?? videoUrl;
+  const VideoPost({
     required this.caption,
     required this.videoUrl,
+    this.creator = 'TokTik Studio',
+    this.source = 'Archivo local',
     this.likes = 0,
     this.views = 0,
+    this.providerId,
+    this.sourcePage,
+    this.license,
+    this.origin = VideoSource.local,
+    this.width,
+    this.height,
   });
 }

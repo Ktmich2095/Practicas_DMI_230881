@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\otero\\OneDrive\\Desktop\\Practicas_DMI_230881\\Practica04\\toktik\\architecture\\initial\\candidate.json",
+    "sha256": "8471745654f2c45f5dc71975219268ea908d9baf094bd7c5620b9ce128665d91",
+    "bytes": 30886
+  },
+  "artifact": {
+    "path": "C:\\Users\\otero\\OneDrive\\Desktop\\Practicas_DMI_230881\\Practica04\\toktik\\architecture\\initial\\index.html",
+    "sha256": "004ef90d6afd0162df470f2729207057e9b9a16a829188de9672e6c974f8e5bd",
+    "bytes": 748386
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\otero\\OneDrive\\Desktop\\Practicas_DMI_230881\\Practica04\\toktik\\architecture\\initial\\index.finalize.json",
+    "summaryReceipt": "C:\\Users\\otero\\OneDrive\\Desktop\\Practicas_DMI_230881\\Practica04\\toktik\\architecture\\initial\\index.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\otero\\OneDrive\\Desktop\\Practicas_DMI_230881\\Practica04\\toktik\\architecture\\initial\\index.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-13T06:06:41.458Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 7598
+}

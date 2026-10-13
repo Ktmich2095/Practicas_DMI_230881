@@ -1,100 +1,173 @@
 import 'package:flutter/material.dart';
-import 'package:toktik/presentation/widgets/video/video_background.dart';
 import 'package:video_player/video_player.dart';
 
+import '../../../domain/entities/video_post.dart';
+import '../../providers/playback_coordinator.dart';
+import '../../shared/video_buttons.dart';
+import 'expandable_caption.dart';
+
 class FullscreenPlayer extends StatefulWidget {
-  
-  final String videoUrl;
-  final String caption;
-
+  final VideoPost video;
+  final PlaybackCoordinator playback;
   const FullscreenPlayer({
-    super.key, 
-    required this.videoUrl, 
-    required this.caption
+    super.key,
+    required this.video,
+    required this.playback,
   });
-
   @override
   State<FullscreenPlayer> createState() => _FullscreenPlayerState();
 }
 
 class _FullscreenPlayerState extends State<FullscreenPlayer> {
-  
-  late VideoPlayerController controller;
-  @override
-  void initState(){
-    super.initState();
-    controller = VideoPlayerController.asset( widget.videoUrl )
-      ..setVolume(0.0)
-      ..setLooping(true)
-      ..play();
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
-    
-    return FutureBuilder(
-      future: controller.initialize(), 
-      builder: (context, snapshot) {
-        if(snapshot.connectionState != ConnectionState.done){
-          return const Center(child: CircularProgressIndicator(strokeWidth: 2));
-        }
-        return GestureDetector(
-          onTap: (){
-            if(controller.value.isPlaying){
-              controller.pause();
-              return;
-            }
-            controller.play();
-          },
-          child: AspectRatio(
-            aspectRatio: controller.value.aspectRatio,
-            child: Stack(
+    final colors = Theme.of(context).colorScheme;
+    final c = widget.playback.controllers[widget.video.id];
+    final failed = widget.playback.errors.contains(widget.video.id);
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        const ColoredBox(color: Color(0xFF11151D)),
+        if (failed)
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                VideoPlayer(controller),
-                
-                // Gradiente
-                VideoBackground(
-                  colors:[Colors.transparent,Colors.black],
-                  stops: [0.8,1.0],
+                const Icon(Icons.videocam_off_outlined, size: 48),
+                const SizedBox(height: 12),
+                const Text('No se pudo reproducir este video'),
+                TextButton(
+                  onPressed: widget.playback.retry,
+                  child: const Text('Reintentar'),
                 ),
-
-                // Texto
+              ],
+            ),
+          )
+        else if (c == null || !c.value.isInitialized)
+          Center(child: CircularProgressIndicator(color: colors.primary))
+        else
+          ValueListenableBuilder(
+            valueListenable: c,
+            builder: (context, value, _) => Stack(
+              fit: StackFit.expand,
+              children: [
+                GestureDetector(
+                  onTap: widget.playback.togglePause,
+                  child: ClipRect(
+                    child: SizedBox.expand(
+                      child: FittedBox(
+                        fit: BoxFit.cover,
+                        child: SizedBox(
+                          width: value.size.width,
+                          height: value.size.height,
+                          child: VideoPlayer(c),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                if (value.hasError)
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text('Error de reproducción'),
+                        TextButton(
+                          onPressed: widget.playback.retry,
+                          child: const Text('Reintentar'),
+                        ),
+                      ],
+                    ),
+                  ),
+                if (value.isBuffering)
+                  const Center(child: CircularProgressIndicator()),
+                if (widget.playback.paused)
+                  const IgnorePointer(
+                    child: Center(
+                      child: Icon(
+                        Icons.play_arrow_rounded,
+                        size: 80,
+                        color: Colors.white70,
+                      ),
+                    ),
+                  ),
                 Positioned(
-                  bottom: 50,
-                  left: 20,
-                  child: _VideoCaption(caption: widget.caption)
-                )
-              ]
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: VideoProgressIndicator(
+                    c,
+                    allowScrubbing: false,
+                    colors: VideoProgressColors(
+                      playedColor: colors.primary,
+                      backgroundColor: Colors.white24,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-        );
-      },
-    );
-  }
-}
-
-
-class _VideoCaption extends StatelessWidget {
-
-  final String caption;
-
-  const _VideoCaption({super.key, required this.caption});
-
-  @override
-  Widget build(BuildContext context) {
-    
-    final size = MediaQuery.of(context).size;
-    final titleStyle = Theme.of(context).textTheme.titleLarge;
-
-    return SizedBox(
-      width: size.width*0.6,
-      child: Text(caption, maxLines: 2, style: titleStyle,),
+        const IgnorePointer(
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black54,
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.black87,
+                ],
+                stops: [0, .25, .5, 1],
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          right: 12,
+          bottom: 100,
+          child: VideoButtons(video: widget.video, playback: widget.playback),
+        ),
+        Positioned(
+          left: 20,
+          right: 88,
+          bottom: 24,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                '@${widget.video.creator}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              const SizedBox(height: 10),
+              ExpandableCaption(
+                text: widget.video.caption,
+                maxHeight: MediaQuery.sizeOf(context).height * .22,
+              ),
+              Text(
+                widget.video.source,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(color: Colors.white70, fontSize: 12),
+              ),
+              if (widget.video.license != null)
+                Text(
+                  widget.video.license!,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontSize: 10, color: Colors.white54),
+                ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

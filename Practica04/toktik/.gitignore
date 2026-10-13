@@ -26,6 +26,7 @@ migrate_working_dir/
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
+api_keys.json
 .dart_tool/
 .flutter-plugins-dependencies
 .pub-cache/
@@ -46,3 +47,9 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Temporary asset generation tools
+/.tools/
+
+# Keep resolved application dependencies reproducible.
+!pubspec.lock
