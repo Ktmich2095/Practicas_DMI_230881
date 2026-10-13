@@ -9,7 +9,10 @@ import 'settings_provider.dart';
 class ThemeAudioProvider extends ChangeNotifier with WidgetsBindingObserver {
   final ThemeAudioRepository repository;
   final SettingsProvider settings;
-  bool _videoAudible = false, _foreground = true, _disposed = false;
+  bool _videoAudible = false,
+      _foreground = true,
+      _disposed = false,
+      _introActive = false;
   String? _playingAsset, error;
   Future<void> _queue = Future.value();
   bool get playing => _playingAsset != null;
@@ -34,6 +37,16 @@ class ThemeAudioProvider extends ChangeNotifier with WidgetsBindingObserver {
     return synchronize();
   }
 
+  Future<void> setIntroActive(bool active) async {
+    _introActive = active;
+    await synchronize();
+    if (active && error != null) {
+      throw StateError(
+        'No se pudo detener el audio temático antes de la intro',
+      );
+    }
+  }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     unawaited(setForeground(state == AppLifecycleState.resumed));
@@ -44,7 +57,10 @@ class ThemeAudioProvider extends ChangeNotifier with WidgetsBindingObserver {
         .then((_) async {
           if (_disposed) return;
           final desired =
-              settings.preferences.themeAudio && !_videoAudible && _foreground
+              settings.preferences.themeAudio &&
+                  !_videoAudible &&
+                  _foreground &&
+                  !_introActive
               ? SeasonStyle.of(settings.season).audioAsset
               : null;
           if (_playingAsset == desired && error == null) return;

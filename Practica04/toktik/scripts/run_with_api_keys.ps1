@@ -7,6 +7,9 @@ $coverrValue = [System.Net.NetworkCredential]::new('', $coverrSecret).Password
 $pixabayValue = [System.Net.NetworkCredential]::new('', $pixabaySecret).Password
 Push-Location (Split-Path -Parent $PSScriptRoot)
 try {
+  if ($Device -ne 'chrome' -and $Device -ne 'edge' -and $Device -ne 'web-server' -and $Device -ne 'windows') {
+    & (Join-Path $PSScriptRoot 'prepare_android_launcher.ps1') -Device $Device
+  }
   & flutter run -d $Device "--dart-define=COVERR_API_KEY=$coverrValue" "--dart-define=PIXABAY_API_KEY=$pixabayValue"
 } finally {
   $coverrValue = $null

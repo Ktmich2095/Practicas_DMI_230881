@@ -1,3 +1,5 @@
+import 'season_calendar.dart';
+
 enum Season {
   normal('Normal'),
   halloween('Halloween'),
@@ -7,10 +9,7 @@ enum Season {
   final String label;
   const Season(this.label);
   static Season forDate(DateTime date) {
-    if (date.month == 10) return halloween;
-    if (date.month == 12) return christmas;
-    if (date.month == 2 && date.day <= 14) return valentine;
-    return normal;
+    return parse(SeasonCalendar.resolve(date)) ?? normal;
   }
 
   static Season? parse(Object? name) {

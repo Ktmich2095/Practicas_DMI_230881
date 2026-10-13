@@ -7,6 +7,7 @@ import '../../providers/discover_provider.dart';
 import '../../providers/settings_provider.dart';
 import '../../shared/video_scrollable_view.dart';
 import '../../widgets/settings_sheet.dart';
+import '../../widgets/branding/toktik_logo.dart';
 
 class DiscoverScreen extends StatefulWidget {
   const DiscoverScreen({super.key});
@@ -16,6 +17,7 @@ class DiscoverScreen extends StatefulWidget {
 
 class _DiscoverScreenState extends State<DiscoverScreen> {
   int section = 1;
+  final Map<String, int> _positions = {};
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<DiscoverProvider>();
@@ -25,7 +27,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
     final videos = section == 2
         ? provider.favorites
         : section == 0
-        ? (provider.videos.toList()..sort((a, b) => b.views.compareTo(a.views)))
+        ? provider.discoverVideos
         : provider.videos;
     void openSettings() => showModalBottomSheet(
       context: context,
@@ -76,13 +78,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     ),
                     const SizedBox(height: 20),
                     const Text(
-                      'Tus historias favoritas, aquí',
+                      'Aún no tienes favoritos.',
                       style: TextStyle(fontSize: 22),
                     ),
                     const SizedBox(height: 12),
                     const Text(
-                      'Toca el corazón de un video para guardarlo.',
+                      'Explora videos y guarda los que más te gusten.',
                       textAlign: TextAlign.center,
+                    ),
+                    TextButton(
+                      onPressed: () => setState(() => section = 1),
+                      child: const Text('Ir a For You'),
                     ),
                   ],
                 ),
@@ -92,6 +98,11 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
             VideoScrollableView(
               key: ValueKey('$section:${provider.selectedSource.name}'),
               videos: videos,
+              initialPage:
+                  _positions['$section:${provider.selectedSource.name}'] ?? 0,
+              onPositionChanged: (index) =>
+                  _positions['$section:${provider.selectedSource.name}'] =
+                      index,
               continuous: section == 1 && !provider.hasMore,
               onNearEnd: section == 1 ? provider.loadMore : null,
             ),
@@ -100,17 +111,11 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               padding: const EdgeInsets.fromLTRB(16, 8, 12, 0),
               child: Row(
                 children: [
+                  TokTikLogo(season: settings.season, size: 42),
                   Text(
-                    'tok',
-                    style: Theme.of(context).textTheme.titleLarge
-                        ?.copyWith(fontWeight: FontWeight.w900),
-                  ),
-                  Text(
-                    'tik',
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      color: colors.primary,
-                    ),
+                    'TokTik',
+                    style: Theme.of(context).textTheme.titleMedium
+                        ?.copyWith(fontWeight: FontWeight.w800),
                   ),
                   if (settings.season != Season.normal)
                     Padding(

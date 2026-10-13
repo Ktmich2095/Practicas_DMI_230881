@@ -37,3 +37,24 @@
 Se retiraron los contratos `video_posts_datasource.dart` y `video_posts_repository.dart`, el datasource local anterior, `local_video_model.dart`, la lista fija `local_video_posts.dart` y el widget de gradiente anterior. La composición activa usa los contratos, mappers, catálogo de assets y reproductor nuevos; no quedan stubs sin implementar ni una lista de respuestas simuladas en la aplicación.
 
 No se modificaron las prácticas anteriores ni se crearon commits o pushes.
+
+## Ampliación de identidad visual y temporadas
+
+- Recursos originales en `assets/branding/`: cuatro SVG, logos PNG, marcas sin
+  decoración y tablero; cuatro efectos `assets/audio/intro_*.wav`.
+- `scripts/generate_branding.py`; Pillow sólo interviene en la regeneración.
+- Configuración `BrandAssets` y calendario puro Dart `SeasonCalendar`.
+- Widgets `TokTikLogo`/`SeasonIntro` y pantallas `StartupScreen`/`IntroPreviewScreen`.
+- Providers `StartupProvider`, `SeasonIdentityProvider` e `IntroAudioProvider`;
+  repositorios de dominio/infraestructura para ícono y sonido.
+- Ajustes existentes: selector “Apariencia y temporadas”, vista previa y sonido
+  persistente; coordinación con playback y audio temático.
+- Android: puente en `MainActivity`, entrada real `LauncherActivity`, alias,
+  `LauncherIcons`, receiver de actualización y recursos legacy/adaptativos.
+- Splash nativo negro en estilos anteriores/posteriores a API 31.
+- Helper exclusivo de debug y `prepare_android_launcher.ps1`, integrado con el
+  lanzador de claves para conservar la ejecución desde Flutter.
+- Tests `identity_test.dart`, `startup_preview_test.dart` e integración nativa
+  `season_identity_test.dart`; dependencia de desarrollo `integration_test` del SDK.
+- README: secuencias, recursos, arquitectura, calendario, sonidos, resultados
+  ejecutados y límites reales del launcher/emulador.

@@ -41,8 +41,12 @@ class VideoButtons extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-          HumanFormats.humanReadableNumber(provider.likes(video).toDouble()),
+        Tooltip(
+          message:
+              '${provider.likes(video)} likes${provider.statistics(video).simulatedLikes ? ' · demostración' : ''}',
+          child: Text(
+            HumanFormats.humanReadableNumber(provider.likes(video).toDouble()),
+          ),
         ),
         const SizedBox(height: 22),
         IconButton(
@@ -56,7 +60,13 @@ class VideoButtons extends StatelessWidget {
         const SizedBox(height: 18),
         const Icon(Icons.visibility_outlined, size: 26),
         const SizedBox(height: 6),
-        Text(HumanFormats.humanReadableNumber(video.views.toDouble())),
+        Tooltip(
+          message:
+              '${provider.views(video)} vistas${provider.statistics(video).simulatedViews ? ' · demostración' : ''}',
+          child: Text(
+            HumanFormats.humanReadableNumber(provider.views(video).toDouble()),
+          ),
+        ),
       ],
     );
   }

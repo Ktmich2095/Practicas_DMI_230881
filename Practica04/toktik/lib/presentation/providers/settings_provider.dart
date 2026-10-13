@@ -12,7 +12,10 @@ class SettingsProvider extends ChangeNotifier with WidgetsBindingObserver {
   final DateTime Function() clock;
   AppPreferences preferences = const AppPreferences();
   String? error;
-  bool saving = false, _disposed = false;
+  bool saving = false,
+      initialized = false,
+      _disposed = false,
+      _observing = false;
   late DateTime _date;
   Timer? _midnight;
   SettingsProvider(this.repository, {DateTime Function()? clock})
@@ -22,12 +25,20 @@ class SettingsProvider extends ChangeNotifier with WidgetsBindingObserver {
   Season get season => preferences.manualSeason ?? Season.forDate(_date);
   Future<void> initialize({bool observeDate = true}) async {
     try {
-      preferences = await repository.read();
+      preferences = await repository.read().timeout(
+        const Duration(seconds: 30),
+      );
     } catch (_) {
       error = 'No se pudieron recuperar las preferencias. Se usan valores iniciales.';
     }
+    _date = clock();
+    initialized = true;
+    if (_disposed) return;
     if (observeDate) {
-      WidgetsBinding.instance.addObserver(this);
+      if (!_observing) {
+        WidgetsBinding.instance.addObserver(this);
+        _observing = true;
+      }
       _scheduleMidnight();
     }
     if (!_disposed) notifyListeners();
@@ -52,6 +63,7 @@ class SettingsProvider extends ChangeNotifier with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (_disposed) return;
     if (state == AppLifecycleState.resumed) {
       refreshDate();
       _scheduleMidnight();
@@ -83,6 +95,8 @@ class SettingsProvider extends ChangeNotifier with WidgetsBindingObserver {
       _save(preferences.copyWith(muted: value));
   Future<bool> setThemeAudio(bool value) =>
       _save(preferences.copyWith(themeAudio: value));
+  Future<bool> setIntroSound(bool value) =>
+      _save(preferences.copyWith(introSound: value));
   @override
   void dispose() {
     _disposed = true;

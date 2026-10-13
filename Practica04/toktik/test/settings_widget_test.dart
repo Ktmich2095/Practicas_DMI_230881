@@ -56,7 +56,7 @@ void main() {
       expect(find.textContaining('No hay contenido'), findsOneWidget);
       await tester.tap(find.text('Favorites'));
       await tester.pumpAndSettle();
-      expect(find.text('Tus historias favoritas, aquí'), findsOneWidget);
+      expect(find.text('Aún no tienes favoritos.'), findsOneWidget);
       await tester.tap(find.text('For You'));
       await tester.pumpAndSettle();
       await tester.tap(find.byTooltip('Fuentes y temas'));

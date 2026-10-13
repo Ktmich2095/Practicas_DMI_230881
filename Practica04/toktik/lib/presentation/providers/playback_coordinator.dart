@@ -10,10 +10,12 @@ class PlaybackCoordinator extends ChangeNotifier {
   final VideoPlayerController Function(VideoPost) createController;
   final Future<void> Function(bool audible)? coordinateAudio;
   final Future<bool> Function(bool muted)? persistMuted;
+  final Future<void> Function(VideoPost)? onQualifiedView;
   PlaybackCoordinator({
     VideoPlayerController Function(VideoPost)? createController,
     this.coordinateAudio,
     this.persistMuted,
+    this.onQualifiedView,
     bool initiallyMuted = true,
   }) : createController = createController ?? _defaultController {
     muted = initiallyMuted;
@@ -26,11 +28,63 @@ class PlaybackCoordinator extends ChangeNotifier {
   final Set<String> errors = {};
   List<VideoPost> _videos = [];
   int _index = 0;
-  bool muted = true, paused = false, foreground = true, _closed = false;
+  bool muted = true,
+      paused = false,
+      foreground = true,
+      _closed = false,
+      _introActive = false;
   Future<void> _queue = Future.value();
+  Object? _owner;
+  final Map<String, Duration> _watched = {};
+  final Set<String> _counted = {};
+  Duration? _lastPosition;
+  String? _trackingId;
+  bool _wasPlaying = false;
+  Object claimFeed() => _owner = Object();
+  void releaseFeed(Object owner) {
+    if (identical(owner, _owner)) {
+      _owner = null;
+      unawaited(select(const [], 0));
+    }
+  }
+
+  bool ownsFeed(Object owner) => identical(owner, _owner);
+  void _observePlayback(VideoPost video, VideoPlayerController controller) {
+    if (_closed || _videos.isEmpty || _videos[_index].id != video.id) return;
+    final value = controller.value;
+    final playing =
+        foreground &&
+        !paused &&
+        !_introActive &&
+        value.isInitialized &&
+        value.isPlaying &&
+        !value.isBuffering &&
+        !value.hasError;
+    if (_trackingId != video.id) {
+      _trackingId = video.id;
+      _lastPosition = null;
+      _wasPlaying = false;
+    }
+    if (playing && _wasPlaying && _lastPosition != null) {
+      final delta = value.position - _lastPosition!;
+      // Only actual decoder progress qualifies; seeks and loop resets don't.
+      if (delta > Duration.zero && delta <= const Duration(seconds: 1)) {
+        _watched[video.id] = (_watched[video.id] ?? Duration.zero) + delta;
+        if (_watched[video.id]! >= const Duration(seconds: 3) &&
+            _counted.add(video.id)) {
+          unawaited(onQualifiedView?.call(video));
+        }
+      }
+    }
+    _lastPosition = value.position;
+    _wasPlaying = playing;
+  }
+
   VideoPlayerController? get current =>
       _videos.isEmpty ? null : controllers[_videos[_index].id];
   Future<void> select(List<VideoPost> videos, int index) {
+    _lastPosition = null;
+    _wasPlaying = false;
     _pauseImmediately();
     _videos = List.of(videos);
     _index = index;
@@ -39,6 +93,7 @@ class PlaybackCoordinator extends ChangeNotifier {
   }
 
   Future<void> updateVideos(List<VideoPost> videos, int index) {
+    _pauseImmediately();
     _videos = List.of(videos);
     _index = index;
     return _schedule();
@@ -60,6 +115,12 @@ class PlaybackCoordinator extends ChangeNotifier {
   Future<void> lifecycle(bool active) {
     foreground = active;
     if (!active) _pauseImmediately();
+    return _schedule();
+  }
+
+  Future<void> setIntroActive(bool active) {
+    _introActive = active;
+    if (active) _pauseImmediately();
     return _schedule();
   }
 
@@ -119,12 +180,15 @@ class PlaybackCoordinator extends ChangeNotifier {
     if (_videos.isNotEmpty && _videos[_index].id == active.id) {
       final c = controllers[active.id];
       if (c != null && c.value.isInitialized && !errors.contains(active.id)) {
-        await coordinateAudio?.call(!muted && foreground && !paused);
+        await coordinateAudio?.call(
+          !muted && foreground && !paused && !_introActive,
+        );
         if (_closed) return;
         await c.setVolume(muted ? 0 : 1);
         if (!_closed &&
             foreground &&
             !paused &&
+            !_introActive &&
             _videos.isNotEmpty &&
             _videos[_index].id == active.id) {
           await c.play();
@@ -148,9 +212,10 @@ class PlaybackCoordinator extends ChangeNotifier {
       return;
     }
     final c = createController(video);
+    c.addListener(() => _observePlayback(video, c));
     controllers[video.id] = c;
     try {
-      await c.initialize().timeout(const Duration(seconds: 20));
+      await c.initialize().timeout(const Duration(seconds: 60));
       if (_closed) return;
       await c.setLooping(true);
       await c.setVolume(0);

@@ -1,5 +1,31 @@
 # Práctica 04 · TokTik
 
+TokTik simula un feed de videos cortos: reproduce el video visible y permite avanzar o retroceder con desplazamiento vertical. Incluye Discover, For You, Favorites, favoritos persistentes, control de sonido, descripción expandible, temas estacionales y fuentes de video locales y remotas.
+
+## Ejecutar la práctica
+
+Desde la raíz del repositorio, en PowerShell:
+
+```powershell
+Set-Location .\Practica04\toktik
+flutter pub get
+flutter devices
+flutter run -d emulator-5554
+```
+
+Usa el ID que muestre `flutter devices`. Las claves son opcionales; sin ellas la app intenta Internet Archive y los videos incluidos en `assets/videos/`. Para probar APIs autenticadas, configura `api_keys.json` localmente y agrega `--dart-define-from-file=api_keys.json` al comando. No incluyas claves reales en el repositorio.
+
+## Evidencias en video
+
+Graba los flujos en el emulador y reemplaza cada espacio con un enlace accesible para el profesor (Drive, OneDrive o video adjunto).
+
+| Evidencia | Qué mostrar | Enlace al video |
+|---|---|---|
+| 1. Feed y reproducción | Desplazamiento vertical, loop, pausa, sonido, widgets y gestos | **Pegar enlace aquí** |
+| 2. Interacción y persistencia | Favorito/me gusta, reinicio de la app y descripción “Ver más” | **Pegar enlace aquí** |
+| 3. Temporadas | Automático por fecha, selección manual, paleta, iconografía e intro con audio | **Pegar enlace aquí** |
+| 4. Fuentes y arquitectura | Discover / For You / Favorites, selección y respaldo de datasources | **Pegar enlace aquí** |
+
 Aplicación de videos verticales para **Desarrollo Móvil Integral**, construida con Flutter y Dart. Su objetivo es aplicar arquitectura CLEAN, peticiones HTTP, estado reactivo, reproducción multimedia y persistencia local en una experiencia de videos cortos.
 
 El proyecto existente se conserva en `Practica04/toktik/`. Su nombre de paquete es **`toktik_app`** y su nombre visible, **TokTik**. Las prácticas 02 y 03 permanecen intactas.
@@ -18,7 +44,7 @@ SDK comprobado: **Flutter 3.47.4**, **Dart 3.13.3**, canal stable. Restricción 
 | intl | 0.20.3 | Formato compacto de contadores |
 | animate_do | 4.2.0 | Dependencia conservada de la base; transiciones actuales con Flutter |
 
-También se conservan los iconos Cupertino de la base y `flutter_lints`. Las versiones se resolvieron mediante `flutter pub get`; el análisis, las pruebas y la compilación web verifican su compatibilidad con el SDK instalado. Android tiene requisitos del entorno pendientes, descritos abajo.
+También se conservan los iconos Cupertino de la base y `flutter_lints`. Las versiones se resolvieron mediante `flutter pub get`; el APK debug compiló e instaló en el emulador disponible. La comprobación de reproducción en frío sigue pendiente, descrita abajo.
 
 ## Funcionalidades
 
@@ -35,6 +61,54 @@ También se conservan los iconos Cupertino de la base y `flutter_lints`. Las ver
 - Interfaz oscura, superposiciones, gradientes, transiciones y navegación con áreas seguras. Los selectores se validaron a 320 × 640.
 
 ## Arquitectura CLEAN
+
+### Diagrama 1: Provider con catálogo local
+
+Con la fuente local seleccionada, el Provider conserva estado y favoritos; el repositorio localiza los MP4 del bundle y el coordinador administra el reproductor del elemento visible.
+
+```mermaid
+flowchart LR
+  UI[DiscoverScreen] --> Feed[DiscoverProvider]
+  Feed --> Catalog[VideoCatalogRepository]
+  Catalog --> Fallback[FallbackVideoRepository]
+  Fallback --> Local[LocalAssetsDatasource]
+  Local --> Manifest[AssetManifest]
+  Manifest --> Files[assets/videos/*.mp4]
+  Feed --> Favorites[PreferencesFavoritesRepository]
+  Favorites --> Store[SharedPreferencesAsync]
+  UI --> Pages[VideoScrollableView]
+  Pages --> Playback[PlaybackCoordinator]
+  Playback --> Controller[VideoPlayerController.asset]
+  Controller --> Files
+```
+
+### Diagrama 2: Provider, repositorio y múltiples datasources
+
+El mismo contrato permite alternar fuentes. El repositorio prueba la seleccionada, valida y deduplica resultados, y continúa con fuentes disponibles si no obtiene videos reproducibles.
+
+```mermaid
+flowchart LR
+  UI[DiscoverScreen] --> Feed[DiscoverProvider]
+  Feed --> Contract[VideoCatalogRepository]
+  Contract --> Fallback[FallbackVideoRepository]
+  Fallback --> Coverr[CoverrDatasource]
+  Fallback --> Pixabay[PixabayDatasource]
+  Fallback --> Archive[ArchiveDatasource]
+  Fallback --> Local[LocalAssetsDatasource]
+  Coverr --> HTTP[JsonApiClient / HTTP]
+  Pixabay --> HTTP
+  Archive --> HTTP
+  Coverr --> Mapper[VideoMapper]
+  Pixabay --> Mapper
+  Archive --> Mapper
+  Mapper --> Entity[VideoPost / VideoBatch]
+  Local --> Entity
+  Entity --> Fallback
+  Fallback --> Feed
+  Feed --> Pages[VideoScrollableView]
+  Pages --> Playback[PlaybackCoordinator]
+  Playback --> Player[VideoPlayerController]
+```
 
 ```text
 lib/
@@ -170,29 +244,31 @@ flutter build web
 python .\scripts\probe_archive.py
 ```
 
-Resultados ejecutados en esta entrega:
+Resultados de la revisión actual:
 
-- Dependencias resueltas correctamente.
-- Análisis sin incidencias.
-- **22 pruebas aprobadas**: contratos HTTP/mappers, fuente seleccionada y respaldo, ausencia de claves, HTTP/JSON inválidos, respuestas vacías, deduplicación, assets reales, favoritos, rollback, restauración, preferencias, temporadas, audio, descripción expandible, navegación/selectores y pantalla estrecha.
-- Coordinación de reproducción probada con controladores simulados: exclusividad, cambio durante inicialización, precarga limitada, ciclo de vida, pausa manual, volumen y liberación.
-- Compilación web completada. Los tres MP4 locales se decodificaron correctamente con FFmpeg.
-- Consulta real de Internet Archive completada: seis resultados y metadatos con archivos MP4. Evidencia en [docs/live_archive_probe.json](docs/live_archive_probe.json). Esta consulta no es una reproducción de los videos.
-- Coverr y Pixabay: además de los contratos y MockClient, se ejecutaron **dos pruebas autenticadas reales con el cliente HTTP de la aplicación**, con ocho videos válidos por proveedor. Las claves se proporcionaron temporalmente, sin escribirlas en archivos fuente ni en los informes. Evidencia: [docs/live_authenticated_probe.json](docs/live_authenticated_probe.json). La consulta auxiliar Python recibió 403; las peticiones de las pruebas Flutter sí autenticaron y pasaron.
-- Diagramas: `validate`, `deliver`, `check` y `browser-check` aprobados; los HTML no contienen rutas de usuario que impidan publicarlos.
+- `flutter analyze`: sin incidencias antes del ajuste de límites de inicialización.
+- **43 pruebas unitarias aprobadas** en la suite enfocada de TokTik; después de ampliar los límites de espera, las 7 pruebas focalizadas de playback y preferencias también pasaron.
+- La ejecución amplia del workspace terminó con 45 aprobadas y 4 fallidas: dos smoke tests de Practica02/Practica03 y dos pruebas de integración Android; estas últimas no deben considerarse aprobadas por la suite de escritorio.
+- `flutter test .\integration_test\feed_statistics_test.dart -d emulator-5554`: falla en la primera reproducción, al esperar `isPlaying`. La prueba Android de temporadas/íconos también requiere una ejecución dedicada en el emulador.
+- En ejecución manual, el APK debug compiló e instaló. El primer arranque mostró un error al recuperar preferencias y el primer video local pasó al estado de reintento; al reintentar el mismo video, se mostró. El emulador reportó muchos frames omitidos y callbacks MediaCodec atrasados.
+- Se ampliaron los límites de lectura inicial de preferencias a 30 s y de inicialización de video a 60 s. Las pruebas unitarias focalizadas pasaron, pero el hot restart del emulador no terminó dentro de un tiempo razonable; falta confirmar estos límites en un arranque en frío.
+- Las pruebas autenticadas de Coverr/Pixabay y la compilación web que aparezcan en informes previos no se repitieron durante esta revisión. No presentes esos resultados como comprobación de la versión actual sin volver a ejecutarlos.
 
-### Limitación de Android y comprobaciones manuales
+### Pendiente antes del merge
 
-En la comprobación previa del entorno faltaban CMake 3.22.1 y bibliotecas Flutter ARM/ARM64 en caché. Android CLI respondió `No url for cmake` al intentar instalar CMake. No se ha generado un APK nuevo de esta entrega ni se ha confirmado reproducción nativa. Los APK anteriores que puedan quedar en `build/` no son evidencia de esta versión.
+La compilación Android sí funciona en este entorno; no hace falta instalar CMake adicional para el APK debug comprobado. Sin embargo, no puedo marcar la práctica como lista para merge mientras falle la reproducción en frío y la restauración inicial de preferencias no esté verificada después de los nuevos límites.
 
-Instala CMake 3.22.1 desde SDK Manager de Android Studio, verifica acceso a las descargas de Flutter y ejecuta:
+Ejecuta desde `Practica04/toktik` y confirma un arranque en frío sin el banner rojo, reproducción automática del primer MP4, sonido/mute y navegación por las tres secciones:
 
 ```powershell
-flutter build apk --debug
+flutter analyze
+flutter test
+flutter test .\integration_test\feed_statistics_test.dart -d emulator-5554
+flutter test .\integration_test\season_identity_test.dart -d emulator-5554
 flutter run -d emulator-5554
 ```
 
-El ID de emulador puede cambiar; consulta `flutter devices`. El APK, cuando la compilación termine, estará en `build/app/outputs/flutter-apk/app-debug.apk`. `video_player` no ofrece reproducción nativa Windows/Linux en esta configuración; usa Android, iOS o web. La compilación iOS requiere macOS.
+El ID puede cambiar; consulta `flutter devices`. La última ejecución observó carga muy lenta del emulador (cientos de frames omitidos); repite en un AVD limpio o dispositivo físico antes de atribuir ese rendimiento a un teléfono real. `video_player` no ofrece reproducción nativa Windows/Linux en esta configuración; usa Android, iOS o web. La compilación iOS requiere macOS.
 
 Antes de entregar, comprueba en dispositivo: desplazamiento rápido, sonido, segundo plano, pausa manual, cierre/reinicio, favorito de otra fuente, eliminación del último favorito, corte de red, reintento, tamaño de texto grande y orientación. En web, autoplay, CORS y audio dependen también del navegador y del proveedor.
 

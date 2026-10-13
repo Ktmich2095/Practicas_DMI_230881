@@ -6,6 +6,11 @@ import '../../domain/entities/season.dart';
 import '../providers/settings_provider.dart';
 import '../providers/discover_provider.dart';
 import '../providers/theme_audio_provider.dart';
+import '../providers/season_identity_provider.dart';
+import '../providers/intro_audio_provider.dart';
+import '../providers/playback_coordinator.dart';
+import '../screens/startup/intro_preview_screen.dart';
+import 'branding/toktik_logo.dart';
 
 class SettingsSheet extends StatelessWidget {
   const SettingsSheet({super.key});
@@ -14,6 +19,7 @@ class SettingsSheet extends StatelessWidget {
     final settings = context.watch<SettingsProvider>();
     final audio = context.watch<ThemeAudioProvider>();
     final feed = context.read<DiscoverProvider>();
+    final identity = context.watch<SeasonIdentityProvider?>();
     return SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
@@ -67,6 +73,13 @@ class SettingsSheet extends StatelessWidget {
               label: const Text('Volver a Aleatoria'),
             ),
             const SizedBox(height: 16),
+            Text(
+              'Apariencia y temporadas',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 12),
+            Center(child: TokTikLogo(season: settings.season, size: 80)),
+            const SizedBox(height: 12),
             DropdownButtonFormField<String>(
               isExpanded: true,
               initialValue:
@@ -97,6 +110,32 @@ class SettingsSheet extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text('Tema actual: ${settings.season.label}'),
+            TextButton.icon(
+              icon: const Icon(Icons.auto_awesome),
+              label: const Text('Vista previa de intro'),
+              onPressed: () => IntroPreviewScreen.open(
+                context,
+                settings.season,
+                context.read<PlaybackCoordinator?>(),
+                context.read<IntroAudioProvider?>(),
+              ),
+            ),
+            SwitchListTile(
+              contentPadding: EdgeInsets.zero,
+              title: const Text('Sonido de las intros'),
+              subtitle: const Text(
+                'Efecto breve; respeta el silencio general del video.',
+              ),
+              value: settings.preferences.introSound,
+              onChanged: settings.saving ? null : settings.setIntroSound,
+            ),
+            if (identity?.error != null) ...[
+              Text(identity!.error!),
+              TextButton(
+                onPressed: identity.synchronize,
+                child: const Text('Reintentar ícono'),
+              ),
+            ],
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
               title: const Text('Audio temático'),

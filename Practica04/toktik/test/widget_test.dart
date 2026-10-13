@@ -98,7 +98,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byIcon(Icons.favorite_border), findsWidgets);
     expect(
-      find.text('Toca el corazón de un video para guardarlo.'),
+      find.text('Explora videos y guarda los que más te gusten.'),
       findsOneWidget,
     );
   });

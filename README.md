@@ -29,4 +29,5 @@ Durante las prácticas se trabajará con diferentes conceptos y herramientas par
 | 1 | Metodología de Evaluación de la Materia | Transcribir en libreta y comprender la metodología y fechas de evaluación de la asignatura. | 5 firmas | ✅ Concluida | - |
 | 2 | Mi Primera Aplicación Móvil con Flutter | Codificar una aplicación móvil utilizando Flutter y manejando `StatelessWidget` y `StatefulWidget`. | 25 firmas | ✅ Concluida | [Ver práctica](Practica02/hello_world_app/README.md) |
 | 3 | Chat de respuestas Sí/No | Desarrollar una aplicación de chat que consulte una API y muestre respuestas automáticas con GIF. | 30 firmas | ✅ Concluida | [Ver práctica](Practica03/yes_no_app/README.md) |
+| 4 | TokTik | Videos verticales con arquitectura CLEAN, APIs, favoritos y temas de temporada. | — | Implementada; validación Android pendiente | [Ver práctica](Practica04/toktik/README.md) |
 

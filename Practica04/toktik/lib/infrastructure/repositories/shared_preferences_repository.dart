@@ -21,6 +21,7 @@ class SharedPreferencesRepository implements PreferencesRepository {
       manualSeason: Season.parse(data['season']),
       muted: data['muted'] != false,
       themeAudio: data['themeAudio'] == true,
+      introSound: data['introSound'] == true,
     );
   }
 
@@ -32,6 +33,7 @@ class SharedPreferencesRepository implements PreferencesRepository {
       'season': preferences.manualSeason?.name,
       'muted': preferences.muted,
       'themeAudio': preferences.themeAudio,
+      'introSound': preferences.introSound,
     }),
   );
 }
