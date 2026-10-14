@@ -1,0 +1,260 @@
+{
+  "status": "pass",
+  "testPublicationPrefix": "/Practicas_DMI_230881/",
+  "sourceOverlay": "Current workspace; unchanged old practice assets read from actual main Git objects when absent locally",
+  "rootSha256": "783205ea19836e900221a30fd807e0479576dc449a683e5da6790deb79d6cb84",
+  "menu": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "columns": "288px",
+      "cards": 3,
+      "rects": [
+        {
+          "x": 16,
+          "y": 665.953125,
+          "w": 288,
+          "h": 446.6875
+        },
+        {
+          "x": 16,
+          "y": 1136.640625,
+          "w": 288,
+          "h": 405.4375
+        },
+        {
+          "x": 16,
+          "y": 1566.078125,
+          "w": 288,
+          "h": 575.078125
+        }
+      ],
+      "buttons": [
+        {
+          "href": "Practica04/toktik/architecture/provider-local/",
+          "label": "Provider Local →"
+        },
+        {
+          "href": "Practica04/toktik/architecture/provider-repository-datasources/",
+          "label": "Repository y DataSources →"
+        }
+      ],
+      "overlaps": false
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "columns": "358px",
+      "cards": 3,
+      "rects": [
+        {
+          "x": 16,
+          "y": 628.015625,
+          "w": 358,
+          "h": 380.6875
+        },
+        {
+          "x": 16,
+          "y": 1032.703125,
+          "w": 358,
+          "h": 339.4375
+        },
+        {
+          "x": 16,
+          "y": 1396.140625,
+          "w": 358,
+          "h": 475.4375
+        }
+      ],
+      "buttons": [
+        {
+          "href": "Practica04/toktik/architecture/provider-local/",
+          "label": "Provider Local →"
+        },
+        {
+          "href": "Practica04/toktik/architecture/provider-repository-datasources/",
+          "label": "Repository y DataSources →"
+        }
+      ],
+      "overlaps": false
+    },
+    {
+      "width": 768,
+      "scrollWidth": 753,
+      "columns": "340.5px 340.5px",
+      "cards": 3,
+      "rects": [
+        {
+          "x": 24,
+          "y": 530.53125,
+          "w": 340.5,
+          "h": 388.6875
+        },
+        {
+          "x": 388.5,
+          "y": 530.53125,
+          "w": 340.5,
+          "h": 388.6875
+        },
+        {
+          "x": 24,
+          "y": 943.21875,
+          "w": 340.5,
+          "h": 508.1875
+        }
+      ],
+      "buttons": [
+        {
+          "href": "Practica04/toktik/architecture/provider-local/",
+          "label": "Provider Local →"
+        },
+        {
+          "href": "Practica04/toktik/architecture/provider-repository-datasources/",
+          "label": "Repository y DataSources →"
+        }
+      ],
+      "overlaps": false
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1009,
+      "columns": "304.328px 304.328px 304.344px",
+      "cards": 3,
+      "rects": [
+        {
+          "x": 24,
+          "y": 591.40625,
+          "w": 304.328125,
+          "h": 546.9375
+        },
+        {
+          "x": 352.328125,
+          "y": 591.40625,
+          "w": 304.328125,
+          "h": 546.9375
+        },
+        {
+          "x": 680.65625,
+          "y": 591.40625,
+          "w": 304.34375,
+          "h": 546.9375
+        }
+      ],
+      "buttons": [
+        {
+          "href": "Practica04/toktik/architecture/provider-local/",
+          "label": "Provider Local →"
+        },
+        {
+          "href": "Practica04/toktik/architecture/provider-repository-datasources/",
+          "label": "Repository y DataSources →"
+        }
+      ],
+      "overlaps": false
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1425,
+      "columns": "357.328px 357.328px 357.344px",
+      "cards": 3,
+      "rects": [
+        {
+          "x": 152.5,
+          "y": 601.609375,
+          "w": 357.328125,
+          "h": 508.1875
+        },
+        {
+          "x": 533.828125,
+          "y": 601.609375,
+          "w": 357.328125,
+          "h": 508.1875
+        },
+        {
+          "x": 915.15625,
+          "y": 601.609375,
+          "w": 357.34375,
+          "h": 508.1875
+        }
+      ],
+      "buttons": [
+        {
+          "href": "Practica04/toktik/architecture/provider-local/",
+          "label": "Provider Local →"
+        },
+        {
+          "href": "Practica04/toktik/architecture/provider-repository-datasources/",
+          "label": "Repository y DataSources →"
+        }
+      ],
+      "overlaps": false
+    }
+  ],
+  "hover": {
+    "transform": "matrix(1, 0, 0, 1, 0, -2)",
+    "filter": "brightness(1.08)"
+  },
+  "reducedMotion": {
+    "duration": "0s",
+    "transform": "none"
+  },
+  "destinations": [
+    {
+      "href": "http://127.0.0.1:64662/Practicas_DMI_230881/Practica02/hello_world_app/.archify/arquitectura/arquitectura.html",
+      "label": "Ver arquitectura de Práctica 02",
+      "title": "Arquitectura · Counter Functions",
+      "svg": 1
+    },
+    {
+      "href": "http://127.0.0.1:64662/Practicas_DMI_230881/Practica03/yes_no_app/.archify/architecture-yes-no-app-20261005-173738/yes-no-app.html",
+      "label": "Ver arquitectura de Práctica 03",
+      "title": "yes_no_app · Arquitectura del chat Flutter Diagram",
+      "svg": 1
+    },
+    {
+      "href": "http://127.0.0.1:64662/Practicas_DMI_230881/Practica04/toktik/architecture/provider-local/",
+      "label": "Ver arquitectura de TokTik con Provider Local",
+      "title": "TokTik - Arquitectura con Provider Local · Diagrama",
+      "svg": 1
+    },
+    {
+      "href": "http://127.0.0.1:64662/Practicas_DMI_230881/Practica04/toktik/architecture/provider-repository-datasources/",
+      "label": "Ver arquitectura de TokTik con Repository y DataSources",
+      "title": "TokTik - Arquitectura con Provider, Repository y DataSources · Diagrama",
+      "svg": 1
+    }
+  ],
+  "readme": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "headings": 25,
+      "activeMedia": 0
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "headings": 25,
+      "activeMedia": 0
+    },
+    {
+      "width": 768,
+      "scrollWidth": 753,
+      "headings": 25,
+      "activeMedia": 0
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1425,
+      "headings": 25,
+      "activeMedia": 0
+    }
+  ],
+  "runtimeErrors": [],
+  "failedResponses": [],
+  "servedFromMain": [
+    "Practica02/hello_world_app/.archify/arquitectura/arquitectura.html",
+    "Practica03/yes_no_app/.archify/architecture-yes-no-app-20261005-173738/yes-no-app.html"
+  ],
+  "productionRequiresLocalServer": false
+}

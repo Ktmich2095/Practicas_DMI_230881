@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "db239901-967e-4c14-be36-4ba98ec3fa02",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\otero\\OneDrive\\Desktop\\Practicas_DMI_230881\\Practica04\\toktik\\architecture\\initial\\candidate.json",
+  "output": "C:\\Users\\otero\\OneDrive\\Desktop\\Practicas_DMI_230881\\Practica04\\toktik\\architecture\\initial\\index.html",
+  "specification": {
+    "sha256": "8471745654f2c45f5dc71975219268ea908d9baf094bd7c5620b9ce128665d91",
+    "bytes": 30886
+  },
+  "artifact": {
+    "sha256": "004ef90d6afd0162df470f2729207057e9b9a16a829188de9672e6c974f8e5bd",
+    "bytes": 748386
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-13T21:38:06.173405+00:00",
+  "provider": "Internet Archive",
+  "searchUrl": "https://archive.org/advancedsearch.php?q=mediatype%3Amovies+AND+%28licenseurl%3A%22https%3A%2F%2Fcreativecommons.org%2Fpublicdomain%2Fzero%2F1.0%2F%22+OR+licenseurl%3A%22http%3A%2F%2Fcreativecommons.org%2Fpublicdomain%2Fzero%2F1.0%2F%22+OR+licenseurl%3A%22https%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby%2F4.0%2F%22+OR+licenseurl%3A%22http%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby%2F4.0%2F%22%29&output=json&rows=6&page=1&fl%5B%5D=identifier&sort%5B%5D=downloads+desc",
+  "items": [
+    {
+      "identifier": "ace_200911_04",
+      "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "compatibleSizeMp4Count": 416
+    },
+    {
+      "identifier": "ace_200907_06",
+      "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "compatibleSizeMp4Count": 268
+    },
+    {
+      "identifier": "taboca_201002_03",
+      "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "compatibleSizeMp4Count": 251
+    },
+    {
+      "identifier": "ace_200911_03",
+      "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "compatibleSizeMp4Count": 320
+    },
+    {
+      "identifier": "free-vvv",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "compatibleSizeMp4Count": 129
+    },
+    {
+      "identifier": "blues-clues-s-03-e-59-blues-big-musical-movie",
+      "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "compatibleSizeMp4Count": 135
+    }
+  ],
+  "searchSucceeded": true,
+  "resultCount": 6
+}

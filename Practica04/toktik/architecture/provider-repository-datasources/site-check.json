@@ -1,0 +1,197 @@
+{
+  "status": "pass",
+  "checkedRelativeLinks": [
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "assets/LICENSE.md"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/index.html#provider-local"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/index.html#provider-repository-datasources"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/provider-local/provider-local.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/provider-repository-datasources/provider-repository-datasources.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/provider-local/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/provider-repository-datasources/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/initial/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/final/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "docs/live_archive_probe.json"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "docs/CHANGES.md"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "index.html#provider-local"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "index.html#provider-repository-datasources"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-local/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-local/provider-local.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-local/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-repository-datasources/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-repository-datasources/provider-repository-datasources.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-repository-datasources/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "initial/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "final/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-repository-datasources\\README.md",
+      "target": "index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-repository-datasources\\README.md",
+      "target": "provider-repository-datasources.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-repository-datasources\\README.md",
+      "target": "../index.html#provider-local"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-repository-datasources\\README.md",
+      "target": "../index.html#provider-repository-datasources"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "?diagram=provider-local"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "?diagram=provider-repository-datasources"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "provider-local/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "provider-local/provider-local.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "provider-local/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "provider-local/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "provider-local/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\index.html",
+      "target": "provider-repository-datasources/index.html"
+    }
+  ],
+  "missingLinks": [],
+  "externalLinks": [
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "https://api.coverr.co/docs/videos/"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "https://api.coverr.co/docs/auth/"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "https://pixabay.com/api/docs/"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "https://doc-tools.readthedocs.io/en/ia-test-gsod/item-search-apis.html"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "https://archive.org/developers/md-read.html"
+    }
+  ],
+  "nojekyll": true,
+  "protectedFilesChecked": 520,
+  "modifiedProtectedFiles": [],
+  "firstDiagramUnchanged": true,
+  "artifactSha256": "92cc856ab0c035f7181edf4a847214385451ef4aa70697e10c9ded90e1727b9b",
+  "svgSha256": "259922f2628302ef8d6837ccee14357bef3958f8594ab8cdce07383d075d7ded",
+  "pages": {
+    "branch": "main",
+    "folder": "/",
+    "configurationSource": "user-confirmed in previous turn",
+    "published": false,
+    "remoteSettingsVerified": false
+  },
+  "visualReview": {
+    "status": "passed",
+    "reviewer": "image-capable assistant",
+    "capturesInspected": [
+      "visual-check/index.visual-check.2048x1320.light.png",
+      "visual-check/index.visual-check.1440x900.dark.png",
+      "visual-check/desktop-full.png",
+      "visual-check/mobile-390.png",
+      "visual-check/navigation-mobile.png"
+    ],
+    "observations": [
+      "No overlapping nodes or route labels in inspected captures.",
+      "Complete data path and API node are present in full-page capture.",
+      "Mobile cards stack; detailed graph labels require viewer zoom."
+    ]
+  }
+}

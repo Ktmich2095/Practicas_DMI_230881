@@ -1,0 +1,86 @@
+{
+  "artifactSha256": "92cc856ab0c035f7181edf4a847214385451ef4aa70697e10c9ded90e1727b9b",
+  "svgSha256": "259922f2628302ef8d6837ccee14357bef3958f8594ab8cdce07383d075d7ded",
+  "svgExport": "Archify viewer: Exportar > SVG Auto",
+  "canonicalExport": true,
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "title": "TokTik - Arquitectura con Provider, Repository y DataSources · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "title": "TokTik - Arquitectura con Provider, Repository y DataSources · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 753,
+      "title": "TokTik - Arquitectura con Provider, Repository y DataSources · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1425,
+      "title": "TokTik - Arquitectura con Provider, Repository y DataSources · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    }
+  ],
+  "standaloneSvg": {
+    "root": "svg",
+    "viewBox": "0 0 1225 1708",
+    "parserErrors": 0,
+    "labels": 51
+  },
+  "navigation": [
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "expected": "provider-local",
+      "selected": "provider-local",
+      "frame": "provider-local/index.html",
+      "standalone": "provider-local/index.html",
+      "svg": "provider-local/provider-local.svg"
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "expected": "provider-repository-datasources",
+      "selected": "provider-repository-datasources",
+      "frame": "provider-repository-datasources/index.html",
+      "standalone": "provider-repository-datasources/index.html",
+      "svg": "provider-repository-datasources/provider-repository-datasources.svg"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1425,
+      "expected": "provider-local",
+      "selected": "provider-local",
+      "frame": "provider-local/index.html",
+      "standalone": "provider-local/index.html",
+      "svg": "provider-local/provider-local.svg"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1425,
+      "expected": "provider-repository-datasources",
+      "selected": "provider-repository-datasources",
+      "frame": "provider-repository-datasources/index.html",
+      "standalone": "provider-repository-datasources/index.html",
+      "svg": "provider-repository-datasources/provider-repository-datasources.svg"
+    }
+  ],
+  "runtimeErrors": [],
+  "status": "pass"
+}

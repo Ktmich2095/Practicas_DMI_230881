@@ -1,0 +1,396 @@
+{
+  "status": "pass",
+  "relativeLinksChecked": 60,
+  "missingLinksOrAnchors": [],
+  "links": [
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "../../index.html",
+      "inWorkingTree": true,
+      "inPublishingMain": true
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/index.html",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/evidencias/README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#resumen-de-funcionalidades",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#ejecutar-toktik",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#identidad-visual",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#videos-demostrativos",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#pantallas-de-carga",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#diagramas-de-arquitectura",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#organizaci%C3%B3n-de-evidencias",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#estado-de-validaci%C3%B3n",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#publicaci%C3%B3n-en-github-pages",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "#referencia-t%C3%A9cnica",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#apis-y-configuraci%C3%B3n",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#compilaci%C3%B3n-android-y-launcher",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/provider-local/index.html",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/provider-local/provider-local.svg",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/provider-local/README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/provider-repository-datasources/index.html",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/provider-repository-datasources/provider-repository-datasources.svg",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/provider-repository-datasources/README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/index.html",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "architecture/README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#arquitectura-clean",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/evidencias/README.md#c%C3%B3mo-insertar-los-archivos",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#registro-de-revisi%C3%B3n-del-13-de-octubre-de-2026",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#compilaci%C3%B3n-android-y-launcher",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#entorno-y-dependencias",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#arquitectura-clean",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#apis-y-configuraci%C3%B3n",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#persistencia-y-temporadas",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#compilaci%C3%B3n-android-y-launcher",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/GUIA_TECNICA.md#registro-de-revisi%C3%B3n-del-13-de-octubre-de-2026",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "assets/LICENSE.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/README.md",
+      "target": "docs/CHANGES.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "../README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "#entorno-y-dependencias",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "#arquitectura-clean",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "#apis-y-configuraci%C3%B3n",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "#persistencia-y-temporadas",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "#compilaci%C3%B3n-android-y-launcher",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "#registro-de-revisi%C3%B3n-del-13-de-octubre-de-2026",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "../assets/LICENSE.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "live_archive_probe.json",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "CHANGES.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/GUIA_TECNICA.md",
+      "target": "../architecture/README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/evidencias/diagramas/README.md",
+      "target": "../README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/evidencias/diagramas/README.md",
+      "target": "../../../architecture/provider-local/index.html",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/evidencias/diagramas/README.md",
+      "target": "../../../architecture/provider-repository-datasources/index.html",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/evidencias/logos/README.md",
+      "target": "../README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/evidencias/README.md",
+      "target": "../../README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/evidencias/splash/README.md",
+      "target": "../README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "Practica04/toktik/docs/evidencias/videos/README.md",
+      "target": "../README.md",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "index.html",
+      "target": "#practicas",
+      "inWorkingTree": true,
+      "inPublishingMain": true
+    },
+    {
+      "from": "index.html",
+      "target": "Practica02/hello_world_app/.archify/arquitectura/arquitectura.html",
+      "inWorkingTree": false,
+      "inPublishingMain": true
+    },
+    {
+      "from": "index.html",
+      "target": "Practica03/yes_no_app/.archify/architecture-yes-no-app-20261005-173738/yes-no-app.html",
+      "inWorkingTree": false,
+      "inPublishingMain": true
+    },
+    {
+      "from": "index.html",
+      "target": "Practica04/toktik/architecture/provider-local/",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    },
+    {
+      "from": "index.html",
+      "target": "Practica04/toktik/architecture/provider-repository-datasources/",
+      "inWorkingTree": true,
+      "inPublishingMain": false
+    }
+  ],
+  "externalLinksNotRechecked": [
+    "https://api.coverr.co/docs/auth/",
+    "https://api.coverr.co/docs/videos/",
+    "https://archive.org/developers/md-read.html",
+    "https://doc-tools.readthedocs.io/en/ia-test-gsod/item-search-apis.html",
+    "https://github.com/Ktmich2095/Practicas_DMI_230881",
+    "https://ktmich2095.github.io/Practicas_DMI_230881/",
+    "https://pixabay.com/api/docs/"
+  ],
+  "firstTwoCardsPreservedExactly": true,
+  "rootCards": 3,
+  "rootIndexSource": {
+    "branch": "main",
+    "revision": "965c6acea76e0f0e8e8c5c818ba3c65004b677b8",
+    "sha256": "45a2f3d901295f9f20482222424585746eaa5766c4c88dc96565fcdc5b94cba4"
+  },
+  "protectedFilesChecked": 545,
+  "modifiedProtectedFiles": [],
+  "diagramsUnchanged": true,
+  "originalTechnicalCodeBlocks": 14,
+  "missingTechnicalCodeBlocks": [],
+  "activeEvidenceMedia": [],
+  "nojekyll": true,
+  "publishing": {
+    "branch": "main",
+    "folder": "/",
+    "published": false,
+    "note": "Existing practice 02/03 diagram links are retained and verified against real main Git objects; absent locally on Practica04."
+  }
+}
