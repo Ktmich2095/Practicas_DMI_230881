@@ -56,6 +56,109 @@ class SlowPlayer extends FakePlayer {
 
 void main() {
   test(
+    'Sparse decoder samples qualify once and a failed recording can retry',
+    () async {
+      var attempts = 0;
+      final coordinator = PlaybackCoordinator(
+        createController: (video) => FakePlayer(video.videoUrl),
+        onQualifiedView: (_) async {
+          attempts++;
+          if (attempts == 1) throw StateError('restore unavailable');
+        },
+      );
+      const video = VideoPost(caption: '', videoUrl: 'sparse.mp4');
+      await coordinator.select([video], 0);
+      final player = coordinator.current!;
+      for (final seconds in [2, 4, 6]) {
+        player.value = player.value.copyWith(
+          position: Duration(seconds: seconds),
+        );
+      }
+      await Future<void>.delayed(Duration.zero);
+      expect(attempts, 1);
+      player.value = player.value.copyWith(
+        position: const Duration(seconds: 8),
+      );
+      await Future<void>.delayed(Duration.zero);
+      expect(attempts, 2);
+      player.value = player.value.copyWith(
+        position: const Duration(seconds: 9),
+      );
+      expect(attempts, 2);
+      coordinator.dispose();
+      await Future<void>.delayed(Duration.zero);
+    },
+  );
+  test(
+    'A decoder that succeeds after timeout recovers without a manual retry',
+    () async {
+      final ready = Completer<void>();
+      final player = SlowPlayer('late.mp4', ready);
+      final coordinator = PlaybackCoordinator(
+        createController: (_) => player,
+        initializationTimeout: const Duration(milliseconds: 20),
+      );
+      const video = VideoPost(caption: '', videoUrl: 'late.mp4');
+      await coordinator.select([video], 0);
+      expect(coordinator.errors, contains(video.id));
+      expect(player.value.isPlaying, isFalse);
+      ready.complete();
+      await Future<void>.delayed(const Duration(milliseconds: 20));
+      expect(coordinator.errors, isEmpty);
+      expect(player.value.isPlaying, isTrue);
+      expect(player.value.isLooping, isTrue);
+      coordinator.dispose();
+      await Future<void>.delayed(Duration.zero);
+    },
+  );
+  test(
+    'A refreshed URL replaces the controller for the same provider ID',
+    () async {
+      final created = <FakePlayer>[];
+      final coordinator = PlaybackCoordinator(
+        createController: (video) {
+          final player = FakePlayer(video.videoUrl);
+          created.add(player);
+          return player;
+        },
+      );
+      const old = VideoPost(
+        caption: '',
+        providerId: 'stable',
+        videoUrl: 'old.mp4',
+      );
+      const refreshed = VideoPost(
+        caption: '',
+        providerId: 'stable',
+        videoUrl: 'new.mp4',
+      );
+      await coordinator.select([old], 0);
+      await coordinator.updateVideos([refreshed], 0);
+      expect(created.first.released, isTrue);
+      expect(coordinator.current!.dataSource, 'new.mp4');
+      expect(coordinator.current!.value.isPlaying, isTrue);
+      coordinator.dispose();
+      await Future<void>.delayed(Duration.zero);
+    },
+  );
+
+  test(
+    'Retry after releasing the last feed is safe; indices are bounded',
+    () async {
+      final coordinator = PlaybackCoordinator(
+        createController: (v) => FakePlayer(v.videoUrl),
+      );
+      const video = VideoPost(caption: '', videoUrl: 'one.mp4');
+      await coordinator.select([video], 20);
+      expect(coordinator.current!.value.isPlaying, isTrue);
+      await coordinator.select([], 0);
+      await coordinator.retry();
+      expect(coordinator.controllers, isEmpty);
+      coordinator.dispose();
+      await coordinator.retry();
+    },
+  );
+  test(
     'Changing target during initialization never starts the old video',
     () async {
       final ready = Completer<void>();

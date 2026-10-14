@@ -38,7 +38,188 @@ class BrokenPlayer extends FakePlayer {
   Future<void> initialize() async => throw StateError('network unavailable');
 }
 
+class RepeatedCatalog extends Catalog {
+  @override
+  Future<VideoBatch> fetch(VideoSource selected, {int page = 0}) async {
+    requests++;
+    return VideoBatch(videos: items, source: VideoSource.local, hasMore: true);
+  }
+}
+
+class FailedReadStore extends MemoryStore {
+  bool failReads = false;
+  @override
+  Future<String?> getString(String key) {
+    if (failReads) throw StateError('storage read unavailable');
+    return super.getString(key);
+  }
+}
+
 void main() {
+  testWidgets('Landscape keeps favorite and sound controls tappable', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(640, 320);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final feed = DiscoverProvider(
+      repository: Catalog(),
+      favoritesRepository: PreferencesFavoritesRepository(
+        storage: MemoryStore(),
+      ),
+    );
+    await feed.loadNextPage();
+    final playback = PlaybackCoordinator(
+      createController: (v) => FakePlayer(v.videoUrl),
+    );
+    final settings = SettingsProvider(MemorySettings());
+    await tester.pumpWidget(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider.value(value: feed),
+          ChangeNotifierProvider.value(value: playback),
+          ChangeNotifierProvider.value(value: settings),
+        ],
+        child: const MyApp(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(
+      find.byTooltip('Guardar en favoritos').hitTestable(),
+      findsOneWidget,
+    );
+    expect(find.byTooltip('Activar sonido').hitTestable(), findsOneWidget);
+    await tester.tap(find.byTooltip('Guardar en favoritos'));
+    await tester.pumpAndSettle();
+    expect(feed.isFavorite(feed.videos.first), isTrue);
+    await tester.tap(find.byTooltip('Activar sonido'));
+    await tester.pumpAndSettle();
+    expect(playback.muted, isFalse);
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox());
+    playback.dispose();
+    feed.dispose();
+    settings.dispose();
+    await tester.pump();
+  });
+  testWidgets(
+    'Favorites distinguishes a failed restore from an empty collection and retries',
+    (tester) async {
+      final store = FailedReadStore()..failReads = true;
+      final catalog = Catalog()..items = [];
+      final feed = DiscoverProvider(
+        repository: catalog,
+        favoritesRepository: PreferencesFavoritesRepository(storage: store),
+      );
+      final settings = SettingsProvider(MemorySettings());
+      await feed.loadNextPage();
+      await tester.pumpWidget(
+        MultiProvider(
+          providers: [
+            ChangeNotifierProvider.value(value: feed),
+            ChangeNotifierProvider.value(value: settings),
+          ],
+          child: const MyApp(),
+        ),
+      );
+      await tester.tap(find.text('Favorites'));
+      await tester.pumpAndSettle();
+      expect(find.text('No pudimos recuperar tus favoritos.'), findsOneWidget);
+      expect(find.text('Aún no tienes favoritos.'), findsNothing);
+      store.failReads = false;
+      await tester.tap(find.text('Reintentar lectura'));
+      await tester.pumpAndSettle();
+      expect(feed.favoritesReady, isTrue);
+      expect(feed.persistenceError, isNull);
+      expect(find.text('Aún no tienes favoritos.'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+      feed.dispose();
+      settings.dispose();
+    },
+  );
+  test('Failed restoration cannot overwrite stored favorites or view counters; retry recovers', () async {
+    final store = FailedReadStore();
+    final favorites = PreferencesFavoritesRepository(storage: store);
+    final statistics = PreferencesStatisticsRepository(storage: store);
+    final catalog = Catalog();
+    final original = catalog.items.first, second = catalog.items[1];
+    await favorites.saveVideos([original]);
+    await statistics.saveViewIncrements({VideoStatistics.key(original): 7});
+    final snapshot = Map<String, Object>.of(store.values);
+    store.failReads = true;
+    final feed = DiscoverProvider(
+      repository: catalog,
+      favoritesRepository: favorites,
+      statisticsRepository: statistics,
+    );
+    await feed.loadNextPage();
+    await feed.toggleFavorite(second);
+    await expectLater(feed.recordView(second), throwsStateError);
+    expect(store.values, snapshot);
+    expect(feed.isFavorite(second), isFalse);
+    expect(feed.persistenceError, isNotNull);
+    store.failReads = false;
+    await feed.toggleFavorite(second);
+    expect(feed.isFavorite(original), isTrue);
+    expect(feed.isFavorite(second), isTrue);
+    await feed.recordView(second);
+    final increments = await statistics.readViewIncrements();
+    expect(increments[VideoStatistics.key(original)], 7);
+    expect(increments[VideoStatistics.key(second)], 1);
+    feed.dispose();
+  });
+  test(
+    'Repeated pages stop pagination without losing the current catalog',
+    () async {
+      final catalog = RepeatedCatalog();
+      final feed = DiscoverProvider(
+        repository: catalog,
+        favoritesRepository: PreferencesFavoritesRepository(
+          storage: MemoryStore(),
+        ),
+      );
+      await feed.loadNextPage();
+      await feed.loadMore();
+      expect(feed.videos.length, 3);
+      expect(feed.hasMore, isFalse);
+      await feed.loadMore();
+      expect(catalog.requests, 2);
+      feed.dispose();
+    },
+  );
+
+  test(
+    'Views exceed likes even when the source has only one extra view',
+    () async {
+      final catalog = Catalog();
+      catalog.items = [
+        const VideoPost(
+          caption: '',
+          videoUrl: 'one.mp4',
+          likes: 100,
+          views: 101,
+        ),
+      ];
+      final feed = DiscoverProvider(
+        repository: catalog,
+        favoritesRepository: PreferencesFavoritesRepository(
+          storage: MemoryStore(),
+        ),
+      );
+      await feed.loadNextPage();
+      final video = feed.videos.single;
+      final views = feed.views(video);
+      await feed.toggleFavorite(video);
+      expect(feed.likes(video), 101);
+      expect(feed.views(video), views);
+      expect(feed.views(video), greaterThan(feed.likes(video)));
+      await feed.toggleFavorite(video);
+      expect(feed.likes(video), 100);
+      feed.dispose();
+    },
+  );
   test(
     'Damaged view storage does not prevent restoring favorite snapshots',
     () async {

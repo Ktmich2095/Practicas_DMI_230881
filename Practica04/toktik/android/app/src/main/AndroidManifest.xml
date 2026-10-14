@@ -23,8 +23,8 @@
               />
 
         </activity>
-        <!-- The normal seasonal entry exists in this package; debug builds
-             prepare its runtime enabled state before Flutter launches it. -->
+        <!-- Normal seasonal entry. MainActivity stays enabled for direct debug
+             launches even when a seasonal alias replaces this launcher entry. -->
         <activity android:name=".LauncherActivity" android:exported="true"
             android:icon="@mipmap/ic_toktik_normal" android:launchMode="singleTop"
             android:theme="@style/LaunchTheme" android:hardwareAccelerated="true"

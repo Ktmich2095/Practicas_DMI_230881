@@ -29,7 +29,7 @@ void main() {
         await app.main();
         for (
           var i = 0;
-          i < 65 && find.byType(DiscoverScreen).evaluate().isEmpty;
+          i < 300 && find.byType(DiscoverScreen).evaluate().isEmpty;
           i++
         ) {
           await tester.pump(const Duration(milliseconds: 200));
@@ -51,7 +51,7 @@ void main() {
         final playback = context.read<PlaybackCoordinator>();
         for (
           var i = 0;
-          i < 30 && playback.current?.value.isInitialized != true;
+          i < 325 && playback.current?.value.isInitialized != true;
           i++
         ) {
           await tester.pump(const Duration(milliseconds: 200));

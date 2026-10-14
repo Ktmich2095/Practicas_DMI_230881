@@ -9,8 +9,12 @@ import '../datasources/local_assets_datasource.dart';
 class FallbackVideoRepository implements VideoCatalogRepository {
   final List<VideoSourceDatasource> datasources;
   final Random random;
-  FallbackVideoRepository(this.datasources, {Random? random})
-    : random = random ?? Random();
+  final Duration sourceTimeout;
+  FallbackVideoRepository(
+    this.datasources, {
+    Random? random,
+    this.sourceTimeout = const Duration(seconds: 20),
+  }) : random = random ?? Random();
   @override
   Future<VideoBatch> fetch(VideoSource selected, {int page = 0}) async {
     final order = List<VideoSourceDatasource>.of(datasources);
@@ -32,11 +36,13 @@ class FallbackVideoRepository implements VideoCatalogRepository {
         continue;
       }
       try {
-        final batch = await datasource.fetch(
-          datasource.source == selected || selected == VideoSource.random
-              ? page
-              : 0,
-        );
+        final batch = await datasource
+            .fetch(
+              datasource.source == selected || selected == VideoSource.random
+                  ? page
+                  : 0,
+            )
+            .timeout(sourceTimeout);
         final seen = <String>{};
         final videos = batch.videos
             .where((v) => LocalAssetsDatasource.valid(v) && seen.add(v.id))

@@ -21,7 +21,7 @@ class SharedPreferencesRepository implements PreferencesRepository {
       manualSeason: Season.parse(data['season']),
       muted: data['muted'] != false,
       themeAudio: data['themeAudio'] == true,
-      introSound: data['introSound'] == true,
+      introSound: data['introSound'] != false,
     );
   }
 

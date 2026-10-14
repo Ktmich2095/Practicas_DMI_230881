@@ -1,0 +1,48 @@
+{
+  "artifactSha256": "92fa7f7364a4aa742f114323f6fdab76d8d44faf194816f112e561ab19187a69",
+  "svgSha256": "425e25b56b5ebe2dda4198b9180a24f7f38cd6da00541cfb6b4e4b999de2eded",
+  "svgExport": "Archify viewer: Exportar > SVG Auto",
+  "canonicalExport": true,
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "title": "TokTik - Arquitectura con Provider Local · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "title": "TokTik - Arquitectura con Provider Local · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 753,
+      "title": "TokTik - Arquitectura con Provider Local · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1425,
+      "title": "TokTik - Arquitectura con Provider Local · Diagrama",
+      "svgCount": 1,
+      "externalAssets": []
+    }
+  ],
+  "standaloneSvg": {
+    "root": "svg",
+    "viewBox": "0 0 1222 1058",
+    "parserErrors": 0,
+    "labels": 33
+  },
+  "runtimeErrors": [],
+  "status": "pass"
+}

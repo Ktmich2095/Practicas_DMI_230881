@@ -76,6 +76,41 @@ void main() {
       await tester.tap(find.text('Volver a Aleatoria'));
       await tester.pumpAndSettle();
       expect(settings.preferences.source, VideoSource.random);
+      final sourceField = tester.widget<DropdownButtonFormField<VideoSource>>(
+        find.byType(DropdownButtonFormField<VideoSource>),
+      );
+      expect(sourceField.initialValue, VideoSource.random);
+      expect(
+        tester
+            .state<FormFieldState<VideoSource>>(
+              find.byType(DropdownButtonFormField<VideoSource>),
+            )
+            .value,
+        VideoSource.random,
+      );
+      store.fail = true;
+      await tester.tap(find.text('Aleatoria').last);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Videos locales').last);
+      await tester.pumpAndSettle();
+      expect(settings.preferences.source, VideoSource.random);
+      expect(
+        tester
+            .widget<DropdownButtonFormField<VideoSource>>(
+              find.byType(DropdownButtonFormField<VideoSource>),
+            )
+            .initialValue,
+        VideoSource.random,
+      );
+      store.fail = false;
+      expect(
+        tester
+            .state<FormFieldState<VideoSource>>(
+              find.byType(DropdownButtonFormField<VideoSource>),
+            )
+            .value,
+        VideoSource.random,
+      );
       expect(tester.takeException(), isNull);
       await tester.pumpWidget(const SizedBox());
       audio.dispose();

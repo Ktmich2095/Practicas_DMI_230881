@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>TokTik · Diagramas de Arquitectura</title>
+  <style>
+    :root { color-scheme: light dark; --bg:#f5f6f8; --panel:#fff; --text:#111827; --muted:#526174; --line:#dbe2ec; --accent:#007e97; }
+    @media(prefers-color-scheme:dark) { :root { --bg:#030817; --panel:#0b1222; --text:#f4f7fb; --muted:#a4b3c8; --line:#263248; --accent:#43d3e5; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,sans-serif; }
+    header { max-width:1320px; margin:auto; padding:24px clamp(16px,4vw,40px); }
+    .eyebrow { margin:0; color:var(--accent); font-size:.8rem; font-weight:700; letter-spacing:.1em; }
+    h1 { margin:6px 0 10px; font-size:clamp(1.4rem,4vw,2rem); line-height:1.2; }
+    p { margin:8px 0 16px; color:var(--muted); }
+    nav { display:flex; flex-wrap:wrap; gap:10px; }
+    a { color:var(--accent); text-underline-offset:4px; }
+    nav a { padding:10px 16px; border:1px solid var(--line); border-radius:12px; background:var(--panel); text-decoration:none; font-weight:650; max-width:100%; overflow-wrap:anywhere; }
+    nav a[aria-current=page] { border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent); }
+    a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    .tools { display:flex; gap:12px 20px; flex-wrap:wrap; margin:16px 0 0; font-size:.9rem; }
+    main { width:100%; padding:0 8px 16px; }
+    iframe { display:block; width:100%; height:90vh; min-height:640px; border:1px solid var(--line); border-radius:16px; background:var(--panel); }
+    footer { max-width:1320px; margin:auto; padding:0 24px 24px; color:var(--muted); font-size:.85rem; }
+    @media(max-width:540px) { nav { flex-direction:column; } iframe { min-height:720px; border-radius:10px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">PRÁCTICA 04 · DESARROLLO MÓVIL INTEGRAL</p>
+    <h1>TokTik · Diagramas de Arquitectura</h1>
+    <p>Dos vistas de la misma aplicación: estado local y arquitectura CLEAN con fuentes de datos.</p>
+    <nav aria-label="Elegir diagrama">
+      <a data-diagram="provider-local" href="?diagram=provider-local">Ver arquitectura con Provider Local →</a>
+      <a data-diagram="provider-repository-datasources" href="?diagram=provider-repository-datasources">Ver arquitectura con Provider, Repository y DataSources →</a>
+    </nav>
+    <div class="tools">
+      <a id="standalone" href="provider-local/index.html" target="_blank" rel="noopener">Abrir diagrama sin marco ↗</a>
+      <a id="svg" href="provider-local/provider-local.svg">Abrir SVG</a>
+      <a id="explanation" href="provider-local/README.md">Explicación y validaciones</a>
+    </div>
+  </header>
+  <main>
+    <iframe id="diagram" src="provider-local/index.html" title="TokTik - Arquitectura con Provider Local" allow="clipboard-write" loading="eager"></iframe>
+    <noscript><p>Sin JavaScript, puedes abrir <a href="provider-local/index.html">Provider Local</a> o <a href="provider-repository-datasources/index.html">Provider, Repository y DataSources</a> directamente.</p></noscript>
+  </main>
+  <footer>Los diagramas conservan su visor Archify original. En celular, usa el zoom y el desplazamiento del visor para explorar el detalle. La navegación no modifica sus archivos.</footer>
+  <script>
+    (() => {
+      const options = {
+        'provider-local': { title:'TokTik - Arquitectura con Provider Local', svg:'provider-local.svg' },
+        'provider-repository-datasources': { title:'TokTik - Arquitectura con Provider, Repository y DataSources', svg:'provider-repository-datasources.svg' }
+      };
+      function renderSelection() {
+      const requested = location.hash.slice(1) || new URLSearchParams(location.search).get('diagram');
+      const selected = Object.hasOwn(options, requested) ? requested : 'provider-local';
+      const option = options[selected];
+      document.querySelectorAll('[data-diagram]').forEach(link => {
+        link.removeAttribute('aria-current');
+        if(link.dataset.diagram === selected) link.setAttribute('aria-current','page');
+      });
+      document.getElementById('diagram').src = selected + '/index.html';
+      document.getElementById('diagram').title = option.title;
+      document.getElementById('standalone').href = selected + '/index.html';
+      document.getElementById('svg').href = selected + '/' + option.svg;
+      document.getElementById('explanation').href = selected + '/README.md';
+      document.title = option.title + ' · Índice';
+      }
+      renderSelection();
+      window.addEventListener('hashchange', renderSelection);
+    })();
+  </script>
+</body>
+</html>

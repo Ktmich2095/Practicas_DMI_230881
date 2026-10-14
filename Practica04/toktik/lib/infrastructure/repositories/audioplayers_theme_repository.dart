@@ -3,7 +3,8 @@ import 'package:audioplayers/audioplayers.dart';
 import '../../domain/repositories/theme_audio_repository.dart';
 
 class AudioplayersThemeRepository implements ThemeAudioRepository {
-  final AudioPlayer player = AudioPlayer();
+  AudioPlayer? _player;
+  AudioPlayer get player => _player ??= AudioPlayer();
   @override
   Future<void> play(String asset) async {
     await player.setReleaseMode(ReleaseMode.loop);
@@ -12,7 +13,7 @@ class AudioplayersThemeRepository implements ThemeAudioRepository {
   }
 
   @override
-  Future<void> stop() => player.stop();
+  Future<void> stop() async => _player?.stop();
   @override
-  Future<void> dispose() => player.dispose();
+  Future<void> dispose() async => _player?.dispose();
 }

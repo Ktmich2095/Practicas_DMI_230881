@@ -19,14 +19,15 @@ class VideoStatistics {
     final likes = video.likes > 0
         ? video.likes.clamp(1, 100000000000)
         : 850 + hash % 450000;
-    final views = video.views > likes
-        ? video.views.clamp(likes + 1, 10000000000000)
+    // Reserve room for the user's +1 like without changing views on a tap.
+    final views = video.views > likes + 1
+        ? video.views.clamp(likes + 2, 10000000000000)
         : likes * (8 + hash % 13) + 100;
     return VideoStatistics(
       likes,
       views,
       video.likes <= 0,
-      video.views <= likes,
+      video.views <= likes + 1,
     );
   }
 }

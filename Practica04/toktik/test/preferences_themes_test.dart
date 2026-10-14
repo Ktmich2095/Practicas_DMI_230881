@@ -5,6 +5,8 @@ import 'package:toktik_app/domain/entities/season.dart';
 import 'package:toktik_app/domain/repositories/theme_audio_repository.dart';
 import 'package:toktik_app/infrastructure/repositories/shared_preferences_repository.dart';
 import 'package:toktik_app/infrastructure/repositories/preferences_favorites_repository.dart';
+import 'package:toktik_app/infrastructure/repositories/audioplayers_intro_repository.dart';
+import 'package:toktik_app/infrastructure/repositories/audioplayers_theme_repository.dart';
 import 'package:toktik_app/presentation/providers/settings_provider.dart';
 import 'package:toktik_app/presentation/providers/theme_audio_provider.dart';
 import 'package:toktik_app/presentation/providers/discover_provider.dart';
@@ -35,6 +37,14 @@ class FakeAudio implements ThemeAudioRepository {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  test('Unused audio repositories do not initialize native audio on stop or dispose', () async {
+    final intro = AudioplayersIntroRepository();
+    final theme = AudioplayersThemeRepository();
+    await intro.stop();
+    await theme.stop();
+    await intro.dispose();
+    await theme.dispose();
+  });
   test('Date ranges and manual season persist across restart', () async {
     expect(Season.forDate(DateTime(2026, 10, 1)), Season.halloween);
     expect(Season.forDate(DateTime(2026, 12, 31)), Season.christmas);
@@ -96,7 +106,7 @@ void main() {
     },
   );
   test(
-    'Theme audio stops before video sound; lifecycle and disposal work',
+    'Legacy ambient preference never plays on silence, pause or resume',
     () async {
       final repository = SharedPreferencesRepository(storage: MemoryStore());
       await repository.save(
@@ -107,16 +117,16 @@ void main() {
       final backend = FakeAudio();
       final audio = ThemeAudioProvider(backend, settings);
       await audio.synchronize();
-      expect(audio.playing, isTrue);
+      expect(audio.playing, isFalse);
       await audio.setVideoAudible(true);
       expect(audio.playing, isFalse);
       expect(backend.events.last, 'stop');
       await audio.setVideoAudible(false);
-      expect(audio.playing, isTrue);
+      expect(audio.playing, isFalse);
       await audio.setForeground(false);
       expect(audio.playing, isFalse);
       await audio.setForeground(true);
-      expect(audio.playing, isTrue);
+      expect(audio.playing, isFalse);
       audio.dispose();
       await Future<void>.delayed(Duration.zero);
       expect(backend.events.last, 'dispose');

@@ -22,6 +22,7 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+    final compact = MediaQuery.orientationOf(context) == Orientation.landscape;
     final c = widget.playback.controllers[widget.video.id];
     final failed = widget.playback.errors.contains(widget.video.id);
     return Stack(
@@ -126,12 +127,12 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
         ),
         Positioned(
           right: 12,
-          bottom: 100,
+          bottom: compact ? 24 : 100,
           child: VideoButtons(video: widget.video, playback: widget.playback),
         ),
         Positioned(
           left: 20,
-          right: 88,
+          right: compact ? 280 : 88,
           bottom: 24,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

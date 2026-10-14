@@ -64,6 +64,29 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                 ),
               ),
             )
+          else if (section == 2 &&
+              !provider.favoritesReady &&
+              provider.persistenceError != null)
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(28),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.error_outline, size: 48),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'No pudimos recuperar tus favoritos.',
+                      textAlign: TextAlign.center,
+                    ),
+                    TextButton(
+                      onPressed: provider.retryPersistence,
+                      child: const Text('Reintentar lectura'),
+                    ),
+                  ],
+                ),
+              ),
+            )
           else if (videos.isEmpty)
             Center(
               child: Padding(

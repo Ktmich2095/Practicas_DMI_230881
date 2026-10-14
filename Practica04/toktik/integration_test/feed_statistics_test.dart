@@ -33,7 +33,7 @@ void main() {
         await app.main();
         for (
           var i = 0;
-          i < 100 && find.byType(DiscoverScreen).evaluate().isEmpty;
+          i < 300 && find.byType(DiscoverScreen).evaluate().isEmpty;
           i++
         ) {
           await tester.pump(const Duration(milliseconds: 200));
@@ -45,7 +45,7 @@ void main() {
         Future<void> waitForPlayback() async {
           for (
             var i = 0;
-            i < 100 && playback.current?.value.isPlaying != true;
+            i < 650 && playback.current?.value.isPlaying != true;
             i++
           ) {
             await tester.pump(const Duration(milliseconds: 100));

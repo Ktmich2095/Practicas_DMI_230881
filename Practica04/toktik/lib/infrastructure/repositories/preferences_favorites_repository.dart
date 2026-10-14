@@ -12,14 +12,15 @@ class PreferencesFavoritesRepository implements FavoritesRepository {
     : preferences = storage ?? SharedPreferencesStore();
   @override
   Future<Set<String>> read() async {
-    if (await preferences.getString('toktik.favorite_catalog.v2') != null) {
-      return (await readVideos()).map((v) => v.id).toSet();
+    final raw = await preferences.getString('toktik.favorite_catalog.v2');
+    if (raw != null) {
+      return VideoMapper.maps(jsonDecode(raw))
+          .map(VideoMapper.fromJson)
+          .map((v) => v.id)
+          .toSet();
     }
-    final videos = await readVideos();
-    return {
-      ...videos.map((v) => v.id),
-      ...(await preferences.getStringList('toktik.favorites.v1') ?? []),
-    };
+    return (await preferences.getStringList('toktik.favorites.v1') ?? [])
+        .toSet();
   }
 
   @override

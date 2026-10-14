@@ -18,7 +18,7 @@ class SettingsSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final settings = context.watch<SettingsProvider>();
     final audio = context.watch<ThemeAudioProvider>();
-    final feed = context.read<DiscoverProvider>();
+    final feed = context.watch<DiscoverProvider>();
     final identity = context.watch<SeasonIdentityProvider?>();
     return SafeArea(
       child: SingleChildScrollView(
@@ -33,6 +33,7 @@ class SettingsSheet extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             DropdownButtonFormField<VideoSource>(
+              key: ValueKey((settings.preferences.source, settings.error)),
               isExpanded: true,
               initialValue: settings.preferences.source,
               decoration: const InputDecoration(
@@ -81,6 +82,10 @@ class SettingsSheet extends StatelessWidget {
             Center(child: TokTikLogo(season: settings.season, size: 80)),
             const SizedBox(height: 12),
             DropdownButtonFormField<String>(
+              key: ValueKey((
+                settings.preferences.manualSeason?.name ?? 'automatic',
+                settings.error,
+              )),
               isExpanded: true,
               initialValue:
                   settings.preferences.manualSeason?.name ?? 'automatic',
@@ -122,9 +127,9 @@ class SettingsSheet extends StatelessWidget {
             ),
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Sonido de las intros'),
+              title: const Text('Sonido de bienvenida'),
               subtitle: const Text(
-                'Efecto breve; respeta el silencio general del video.',
+                'Suena al iniciar; independiente del silencio de los videos.',
               ),
               value: settings.preferences.introSound,
               onChanged: settings.saving ? null : settings.setIntroSound,
@@ -136,16 +141,6 @@ class SettingsSheet extends StatelessWidget {
                 child: const Text('Reintentar ícono'),
               ),
             ],
-            SwitchListTile(
-              contentPadding: EdgeInsets.zero,
-              title: const Text('Audio temático'),
-              subtitle: const Text(
-                'Sólo suena si el video está silenciado o pausado. El tema Normal no tiene audio.',
-              ),
-              value: settings.preferences.themeAudio,
-              onChanged: settings.saving ? null : settings.setThemeAudio,
-            ),
-            if (audio.playing) const Text('Audio temático activo'),
             if (settings.error != null)
               Text(
                 settings.error!,

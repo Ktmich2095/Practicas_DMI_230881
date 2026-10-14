@@ -6,7 +6,8 @@ import '../../domain/entities/season.dart';
 class BrandAssets {
   static String logo(Season season, {bool decorated = true}) =>
       'assets/branding/${decorated ? 'logo' : 'mark'}_${season.name}.png';
-  static String introAudio(Season season) => 'audio/intro_${season.name}.wav';
+  // AssetSource adds the assets/ prefix. Files are optional until supplied.
+  static String introAudio(Season season) => 'sounds/${season.name}.mp3';
   static Duration duration(Season season) => Duration(
     milliseconds: switch (season) {
       Season.normal => 2800,

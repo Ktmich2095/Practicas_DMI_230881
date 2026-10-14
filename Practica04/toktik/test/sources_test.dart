@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
@@ -44,8 +45,30 @@ const localVideo = VideoPost(
   videoUrl: 'assets/videos/aurora.mp4',
   providerId: 'local:aurora',
 );
+
+class HangingSource extends StubSource {
+  HangingSource() : super(VideoSource.archive, []);
+  @override
+  Future<VideoBatch> fetch(int page) => Completer<VideoBatch>().future;
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  test(
+    'An unresponsive source reaches local fallback within its deadline',
+    () async {
+      final batch = await FallbackVideoRepository(
+        [
+          HangingSource(),
+          StubSource(VideoSource.local, [localVideo]),
+        ],
+        sourceTimeout: const Duration(milliseconds: 20),
+      ).fetch(VideoSource.archive);
+      expect(batch.source, VideoSource.local);
+      expect(batch.videos.single.id, localVideo.id);
+      expect(batch.notices, isNotEmpty);
+    },
+  );
   test('Local fallback discovers the three real bundled MP4 assets', () async {
     final batch = await LocalAssetsDatasource().fetch(0);
     expect(batch.videos.length, 3);

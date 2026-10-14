@@ -13,20 +13,26 @@ class IntroAudioProvider with WidgetsBindingObserver {
   final ThemeAudioProvider themeAudio;
   final SettingsProvider settings;
   bool _foreground = true, _active = false, _disposed = false;
+  bool _startupPlayed = false;
   Future<void> _queue = Future.value();
   IntroAudioProvider(this.repository, this.themeAudio, this.settings) {
     WidgetsBinding.instance.addObserver(this);
   }
+
+  /// App-scoped guard: rebuilds, retries and resume cannot replay the welcome.
+  Future<void> startWelcome(Season season) {
+    if (_startupPlayed || _disposed) return Future.value();
+    _startupPlayed = true;
+    return start(season);
+  }
+
   Future<void> start(Season season) {
     _active = true;
     _queue = _queue
         .then((_) async {
           if (_disposed || !_active) return;
           await themeAudio.setIntroActive(true);
-          if (_foreground &&
-              settings.preferences.introSound &&
-              !settings.preferences.muted &&
-              _active) {
+          if (_foreground && settings.preferences.introSound && _active) {
             await repository.playOnce(BrandAssets.introAudio(season));
           }
         })

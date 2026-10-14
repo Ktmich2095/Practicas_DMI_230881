@@ -58,7 +58,8 @@ void main() {
       );
       final identity = SeasonIdentityProvider(settings, FakeIcons());
       final theme = ThemeAudioProvider(FakeAudio(), settings);
-      final audio = IntroAudioProvider(FakeIntroAudio(), theme, settings);
+      final sound = FakeIntroAudio();
+      final audio = IntroAudioProvider(sound, theme, settings);
       final startup = StartupProvider(settings, feed, identity);
       await tester.pumpWidget(
         MultiProvider(
@@ -74,6 +75,7 @@ void main() {
       await tester.pump();
       expect(find.byKey(const ValueKey('preferences-loading')), findsOneWidget);
       expect(find.byType(TokTikLogo), findsNothing);
+      expect(sound.events, isEmpty);
       preferences.ready.complete(
         const AppPreferences(
           manualSeason: Season.christmas,
@@ -87,6 +89,7 @@ void main() {
         Season.christmas,
       );
       expect(find.byType(DiscoverScreen), findsNothing);
+      expect(sound.events, ['play:sounds/christmas.mp3']);
       catalog.ready.complete(
         const VideoBatch(videos: [], source: VideoSource.local),
       );
@@ -94,6 +97,11 @@ void main() {
       await tester.pump(const Duration(seconds: 4));
       await tester.pumpAndSettle();
       expect(find.byType(DiscoverScreen), findsOneWidget);
+      expect(sound.events.last, 'stop');
+      expect(
+        sound.events.where((event) => event.startsWith('play:')).length,
+        1,
+      );
       expect(tester.takeException(), isNull);
       await tester.pumpWidget(const SizedBox());
       startup.dispose();

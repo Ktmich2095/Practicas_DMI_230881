@@ -11,11 +11,13 @@ class PlaybackCoordinator extends ChangeNotifier {
   final Future<void> Function(bool audible)? coordinateAudio;
   final Future<bool> Function(bool muted)? persistMuted;
   final Future<void> Function(VideoPost)? onQualifiedView;
+  final Duration initializationTimeout;
   PlaybackCoordinator({
     VideoPlayerController Function(VideoPost)? createController,
     this.coordinateAudio,
     this.persistMuted,
     this.onQualifiedView,
+    this.initializationTimeout = const Duration(seconds: 60),
     bool initiallyMuted = true,
   }) : createController = createController ?? _defaultController {
     muted = initiallyMuted;
@@ -25,6 +27,7 @@ class PlaybackCoordinator extends ChangeNotifier {
       ? VideoPlayerController.networkUrl(Uri.parse(video.videoUrl))
       : VideoPlayerController.asset(video.videoUrl);
   final Map<String, VideoPlayerController> controllers = {};
+  final Map<String, String> _controllerUrls = {};
   final Set<String> errors = {};
   List<VideoPost> _videos = [];
   int _index = 0;
@@ -67,12 +70,23 @@ class PlaybackCoordinator extends ChangeNotifier {
     }
     if (playing && _wasPlaying && _lastPosition != null) {
       final delta = value.position - _lastPosition!;
-      // Only actual decoder progress qualifies; seeks and loop resets don't.
-      if (delta > Duration.zero && delta <= const Duration(seconds: 1)) {
-        _watched[video.id] = (_watched[video.id] ?? Duration.zero) + delta;
+      // Sparse native callbacks can advance by more than a second. Count at
+      // most one second per sample; unchanged positions and loop resets add none.
+      if (delta > Duration.zero && delta <= value.duration) {
+        final progress = delta > const Duration(seconds: 1)
+            ? const Duration(seconds: 1)
+            : delta;
+        _watched[video.id] = (_watched[video.id] ?? Duration.zero) + progress;
         if (_watched[video.id]! >= const Duration(seconds: 3) &&
             _counted.add(video.id)) {
-          unawaited(onQualifiedView?.call(video));
+          unawaited(
+            Future<void>.sync(() async {
+              await onQualifiedView?.call(video);
+            }).catchError((Object _) {
+              // A failed restore did not record a view. Retry on later progress.
+              _counted.remove(video.id);
+            }),
+          );
         }
       }
     }
@@ -87,7 +101,7 @@ class PlaybackCoordinator extends ChangeNotifier {
     _wasPlaying = false;
     _pauseImmediately();
     _videos = List.of(videos);
-    _index = index;
+    _index = videos.isEmpty ? 0 : index.clamp(0, videos.length - 1);
     paused = false;
     return _schedule();
   }
@@ -95,7 +109,7 @@ class PlaybackCoordinator extends ChangeNotifier {
   Future<void> updateVideos(List<VideoPost> videos, int index) {
     _pauseImmediately();
     _videos = List.of(videos);
-    _index = index;
+    _index = videos.isEmpty ? 0 : index.clamp(0, videos.length - 1);
     return _schedule();
   }
 
@@ -131,11 +145,13 @@ class PlaybackCoordinator extends ChangeNotifier {
   }
 
   Future<void> retry() async {
+    if (_closed || _videos.isEmpty) return;
     final id = _videos[_index].id;
     errors.remove(id);
     // Dispose failed controllers inside the serialized queue.
     _queue = _queue.then((_) async {
       await controllers.remove(id)?.dispose();
+      _controllerUrls.remove(id);
     });
     await _schedule();
   }
@@ -162,8 +178,12 @@ class PlaybackCoordinator extends ChangeNotifier {
       }
     }
     for (final id in controllers.keys.toList()) {
-      if (!wanted.contains(id)) {
+      final matching = _videos.where((video) => video.id == id);
+      if (!wanted.contains(id) ||
+          matching.isEmpty ||
+          _controllerUrls[id] != matching.first.videoUrl) {
         await controllers.remove(id)!.dispose();
+        _controllerUrls.remove(id);
         errors.remove(id);
       }
     }
@@ -176,6 +196,12 @@ class PlaybackCoordinator extends ChangeNotifier {
     final active = _videos[_index];
     await _prepare(active);
     if (_closed) return;
+    if (errors.contains(active.id)) {
+      // Prioritize recovery of the visible player over preparing more decoders.
+      await coordinateAudio?.call(false);
+      if (!_closed) notifyListeners();
+      return;
+    }
     // The target may have changed while initialization was pending.
     if (_videos.isNotEmpty && _videos[_index].id == active.id) {
       final c = controllers[active.id];
@@ -214,11 +240,29 @@ class PlaybackCoordinator extends ChangeNotifier {
     final c = createController(video);
     c.addListener(() => _observePlayback(video, c));
     controllers[video.id] = c;
-    try {
-      await c.initialize().timeout(const Duration(seconds: 60));
+    _controllerUrls[video.id] = video.videoUrl;
+    final initialization = () async {
+      await c.initialize();
       if (_closed) return;
       await c.setLooping(true);
       await c.setVolume(0);
+    }();
+    try {
+      await initialization.timeout(initializationTimeout);
+    } on TimeoutException {
+      errors.add(video.id);
+      // A timeout does not cancel the native decoder. Recover if it eventually
+      // succeeds, but never revive a controller replaced by retry or a new URL.
+      unawaited(
+        initialization
+            .then((_) async {
+              if (!_closed && identical(controllers[video.id], c)) {
+                errors.remove(video.id);
+                await _schedule();
+              }
+            })
+            .catchError((Object _) {}),
+      );
     } catch (_) {
       errors.add(video.id);
     }
@@ -237,6 +281,7 @@ class PlaybackCoordinator extends ChangeNotifier {
           await c.dispose();
         }
         controllers.clear();
+        _controllerUrls.clear();
       }),
     );
     super.dispose();

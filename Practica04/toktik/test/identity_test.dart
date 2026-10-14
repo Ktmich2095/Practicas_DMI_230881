@@ -121,7 +121,7 @@ void main() {
         .setMockMethodCallHandler(AndroidLauncherIconRepository.channel, null);
   });
   test(
-    'Intro sound is opt-in, one-shot and stops themed audio first',
+    'Welcome is one-shot, independent of video mute, with no ambient audio',
     () async {
       final repo = SharedPreferencesRepository(storage: MemoryStore());
       await repo.save(
@@ -137,17 +137,17 @@ void main() {
       final ambient = FakeAudio();
       final theme = ThemeAudioProvider(ambient, settings);
       await theme.synchronize();
-      expect(theme.playing, isTrue);
+      expect(theme.playing, isFalse);
       final sound = FakeIntroAudio();
       final intro = IntroAudioProvider(sound, theme, settings);
-      await intro.start(Season.christmas);
+      await intro.startWelcome(Season.christmas);
       expect(theme.playing, isFalse);
-      expect(sound.events, ['play:audio/intro_christmas.wav']);
+      expect(sound.events, ['play:sounds/christmas.mp3']);
       await intro.stop();
       expect(sound.events.last, 'stop');
-      expect(theme.playing, isTrue);
+      expect(theme.playing, isFalse);
       await settings.setMuted(true);
-      await intro.start(Season.normal);
+      await intro.startWelcome(Season.normal);
       expect(sound.events.where((e) => e.startsWith('play:')).length, 1);
       intro.dispose();
       await Future<void>.delayed(Duration.zero);

@@ -1,0 +1,104 @@
+{
+  "status": "pass",
+  "checkedRelativeLinks": [
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "assets/LICENSE.md"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/provider-local/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/provider-local/provider-local.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/provider-local/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/initial/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/final/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "architecture/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "docs/live_archive_probe.json"
+    },
+    {
+      "from": "Practica04\\toktik\\README.md",
+      "target": "docs/CHANGES.md"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-local/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-local/provider-local.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "provider-local/README.md"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "initial/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\README.md",
+      "target": "final/index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-local\\README.md",
+      "target": "index.html"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-local\\README.md",
+      "target": "provider-local.svg"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-local\\README.md",
+      "target": "responsive-export-check.json"
+    },
+    {
+      "from": "Practica04\\toktik\\architecture\\provider-local\\README.md",
+      "target": "pages-links-review.json"
+    }
+  ],
+  "missing": [],
+  "nojekyll": true,
+  "rootIndexExists": false,
+  "htmlExternalScripts": [],
+  "svgViewBox": "0 0 1222 1058",
+  "visualReview": {
+    "status": "passed",
+    "reviewer": "image-capable assistant",
+    "artifactSha256": "92fa7f7364a4aa742f114323f6fdab76d8d44faf194816f112e561ab19187a69",
+    "capturesInspected": [
+      "visual-check/index.visual-check.1440x900.light.png",
+      "visual-check/index.visual-check.2048x1320.dark.png",
+      "visual-check/mobile-390.png"
+    ],
+    "observations": [
+      "No overlapping nodes or relationship labels in inspected desktop captures.",
+      "Mobile has no page overflow; cards stack below the diagram.",
+      "Mobile overview requires viewer zoom to read small diagram text."
+    ]
+  },
+  "pages": {
+    "source": "user-confirmed",
+    "branch": "main",
+    "folder": "/",
+    "remoteSettingsVerified": false,
+    "published": false
+  }
+}

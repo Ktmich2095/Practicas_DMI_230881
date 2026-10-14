@@ -11,10 +11,12 @@ class DiscoverProvider extends ChangeNotifier {
   final VideoCatalogRepository repository;
   final FavoritesRepository favoritesRepository;
   final VideoStatisticsRepository? statisticsRepository;
+  final Duration restorationTimeout;
   DiscoverProvider({
     required this.repository,
     required this.favoritesRepository,
     this.statisticsRepository,
+    this.restorationTimeout = const Duration(seconds: 5),
   });
   bool initialLoading = true,
       saving = false,
@@ -29,6 +31,15 @@ class DiscoverProvider extends ChangeNotifier {
       actualSource = VideoSource.random;
   int _page = 0, _generation = 0;
   bool _disposed = false, _restored = false;
+  bool _favoritesReady = false, _viewsReady = false;
+  bool get favoritesReady => _favoritesReady;
+  Future<void> retryPersistence() async {
+    await _ensureRestored();
+    if (_disposed) return;
+    _prepareCatalog();
+    _emit();
+  }
+
   bool isFavorite(VideoPost video) => _favorites.contains(video.id);
   final Map<String, VideoStatistics> _statistics = {};
   Map<String, int> _viewIncrements = {};
@@ -60,33 +71,67 @@ class DiscoverProvider extends ChangeNotifier {
     _discoverVideos = result;
   }
 
-  Future<void> _restore() async {
+  Future<void> _ensureRestored() async {
+    if (_restored || _disposed) return;
+    final pending = _restoring ??= _restore();
     try {
-      _viewIncrements =
-          await statisticsRepository?.readViewIncrements().timeout(
-            const Duration(seconds: 5),
-          ) ??
-          {};
-    } catch (_) {
-      persistenceError = 'No se pudieron recuperar las visualizaciones.';
+      await pending;
+    } finally {
+      if (identical(_restoring, pending)) _restoring = null;
     }
-    try {
-      _favorites = await favoritesRepository.read().timeout(
-        const Duration(seconds: 5),
-      );
-      for (final video in await favoritesRepository.readVideos().timeout(
-        const Duration(seconds: 5),
-      )) {
-        _favoriteVideos[video.id] = video;
-        statistics(video);
-      }
-    } catch (_) {
-      persistenceError = 'No se pudieron recuperar los favoritos.';
-    }
-    _restored = true;
   }
 
-  Future<void> recordView(VideoPost video) {
+  Future<void> _restore() async {
+    if (!_viewsReady) {
+      try {
+        _viewIncrements =
+            await statisticsRepository?.readViewIncrements().timeout(
+              restorationTimeout,
+            ) ??
+            {};
+        _viewsReady = true;
+        if (persistenceError ==
+            'No se pudieron recuperar las visualizaciones.') {
+          persistenceError = null;
+        }
+      } catch (_) {
+        persistenceError = 'No se pudieron recuperar las visualizaciones.';
+      }
+    }
+    if (!_favoritesReady) {
+      try {
+        // Apply the snapshot only after both reads succeed. A failed restore must
+        // never allow a subsequent tap to overwrite favorites not yet loaded.
+        final ids = await favoritesRepository.read().timeout(
+          restorationTimeout,
+        );
+        final snapshots = await favoritesRepository.readVideos().timeout(
+          restorationTimeout,
+        );
+        _favorites = ids;
+        _favoriteVideos.clear();
+        for (final video in snapshots) {
+          _favoriteVideos[video.id] = video;
+          statistics(video);
+        }
+        _favoritesReady = true;
+        if (persistenceError == 'No se pudieron recuperar los favoritos.') {
+          persistenceError = null;
+        }
+      } catch (_) {
+        persistenceError = 'No se pudieron recuperar los favoritos.';
+      }
+    }
+    _restored = _favoritesReady && _viewsReady;
+  }
+
+  Future<void> recordView(VideoPost video) async {
+    await _ensureRestored();
+    if (_disposed) return;
+    if (!_viewsReady) {
+      _emit();
+      throw StateError('Las visualizaciones todavía no se han recuperado.');
+    }
     final key = VideoStatistics.key(video);
     if (!_viewedThisSession.add(key)) return _viewWrites;
     _viewIncrements[key] = ((_viewIncrements[key] ?? 0) + 1).clamp(
@@ -125,7 +170,7 @@ class DiscoverProvider extends ChangeNotifier {
     notices = [];
     _emit();
     if (!_restored) {
-      await (_restoring ??= _restore());
+      await _ensureRestored();
     }
     if (_disposed || generation != _generation) return;
     try {
@@ -167,9 +212,10 @@ class DiscoverProvider extends ChangeNotifier {
         ];
       } else {
         final ids = videos.map((v) => v.id).toSet();
+        final previousCount = videos.length;
         videos = [...videos, ...batch.videos.where((v) => ids.add(v.id))];
         _prepareCatalog();
-        hasMore = batch.hasMore && batch.videos.isNotEmpty;
+        hasMore = batch.hasMore && videos.length > previousCount;
         _page++;
       }
     } catch (_) {
@@ -182,6 +228,15 @@ class DiscoverProvider extends ChangeNotifier {
   }
 
   Future<void> toggleFavorite(VideoPost video) async {
+    if (saving || _disposed) return;
+    if (!_favoritesReady) {
+      await _ensureRestored();
+      if (_disposed || !_favoritesReady) {
+        _emit();
+        return;
+      }
+      _prepareCatalog();
+    }
     if (saving) return;
     saving = true;
     persistenceError = null;

@@ -10,7 +10,7 @@ class AppPreferences {
     this.manualSeason,
     this.muted = true,
     this.themeAudio = false,
-    this.introSound = false,
+    this.introSound = true,
   });
   AppPreferences copyWith({
     VideoSource? source,

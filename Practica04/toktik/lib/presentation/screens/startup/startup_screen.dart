@@ -16,6 +16,7 @@ class StartupScreen extends StatefulWidget {
 }
 
 class _StartupScreenState extends State<StartupScreen> {
+  IntroAudioProvider? _audio;
   bool introDone = false,
       soundStarted = false,
       soundStopped = false,
@@ -34,14 +35,21 @@ class _StartupScreenState extends State<StartupScreen> {
   }
 
   @override
+  void dispose() {
+    unawaited(_audio?.stop());
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final startup = context.watch<StartupProvider>();
     final season = context.watch<SettingsProvider>().season;
     final audio = context.read<IntroAudioProvider>();
+    _audio = audio;
     if (startup.settingsReady && !soundStarted) {
       soundStarted = true;
-      Future.microtask(() {
-        if (mounted) audio.start(season);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) unawaited(audio.startWelcome(season));
       });
     }
     if (startup.ready && introDone && !soundStopped) {
