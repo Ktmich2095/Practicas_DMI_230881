@@ -29,6 +29,23 @@ class PlaybackCoordinator extends ChangeNotifier {
   final Map<String, VideoPlayerController> controllers = {};
   final Map<String, String> _controllerUrls = {};
   final Set<String> errors = {};
+  final Map<String, String> errorDetails = {};
+  static String safePlaybackError(Object? error) {
+    final text = error.toString().toLowerCase();
+    final status = RegExp(
+      r'(?:http|response\s*code|status\s*code)\D{0,12}(401|403|404|429|5\d\d)\b',
+    ).firstMatch(text)?.group(1);
+    if (status != null) {
+      return 'Reproducción HTTP $status: el archivo remoto no está disponible. Reintenta o renueva la fuente.';
+    }
+    if (text.contains('decoder') ||
+        text.contains('codec') ||
+        text.contains('unsupported')) {
+      return 'REPRODUCCION_CODEC: el decodificador no admite este archivo o no tiene recursos disponibles.';
+    }
+    return 'REPRODUCCION_ERROR: no se pudo abrir el video (red, URL o formato).';
+  }
+
   List<VideoPost> _videos = [];
   int _index = 0;
   bool muted = true,
@@ -53,6 +70,14 @@ class PlaybackCoordinator extends ChangeNotifier {
 
   bool ownsFeed(Object owner) => identical(owner, _owner);
   void _observePlayback(VideoPost video, VideoPlayerController controller) {
+    if (!_closed &&
+        identical(controllers[video.id], controller) &&
+        controller.value.hasError) {
+      errorDetails[video.id] = safePlaybackError(
+        controller.value.errorDescription,
+      );
+      if (errors.add(video.id)) notifyListeners();
+    }
     if (_closed || _videos.isEmpty || _videos[_index].id != video.id) return;
     final value = controller.value;
     final playing =
@@ -148,6 +173,7 @@ class PlaybackCoordinator extends ChangeNotifier {
     if (_closed || _videos.isEmpty) return;
     final id = _videos[_index].id;
     errors.remove(id);
+    errorDetails.remove(id);
     // Dispose failed controllers inside the serialized queue.
     _queue = _queue.then((_) async {
       await controllers.remove(id)?.dispose();
@@ -157,9 +183,10 @@ class PlaybackCoordinator extends ChangeNotifier {
   }
 
   Future<void> _schedule() {
-    _queue = _queue.then((_) => _sync()).catchError((Object _) {
+    _queue = _queue.then((_) => _sync()).catchError((Object error) {
       if (!_closed && _videos.isNotEmpty) {
         errors.add(_videos[_index].id);
+        errorDetails[_videos[_index].id] = safePlaybackError(error);
         notifyListeners();
       }
     });
@@ -185,6 +212,7 @@ class PlaybackCoordinator extends ChangeNotifier {
         await controllers.remove(id)!.dispose();
         _controllerUrls.remove(id);
         errors.remove(id);
+        errorDetails.remove(id);
       }
     }
     if (_videos.isEmpty) {
@@ -251,6 +279,7 @@ class PlaybackCoordinator extends ChangeNotifier {
       await initialization.timeout(initializationTimeout);
     } on TimeoutException {
       errors.add(video.id);
+      errorDetails[video.id] = 'REPRODUCCION_TIMEOUT: el video no inicializó dentro del límite de espera.';
       // A timeout does not cancel the native decoder. Recover if it eventually
       // succeeds, but never revive a controller replaced by retry or a new URL.
       unawaited(
@@ -258,13 +287,15 @@ class PlaybackCoordinator extends ChangeNotifier {
             .then((_) async {
               if (!_closed && identical(controllers[video.id], c)) {
                 errors.remove(video.id);
+                errorDetails.remove(video.id);
                 await _schedule();
               }
             })
             .catchError((Object _) {}),
       );
-    } catch (_) {
+    } catch (error) {
       errors.add(video.id);
+      errorDetails[video.id] = safePlaybackError(error);
     }
   }
 

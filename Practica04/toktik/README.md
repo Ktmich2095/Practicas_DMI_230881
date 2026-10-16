@@ -14,6 +14,7 @@ sonora.
 
 ## Contenido
 
+- [Demostración interactiva de TokTik](#demostración-interactiva-de-toktik)
 - [Resumen de funcionalidades](#resumen-de-funcionalidades)
 - [Ejecutar TokTik](#ejecutar-toktik)
 - [Identidad visual](#identidad-visual)
@@ -22,6 +23,25 @@ sonora.
 - [Pantallas de carga](#pantallas-de-carga)
 - [Diagramas de Arquitectura](#diagramas-de-arquitectura)
 - [Organización de evidencias](#organización-de-evidencias)
+
+## Demostración interactiva de TokTik
+
+Appetize permite ejecutar aplicaciones móviles de forma interactiva desde el
+navegador. Prueba la versión publicada de TokTik **sin instalar la aplicación**
+en tu dispositivo.
+
+**[▶️ Probar TokTik](https://appetize.io/app/b_mxqkb4onsv4c5o2yd546uwzesi)**
+
+## APK release para Appetize
+
+Coverr y Pixabay utilizan un backend HTTPS para que las claves privadas no
+queden dentro del APK público. El archivo api_keys.json se reserva para
+desarrollo y para el servidor; no se carga automáticamente en release.
+
+Consulta la [guía de configuración, compilación y pruebas reales](docs/APPETIZE_APIS.md)
+y el [backend de catálogos](backend/README.md). Primero debe desplegarse el
+backend; después el script scripts/build_appetize_release.ps1 genera el APK
+con su URL pública y comprueba que no incluya las claves locales.
 
 ## Resumen de funcionalidades
 

@@ -32,7 +32,9 @@ class FallbackVideoRepository implements VideoCatalogRepository {
     final notices = <String>[];
     for (final datasource in order) {
       if (!datasource.available) {
-        notices.add('${datasource.source.label}: credencial no configurada');
+        notices.add(
+          '${datasource.source.label}: acceso no configurado (clave de desarrollo o backend HTTPS)',
+        );
         continue;
       }
       try {
