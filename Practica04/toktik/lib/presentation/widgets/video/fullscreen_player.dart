@@ -37,6 +37,14 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
                 const Icon(Icons.videocam_off_outlined, size: 48),
                 const SizedBox(height: 12),
                 const Text('No se pudo reproducir este video'),
+                Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Text(
+                    widget.playback.errorDetails[widget.video.id] ??
+                        'Reintenta la reproducción.',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 TextButton(
                   onPressed: widget.playback.retry,
                   child: const Text('Reintentar'),

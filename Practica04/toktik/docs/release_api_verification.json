@@ -1,0 +1,61 @@
+﻿[
+    {
+        "stage":  "config",
+        "releaseKeysEmpty":  true
+    },
+    {
+        "source":  "coverr",
+        "stage":  "catalog",
+        "ok":  true,
+        "count":  8
+    },
+    {
+        "source":  "coverr",
+        "stage":  "playback",
+        "initialized":  true,
+        "progress":  true,
+        "ok":  true
+    },
+    {
+        "source":  "pixabay",
+        "stage":  "catalog",
+        "ok":  true,
+        "count":  8
+    },
+    {
+        "source":  "pixabay",
+        "stage":  "playback",
+        "initialized":  true,
+        "progress":  true,
+        "ok":  true
+    },
+    {
+        "source":  "archive",
+        "stage":  "catalog",
+        "ok":  true,
+        "count":  6
+    },
+    {
+        "source":  "archive",
+        "stage":  "playback",
+        "initialized":  true,
+        "progress":  true,
+        "ok":  true
+    },
+    {
+        "source":  "local",
+        "stage":  "catalog",
+        "ok":  true,
+        "count":  3
+    },
+    {
+        "source":  "local",
+        "stage":  "playback",
+        "initialized":  true,
+        "progress":  true,
+        "ok":  true
+    },
+    {
+        "stage":  "complete"
+    }
+]

@@ -9,6 +9,10 @@ Los comandos se ejecutan desde `Practica04/toktik`, salvo indicación contraria.
 
 ## Índice
 
+Para la configuración pública actual de Coverr/Pixabay en release, consultar
+[APIs en Appetize](APPETIZE_APIS.md). Las claves directas de los comandos de
+desarrollo de esta guía no se utilizan en el APK público.
+
 - [Entorno y dependencias](#entorno-y-dependencias)
 - [Arquitectura CLEAN](#arquitectura-clean)
 - [APIs y configuración](#apis-y-configuración)

@@ -41,7 +41,8 @@ class VideoMapper {
     final id = text(hit['id']);
     final renditions = map(hit['videos']);
     Map<String, dynamic> rendition = {};
-    for (final size in ['small', 'medium', 'tiny', 'large']) {
+    // Prefer the lighter documented MP4 for emulator startup and bandwidth.
+    for (final size in ['tiny', 'small', 'medium', 'large']) {
       final candidate = map(renditions[size]);
       if (text(candidate['url']).isNotEmpty && number(candidate['size']) > 0) {
         rendition = candidate;
