@@ -88,6 +88,3 @@ El APK normal release se compiló (50,5 MB), se instaló y abrió en API 35
 Ese APK normal se compiló sin URL porque aún no existe backend público:
 no debe confundirse con el APK final configurado para Appetize.
 
-Endpoints y contratos contrastados con [Coverr Videos](https://api.coverr.co/docs/videos/),
-[Coverr Auth](https://api.coverr.co/docs/auth/) y
-[Pixabay API](https://pixabay.com/api/docs/).
