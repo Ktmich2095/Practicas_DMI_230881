@@ -24,12 +24,13 @@ Durante las prácticas se trabajará con diferentes conceptos y herramientas par
 
 ## Tabla de prácticas
 
-| No. | Práctica | Descripción | Ponderación (firmas) | Estado | Ir a la práctica |
+| No. | Práctica | Descripción | Ponderación (firmas) | Estado | Ir a la práctica / manual |
 |---|---|---|---:|---|---|
 | 1 | Metodología de Evaluación de la Materia | Transcribir en libreta y comprender la metodología y fechas de evaluación de la asignatura. | 5 firmas | ✅ Concluida | - |
 | 2 | Mi Primera Aplicación Móvil con Flutter | Codificar una aplicación móvil utilizando Flutter y manejando `StatelessWidget` y `StatefulWidget`. | 25 firmas | ✅ Concluida | [Ver práctica](Practica02/hello_world_app/README.md) |
 | 3 | Chat de respuestas Sí/No | Desarrollar una aplicación de chat que consulte una API y muestre respuestas automáticas con GIF. | 30 firmas | ✅ Concluida | [Ver práctica](Practica03/yes_no_app/README.md) |
 | 4 | TokTik | Videos verticales con arquitectura CLEAN, APIs, favoritos y temas de temporada. | 30 Firmas | ✅ Concluida | [Ver práctica](Practica04/toktik/README.md) |
+| — | Manual de instalación de Flutter | Guía para instalar y configurar el entorno de desarrollo Flutter para Android. | — | ✅ Concluida | [Ver manual](ManualFlutter/README.md) |
 
 ---
 
