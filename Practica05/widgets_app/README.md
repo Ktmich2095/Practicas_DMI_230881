@@ -1,6 +1,6 @@
 # Widgets App · Práctica 05
 
-Aplicación académica de Desarrollo Móvil Integral para explorar componentes de Material Design 3, navegación declarativa con GoRouter y estado reactivo con Riverpod. Se conserva y completa el proyecto existente en la rama `Practica05`.
+Aplicación académica de Desarrollo Móvil Integral para explorar componentes de Material Design 3, navegación declarativa con GoRouter y estado reactivo con Riverpod. Proyecto integrado en la rama `main`.
 
 Objetivo: demostrar widgets visuales e interactivos en once pantallas con temas personalizables, tutorial y galería con carga progresiva.
 
@@ -28,7 +28,7 @@ Se conserva `presentation/` como contenedor de screens, providers y widgets. GoR
 
 ## Instalación y ejecución
 
-Clonar el [repositorio GitHub](https://github.com/Ktmich2095/Practicas_DMI_230881.git), seleccionar la rama `Practica05` y entrar en `Practica05/widgets_app`:
+Clonar el [repositorio GitHub](https://github.com/Ktmich2095/Practicas_DMI_230881.git), seleccionar la rama `main` y entrar en `Practica05/widgets_app`:
 
 ```powershell
 flutter pub get
@@ -75,13 +75,15 @@ El inicio y el drawer usan `context.push`; el tutorial utiliza `context.pop` cua
 
 ## Diagramas Archify
 
-- [Portal listo para publicación](docs/index.html).
-- [Diagrama general](docs/diagrams/general.html).
-- [Diagrama específico](docs/diagrams/especifica.html).
+- [Portal de Práctica 05 en GitHub Pages](https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/index.html).
+- [Diagrama general · visor Archify](https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html).
+- [Diagrama específico · visor Archify](https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html).
+
+Los enlaces abren los diagramas interactivos en Pages, incluso al consultar este README desde GitHub. El catálogo utiliza rutas relativas; estos enlaces del README utilizan URLs completas para evitar que GitHub muestre el código HTML. Pages se publica desde `main`, carpeta raíz. Los destinos se verificaron localmente; si el sitio público devuelve 404, comprobar el despliegue después de publicar los cambios. No se realizaron commits ni push.
 
 
 ### Vistas previas de Archify
 
-[![Arquitectura general](docs/evidence/screenshots/archify-general/general.visual-check.1440x900.light.png)](docs/diagrams/general.html)
+[![Arquitectura general](docs/evidence/screenshots/archify-general/general.visual-check.1440x900.light.png)](https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html)
 
-[![Pantallas y dependencias](docs/evidence/screenshots/archify-especifica/especifica.visual-check.1440x900.dark.png)](docs/diagrams/especifica.html)
+[![Pantallas y dependencias](docs/evidence/screenshots/archify-especifica/especifica.visual-check.1440x900.dark.png)](https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html)

@@ -1,0 +1,26 @@
+﻿{
+    "checkedAt":  "2026-11-09T21:33:09.1690054Z",
+    "branch":  "main",
+    "publishedByAgent":  false,
+    "results":  [
+                    {
+                        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/",
+                        "status":  200
+                    },
+                    {
+                        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/index.html",
+                        "status":  404,
+                        "error":  "Error en el servidor remoto: (404) No se encontró."
+                    },
+                    {
+                        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html",
+                        "status":  404,
+                        "error":  "Error en el servidor remoto: (404) No se encontró."
+                    },
+                    {
+                        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html",
+                        "status":  404,
+                        "error":  "Error en el servidor remoto: (404) No se encontró."
+                    }
+                ]
+}
