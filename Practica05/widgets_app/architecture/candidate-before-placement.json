@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Widgets App — arquitectura de interfaces Flutter",
+    "locale": "es",
+    "output": "architecture/index.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "app",
+      "type": "frontend",
+      "label": "MainApp + ProviderScope",
+      "sublabel": "MaterialApp.router · ConsumerWidget",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "router",
+      "type": "frontend",
+      "label": "appRouter",
+      "sublabel": "GoRouter · 11 rutas · inicio /",
+      "pos": [
+        400,
+        40
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "home",
+      "type": "frontend",
+      "label": "HomeScreen",
+      "sublabel": "_HomeView + _CustomListTile",
+      "pos": [
+        760,
+        40
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "theme",
+      "type": "backend",
+      "label": "ThemeNotifier / AppTheme",
+      "sublabel": "Estado global → ThemeData Material 3",
+      "pos": [
+        40,
+        210
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "menu",
+      "type": "frontend",
+      "label": "appMenuItems",
+      "sublabel": "10 destinos · MenuItem",
+      "pos": [
+        760,
+        210
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "drawer",
+      "type": "frontend",
+      "label": "SideMenu",
+      "sublabel": "NavigationDrawer · selección local",
+      "pos": [
+        760,
+        380
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "demos",
+      "type": "frontend",
+      "label": "Botones, tarjetas y avisos",
+      "sublabel": "ButtonsScreen · CardsScreen · SnackbarScreen",
+      "pos": [
+        400,
+        380
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "local",
+      "type": "frontend",
+      "label": "Animación y controles",
+      "sublabel": "AnimatedScreen · UiControlsScreen · setState",
+      "pos": [
+        400,
+        550
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "tutorial",
+      "type": "frontend",
+      "label": "Tutorial y progreso",
+      "sublabel": "AppTutorialScreen · ProgressScreen",
+      "pos": [
+        760,
+        550
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "counter",
+      "type": "frontend",
+      "label": "CounterScreen",
+      "sublabel": "counterProvider = 5 · isDarkmodeProvider",
+      "pos": [
+        40,
+        550
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "changer",
+      "type": "frontend",
+      "label": "ThemeChangerScreen",
+      "sublabel": "colorListProvider · ThemeNotifier",
+      "pos": [
+        40,
+        380
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "infinite",
+      "type": "frontend",
+      "label": "InfiniteScrollScreen",
+      "sublabel": "ScrollController · refresh · carga simulada",
+      "pos": [
+        400,
+        720
+      ],
+      "size": [
+        230,
+        70
+      ]
+    },
+    {
+      "id": "images",
+      "type": "external",
+      "label": "picsum.photos",
+      "sublabel": "Imágenes remotas · HTTPS",
+      "pos": [
+        760,
+        720
+      ],
+      "size": [
+        230,
+        70
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "app-router",
+      "to": "router",
+      "from": "app",
+      "label": "configura"
+    },
+    {
+      "id": "app-theme",
+      "to": "theme",
+      "from": "app",
+      "label": "observa"
+    },
+    {
+      "id": "router-home",
+      "to": "home",
+      "from": "router",
+      "label": "/"
+    },
+    {
+      "id": "home-menu",
+      "to": "menu",
+      "from": "home",
+      "label": "lee"
+    },
+    {
+      "id": "home-drawer",
+      "to": "drawer",
+      "from": "home",
+      "label": "drawer"
+    },
+    {
+      "id": "drawer-menu",
+      "to": "menu",
+      "from": "drawer",
+      "label": "lee"
+    },
+    {
+      "id": "router-demos",
+      "to": "demos",
+      "from": "router"
+    },
+    {
+      "id": "router-local",
+      "to": "local",
+      "from": "router"
+    },
+    {
+      "id": "router-tutorial",
+      "to": "tutorial",
+      "from": "router"
+    },
+    {
+      "id": "router-counter",
+      "to": "counter",
+      "from": "router"
+    },
+    {
+      "id": "router-changer",
+      "to": "changer",
+      "from": "router"
+    },
+    {
+      "id": "router-infinite",
+      "to": "infinite",
+      "from": "router"
+    },
+    {
+      "id": "changer-theme",
+      "to": "theme",
+      "from": "changer",
+      "label": "modifica"
+    },
+    {
+      "id": "infinite-images",
+      "to": "images",
+      "from": "infinite",
+      "label": "HTTPS"
+    },
+    {
+      "id": "demos-images",
+      "to": "images",
+      "from": "demos",
+      "label": "HTTPS"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "violet",
+      "title": "Navegación real",
+      "items": [
+        "HomeScreen y SideMenu leen appMenuItems y llaman context.push(menuItem.link).",
+        "appRouter construye las 11 pantallas. Las flechas sin etiqueta desde appRouter representan sus builders.",
+        "screens.dart es un archivo de exportaciones, no una capa de ejecución."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Widgets y estado",
+      "items": [
+        "CustomButton: ClipRRect + Material + InkWell; se usa en ButtonsScreen.",
+        "CardsScreen compone _CardType1, _CardType2, _CardType3 y _CardType4.",
+        "Tutorial: SlideInfo, slides, _Slide y PageController. Progreso: _ControlledProgresIndicator con StreamBuilder.",
+        "CounterScreen modifica counterProvider e isDarkmodeProvider. Este último NO controla el tema de MainApp.",
+        "MainApp observa themeNotifierProvider; ThemeChangerScreen cambia modo y color. selectedColorProvider está declarado sin uso activo."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Alcance y diferencias detectadas",
+      "items": [
+        "Mapa del árbol de trabajo del 27/10/2026; no representa exclusivamente el commit HEAD. Fuentes locales en candidate.json y analysis.md.",
+        "pubspec.yaml declara Flutter, cupertino_icons y go_router; flutter_riverpod y animate_do están importados pero no declarados.",
+        "assets/images/1.png, 2.png, 3.png y jar-loading.gif están referenciados, pero faltan y no están registrados.",
+        "La paginación se simula con Future.delayed y listas en memoria; no hay backend propio, repositorios ni almacenamiento persistente."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "diagram": {
+    "local": [],
+    "external": [
+      "https://github.com/tt-a1i/archify"
+    ],
+    "runtimeExternalResources": []
+  },
+  "menu": {
+    "local": [
+      {
+        "link": "Practica02/hello_world_app/.archify/arquitectura/arquitectura.html",
+        "exists": false,
+        "relative": true,
+        "resource": false
+      },
+      {
+        "link": "Practica03/yes_no_app/.archify/architecture-yes-no-app-20261005-173738/yes-no-app.html",
+        "exists": false,
+        "relative": true,
+        "resource": false
+      },
+      {
+        "link": "Practica04/toktik/architecture/provider-local/",
+        "exists": false,
+        "relative": true,
+        "resource": false
+      },
+      {
+        "link": "Practica04/toktik/architecture/provider-repository-datasources/",
+        "exists": false,
+        "relative": true,
+        "resource": false
+      },
+      {
+        "link": "Practica04/toktik/videos.html",
+        "exists": false,
+        "relative": true,
+        "resource": false
+      },
+      {
+        "link": "Practica05/widgets_app/architecture/index.html",
+        "exists": true,
+        "relative": true,
+        "resource": false
+      }
+    ],
+    "external": [
+      "https://github.com/Ktmich2095/Practicas_DMI_230881",
+      "https://appetize.io/app/b_mxqkb4onsv4c5o2yd546uwzesi"
+    ],
+    "runtimeExternalResources": []
+  },
+  "allOriginalLinksPreserved": true,
+  "ignoredFiles": [],
+  "newCardTargetExists": true,
+  "newCardLinkCount": 1,
+  "svgExists": true,
+  "previousPracticeMissingLinks": [
+    "Practica02/hello_world_app/.archify/arquitectura/arquitectura.html",
+    "Practica03/yes_no_app/.archify/architecture-yes-no-app-20261005-173738/yes-no-app.html",
+    "Practica04/toktik/architecture/provider-local/",
+    "Practica04/toktik/architecture/provider-repository-datasources/",
+    "Practica04/toktik/videos.html"
+  ],
+  "newDeliverableOK": true
+}

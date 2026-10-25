@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\PC-06\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\architecture\\candidate.json",
+    "sha256": "c8b56ec643872593f36d82c1400513bfb92c5ebea4bc45ac1bf3d3fa7e99f86c",
+    "bytes": 7049
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-06\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\architecture\\index.html",
+    "sha256": "030c6c9d671aca45c53a0a9594939d1b53ceed9db5df7694b44ca544df60cfa0",
+    "bytes": 860233
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\PC-06\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\architecture\\index.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-06\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\architecture\\index.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\PC-06\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\architecture\\index.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-27T21:58:59.992Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 4953,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 4,
+      "routesOverSuggestedBends": 3,
+      "routesOverSuggestedStretch": 1
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "home-drawer",
+            "from": "home",
+            "to": "drawer",
+            "label": "drawer",
+            "collectionIndex": 4,
+            "artifactIndex": 5
+          },
+          "right": {
+            "id": "router-tutorial",
+            "from": "router",
+            "to": "tutorial",
+            "label": "",
+            "collectionIndex": 8,
+            "artifactIndex": 9
+          },
+          "point": [
+            736,
+            361
+          ]
+        },
+        {
+          "left": {
+            "id": "router-demos",
+            "from": "router",
+            "to": "demos",
+            "label": "",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "right": {
+            "id": "router-infinite",
+            "from": "router",
+            "to": "infinite",
+            "label": "",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "point": [
+            501,
+            369
+          ],
+          "sharedNode": "router"
+        },
+        {
+          "left": {
+            "id": "router-local",
+            "from": "router",
+            "to": "local",
+            "label": "",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "right": {
+            "id": "router-tutorial",
+            "from": "router",
+            "to": "tutorial",
+            "label": "",
+            "collectionIndex": 8,
+            "artifactIndex": 9
+          },
+          "point": [
+            654,
+            361
+          ],
+          "sharedNode": "router"
+        },
+        {
+          "left": {
+            "id": "router-local",
+            "from": "router",
+            "to": "local",
+            "label": "",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "right": {
+            "id": "demos-images",
+            "from": "demos",
+            "to": "images",
+            "label": "HTTPS",
+            "collectionIndex": 14,
+            "artifactIndex": 15
+          },
+          "point": [
+            654,
+            415
+          ]
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "router-tutorial",
+            "from": "router",
+            "to": "tutorial",
+            "label": "",
+            "collectionIndex": 8,
+            "artifactIndex": 9
+          },
+          "bends": 4,
+          "stretch": 1
+        },
+        {
+          "relationship": {
+            "id": "router-counter",
+            "from": "router",
+            "to": "counter",
+            "label": "",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "bends": 4,
+          "stretch": 1
+        },
+        {
+          "relationship": {
+            "id": "router-infinite",
+            "from": "router",
+            "to": "infinite",
+            "label": "",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "bends": 4,
+          "stretch": 1.413,
+          "directCorridorBlockers": [
+            {
+              "id": "demos",
+              "label": "Botones, tarjetas y avisos",
+              "box": [
+                400,
+                380,
+                230,
+                70
+              ]
+            },
+            {
+              "id": "local",
+              "label": "Animación y controles",
+              "box": [
+                400,
+                550,
+                230,
+                70
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "home → drawer crosses router → tutorial: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "router → demos and router → infinite cross next to router: move node demos or infinite so the two reach router from different sides (for example one level with it, one directly above or below it).",
+      "router → local and router → tutorial cross next to router: move node local or tutorial so the two reach router from different sides (for example one level with it, one directly above or below it).",
+      "router → local crosses demos → images: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "router → tutorial needs 4 bends: move node router or tutorial so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "router → counter needs 4 bends: move node router or counter so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

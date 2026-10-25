@@ -1,0 +1,112 @@
+{
+  "basis": "working-tree",
+  "reason": "Uncommitted source files cannot be attributed to HEAD",
+  "components": {
+    "app": [
+      {
+        "path": "lib/main.dart",
+        "line": 1
+      }
+    ],
+    "router": [
+      {
+        "path": "lib/config/router/app_router.dart",
+        "line": 1
+      }
+    ],
+    "home": [
+      {
+        "path": "lib/presentation/screens/home/home_screen.dart",
+        "line": 1
+      }
+    ],
+    "theme": [
+      {
+        "path": "lib/presentation/providers/theme_provider.dart",
+        "line": 1
+      },
+      {
+        "path": "lib/config/theme/app_theme.dart",
+        "line": 1
+      }
+    ],
+    "menu": [
+      {
+        "path": "lib/config/menu/menu_items.dart",
+        "line": 1
+      }
+    ],
+    "drawer": [
+      {
+        "path": "lib/presentation/widgets/side_menu.dart",
+        "line": 1
+      }
+    ],
+    "demos": [
+      {
+        "path": "lib/presentation/screens/buttons/buttons_screen.dart",
+        "line": 1
+      },
+      {
+        "path": "lib/presentation/screens/cards/cards_screen.dart",
+        "line": 1
+      },
+      {
+        "path": "lib/presentation/screens/snackbar/snackbar_screen.dart",
+        "line": 1
+      }
+    ],
+    "local": [
+      {
+        "path": "lib/presentation/screens/animated/animated_screen.dart",
+        "line": 1
+      },
+      {
+        "path": "lib/presentation/screens/ui_controls/ui_controls_screen.dart",
+        "line": 1
+      }
+    ],
+    "tutorial": [
+      {
+        "path": "lib/presentation/screens/app_tutorial/app_tutorial_screen.dart",
+        "line": 1
+      },
+      {
+        "path": "lib/presentation/screens/progress/progress_screen.dart",
+        "line": 1
+      }
+    ],
+    "counter": [
+      {
+        "path": "lib/presentation/screens/counter/counter_screen.dart",
+        "line": 1
+      },
+      {
+        "path": "lib/presentation/providers/counter_provider.dart",
+        "line": 1
+      }
+    ],
+    "changer": [
+      {
+        "path": "lib/presentation/screens/theme_changer/theme_changer_screen.dart",
+        "line": 1
+      }
+    ],
+    "infinite": [
+      {
+        "path": "lib/presentation/screens/infinite_scroll/infinite_scroll_screen.dart",
+        "line": 1
+      }
+    ],
+    "images": [
+      {
+        "path": "lib/presentation/screens/cards/cards_screen.dart",
+        "line": 1
+      },
+      {
+        "path": "lib/presentation/screens/infinite_scroll/infinite_scroll_screen.dart",
+        "line": 1
+      }
+    ]
+  }
+}
