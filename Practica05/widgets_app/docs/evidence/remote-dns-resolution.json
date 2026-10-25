@@ -1,0 +1,7 @@
+{
+  "scope": "integration test only; no production or OS changes",
+  "addresses": {
+    "picsum.photos": "104.26.5.30",
+    "fastly.picsum.photos": "151.101.65.91"
+  }
+}

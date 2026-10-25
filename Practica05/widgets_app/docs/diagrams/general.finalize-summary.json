@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json",
+    "sha256": "6eaddd59c9f9dc1077e75c67b3e0dc6566d03ff935e79d11c6af8461476fd1b7",
+    "bytes": 3686
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.html",
+    "sha256": "b31a2bb562e961131532ed15776b538176d8ea71b4ca2eaeac43b20808d72faa",
+    "bytes": 856333
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-30T21:00:24.673Z",
+    "source": "network",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 5645,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

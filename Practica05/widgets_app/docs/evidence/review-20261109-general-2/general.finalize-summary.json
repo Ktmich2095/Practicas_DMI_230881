@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json",
+    "sha256": "8a83314c2360e9f5434abe813b7a10b966f2465a7915c79e0f4c736a0c46d2bc",
+    "bytes": 9373
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.html",
+    "sha256": "7fec337b9ee47ff76cfbcc89051a291eb6ef9dcc7747899f2390e1cc7a65ce21",
+    "bytes": 856369
+  },
+  "gates": {
+    "validate": "fail",
+    "deliver": "not-run",
+    "check": "not-run",
+    "browser-check": "not-run"
+  },
+  "failedStage": "validate",
+  "diagnostics": [
+    {
+      "code": "input/json-parse",
+      "severity": "error",
+      "message": "Input JSON could not be parsed: Unexpected token ﻿ in JSON at position 0",
+      "subject": {
+        "input": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json"
+      },
+      "evidence": {
+        "reason": "Unexpected token ﻿ in JSON at position 0"
+      },
+      "supportedFixes": [
+        "repair the JSON syntax and run validation again"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\review-20261109-general-2\\general.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\review-20261109-general-2\\general.finalize-summary.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-09T20:41:44.147Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 584,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  },
+  "nextAction": {
+    "action": "edit-in-place",
+    "candidate": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json",
+    "constraint": "Preserve unaffected semantics and geometry; apply each diagnostic's supportedFixes, or the fix its message names, and do not replace the whole candidate.",
+    "then": "finalize-once"
+  }
+}

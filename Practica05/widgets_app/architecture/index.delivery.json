@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "415f8990-96ac-4a2c-acda-09720b09d32d",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\PC-06\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\architecture\\candidate.json",
+  "output": "C:\\Users\\PC-06\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\architecture\\index.html",
+  "specification": {
+    "sha256": "0428345f3839a3d91e9f8e24445e388922d8078f91601c5b050a7c47f96d60e7",
+    "bytes": 7344
+  },
+  "artifact": {
+    "sha256": "ae4ce87fb768ce453764cfad4d20e29718606ca6576e08871344bcca470424b0",
+    "bytes": 859991
+  }
+}

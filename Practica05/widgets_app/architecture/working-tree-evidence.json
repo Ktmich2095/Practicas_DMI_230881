@@ -1,0 +1,391 @@
+{
+  "basis": "working-tree",
+  "date": "2026-10-27",
+  "head": "a23cf1e7104206ad315f2a2db06fa7a8f30eec63",
+  "note": "HEAD is identity only. Modified/untracked source bytes are NOT attributed to this revision.",
+  "files": [
+    {
+      "path": "lib/config/menu/menu_items.dart",
+      "sha256": "b903656023fc456848af248c4b958df1472fe91b1f36197bbdfc5869ae237f90",
+      "lines": 97,
+      "symbols": [
+        {
+          "line": 4,
+          "text": "class MenuItem {"
+        },
+        {
+          "line": 19,
+          "text": "const appMenuItems = <MenuItem>["
+        }
+      ]
+    },
+    {
+      "path": "lib/config/router/app_router.dart",
+      "sha256": "4176db16885f374fea0d600cd71ff1715942962393a2323224ab7b24e92a639d",
+      "lines": 75,
+      "symbols": [
+        {
+          "line": 5,
+          "text": "final appRouter = GoRouter("
+        }
+      ]
+    },
+    {
+      "path": "lib/config/theme/app_theme.dart",
+      "sha256": "818461b29a7743e852ce65a6797b51aa97b6d597fbdd630e7a23f424404dc39e",
+      "lines": 47,
+      "symbols": [
+        {
+          "line": 17,
+          "text": "class AppTheme {"
+        }
+      ]
+    },
+    {
+      "path": "lib/main.dart",
+      "sha256": "7304090d7b27f7f7e51a34e5afe079469cd3d7cc50560a456f6c8debde957d49",
+      "lines": 32,
+      "symbols": [
+        {
+          "line": 15,
+          "text": "class MainApp extends ConsumerWidget {"
+        },
+        {
+          "line": 23,
+          "text": "final AppTheme appTheme = ref.watch( themeNotifierProvider );"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/providers/counter_provider.dart",
+      "sha256": "2a9d1751ab8aabb5ce232730287eef6ecaab23889eb96d03e5076933e8d45814",
+      "lines": 5,
+      "symbols": [
+        {
+          "line": 4,
+          "text": "final counterProvider = StateProvider<int>((ref) => 5 );"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/providers/theme_provider.dart",
+      "sha256": "69321b884c3cc17ca2fc98746589c27fc8020ebd2f620c7740118bc1171ba9b9",
+      "lines": 38,
+      "symbols": [
+        {
+          "line": 5,
+          "text": "final colorListProvider = Provider((ref) => colorList);"
+        },
+        {
+          "line": 8,
+          "text": "final isDarkmodeProvider = StateProvider((ref) => false);"
+        },
+        {
+          "line": 11,
+          "text": "final selectedColorProvider = StateProvider((ref) => 0);"
+        },
+        {
+          "line": 17,
+          "text": "final themeNotifierProvider = StateNotifierProvider<ThemeNotifier, AppTheme>("
+        },
+        {
+          "line": 23,
+          "text": "class ThemeNotifier extends StateNotifier<AppTheme> {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/animated/animated_screen.dart",
+      "sha256": "6625243cca85ea6961562604d9cada4e3e55966fe0c2c1648cc534ac5490ca1f",
+      "lines": 67,
+      "symbols": [
+        {
+          "line": 4,
+          "text": "class AnimatedScreen extends StatefulWidget {"
+        },
+        {
+          "line": 14,
+          "text": "class _AnimatedScreenState extends State<AnimatedScreen> {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/app_tutorial/app_tutorial_screen.dart",
+      "sha256": "f2246e60603fe862606f8ae2aff21b96f27813f48090584b24dec637d74d69d6",
+      "lines": 150,
+      "symbols": [
+        {
+          "line": 6,
+          "text": "class SlideInfo {"
+        },
+        {
+          "line": 23,
+          "text": "class AppTutorialScreen extends StatefulWidget {"
+        },
+        {
+          "line": 33,
+          "text": "class _AppTutorialScreenState extends State<AppTutorialScreen> {"
+        },
+        {
+          "line": 114,
+          "text": "class _Slide extends StatelessWidget {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/buttons/buttons_screen.dart",
+      "sha256": "70c04ed5eb4b47c4034ca06c32b274976b24673028db56c664fbf7f1a500ad14",
+      "lines": 118,
+      "symbols": [
+        {
+          "line": 4,
+          "text": "class ButtonsScreen extends StatelessWidget {"
+        },
+        {
+          "line": 27,
+          "text": "class _ButtonsView extends StatelessWidget {"
+        },
+        {
+          "line": 94,
+          "text": "class CustomButton extends StatelessWidget {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/cards/cards_screen.dart",
+      "sha256": "cf8953b5121501b9300d0a395d6dc85b47e1915f8c3e4ed780b41dd01f29a59c",
+      "lines": 249,
+      "symbols": [
+        {
+          "line": 16,
+          "text": "class CardsScreen extends StatelessWidget {"
+        },
+        {
+          "line": 33,
+          "text": "class _CardsView extends StatelessWidget {"
+        },
+        {
+          "line": 66,
+          "text": "class _CardType1 extends StatelessWidget {"
+        },
+        {
+          "line": 105,
+          "text": "class _CardType2 extends StatelessWidget {"
+        },
+        {
+          "line": 154,
+          "text": "class _CardType3 extends StatelessWidget {"
+        },
+        {
+          "line": 198,
+          "text": "class _CardType4 extends StatelessWidget {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/counter/counter_screen.dart",
+      "sha256": "0b5ffbced1d1e1681d1c94b05dd1f72522290c8ccf369e556c0040fb220bd71a",
+      "lines": 52,
+      "symbols": [
+        {
+          "line": 7,
+          "text": "class CounterScreen extends ConsumerWidget {"
+        },
+        {
+          "line": 17,
+          "text": "final int clickCounter = ref.watch( counterProvider );"
+        },
+        {
+          "line": 18,
+          "text": "final bool isDarkmode = ref.watch( isDarkmodeProvider );"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/home/home_screen.dart",
+      "sha256": "24e4542cd5a0c8ea70e6b5d3371f9dcc1168a025f8edf814cc762fda19f468c1",
+      "lines": 83,
+      "symbols": [
+        {
+          "line": 9,
+          "text": "class HomeScreen extends StatelessWidget {"
+        },
+        {
+          "line": 31,
+          "text": "class _HomeView extends StatelessWidget {"
+        },
+        {
+          "line": 49,
+          "text": "class _CustomListTile extends StatelessWidget {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/infinite_scroll/infinite_scroll_screen.dart",
+      "sha256": "7ba82ea67a013a9ee1f957f5b846562f1120c722d864e295cac8093742ce693f",
+      "lines": 141,
+      "symbols": [
+        {
+          "line": 5,
+          "text": "class InfiniteScrollScreen extends StatefulWidget {"
+        },
+        {
+          "line": 15,
+          "text": "class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/progress/progress_screen.dart",
+      "sha256": "658bf6dce6d104110ea9432602476f4938463879532e47e3a695af63eef98cbb",
+      "lines": 76,
+      "symbols": [
+        {
+          "line": 3,
+          "text": "class ProgressScreen extends StatelessWidget {"
+        },
+        {
+          "line": 20,
+          "text": "class _ProgressView extends StatelessWidget {"
+        },
+        {
+          "line": 45,
+          "text": "class _ControlledProgresIndicator extends StatelessWidget {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/screens.dart",
+      "sha256": "bed383993fba7251a96edc1ec026d9fd465e50072aeae7593a412bb46561e8f3",
+      "lines": 15,
+      "symbols": [
+        {
+          "line": 5,
+          "text": "export 'package:widgets_app/presentation/screens/animated/animated_screen.dart';"
+        },
+        {
+          "line": 6,
+          "text": "export 'package:widgets_app/presentation/screens/app_tutorial/app_tutorial_screen.dart';"
+        },
+        {
+          "line": 7,
+          "text": "export 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';"
+        },
+        {
+          "line": 8,
+          "text": "export 'package:widgets_app/presentation/screens/cards/cards_screen.dart';"
+        },
+        {
+          "line": 9,
+          "text": "export 'package:widgets_app/presentation/screens/counter/counter_screen.dart';"
+        },
+        {
+          "line": 10,
+          "text": "export 'package:widgets_app/presentation/screens/home/home_screen.dart';"
+        },
+        {
+          "line": 11,
+          "text": "export 'package:widgets_app/presentation/screens/infinite_scroll/infinite_scroll_screen.dart';"
+        },
+        {
+          "line": 12,
+          "text": "export 'package:widgets_app/presentation/screens/progress/progress_screen.dart';"
+        },
+        {
+          "line": 13,
+          "text": "export 'package:widgets_app/presentation/screens/snackbar/snackbar_screen.dart';"
+        },
+        {
+          "line": 14,
+          "text": "export 'package:widgets_app/presentation/screens/theme_changer/theme_changer_screen.dart';"
+        },
+        {
+          "line": 15,
+          "text": "export 'package:widgets_app/presentation/screens/ui_controls/ui_controls_screen.dart';"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/snackbar/snackbar_screen.dart",
+      "sha256": "d25b46fbc493b21b1025158b2ab33f0a9946b464328b503897ee2b923c79a099",
+      "lines": 81,
+      "symbols": [
+        {
+          "line": 4,
+          "text": "class SnackbarScreen extends StatelessWidget {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/theme_changer/theme_changer_screen.dart",
+      "sha256": "a76b7477eb971e175c822740f6bb89d32bed776e5dd1c2d549ebc4d080fd5166",
+      "lines": 71,
+      "symbols": [
+        {
+          "line": 7,
+          "text": "class ThemeChangerScreen extends ConsumerWidget {"
+        },
+        {
+          "line": 16,
+          "text": "final isDarkmode = ref.watch( themeNotifierProvider ).isDarkmode;"
+        },
+        {
+          "line": 39,
+          "text": "class _ThemeChangerView extends ConsumerWidget {"
+        },
+        {
+          "line": 45,
+          "text": "final List<Color> colors = ref.watch( colorListProvider );"
+        },
+        {
+          "line": 46,
+          "text": "final int selectedColor = ref.watch( themeNotifierProvider ).selectedColor;"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/screens/ui_controls/ui_controls_screen.dart",
+      "sha256": "295b04feec3fb4ddfdecb86aeabac78070c3b11f4d209d0d59b7bb1c9461232c",
+      "lines": 118,
+      "symbols": [
+        {
+          "line": 3,
+          "text": "class UiControlsScreen extends StatelessWidget {"
+        },
+        {
+          "line": 19,
+          "text": "class _UiControlsView extends StatefulWidget {"
+        },
+        {
+          "line": 26,
+          "text": "enum Transportation { car, plane, boat, submarine }"
+        },
+        {
+          "line": 28,
+          "text": "class _UiControlsViewState extends State<_UiControlsView> {"
+        }
+      ]
+    },
+    {
+      "path": "lib/presentation/widgets/side_menu.dart",
+      "sha256": "04f76f7023472e36e83aa5b659a555cd90d4162a2235985d51cddc1c5e99e2b4",
+      "lines": 79,
+      "symbols": [
+        {
+          "line": 5,
+          "text": "class SideMenu extends StatefulWidget {"
+        },
+        {
+          "line": 18,
+          "text": "class _SideMenuState extends State<SideMenu> {"
+        }
+      ]
+    },
+    {
+      "path": "pubspec.yaml",
+      "sha256": "3fb85e70078ecfa7ff52fcf628d902179d1f61bf0aaae182ad245aca5152a2dd",
+      "lines": 90,
+      "symbols": []
+    }
+  ]
+}

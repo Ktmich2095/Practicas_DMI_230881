@@ -1,0 +1,477 @@
+{
+  "checkedAt": "2026-11-09T21:11:40.167Z",
+  "prefix": "/Practicas_DMI_230881/",
+  "pages": [
+    {
+      "page": "index.html",
+      "width": 390,
+      "title": "Arquitecturas · Desarrollo Móvil Integral",
+      "cards": 4,
+      "viewer": false,
+      "overflow": false
+    },
+    {
+      "page": "Practica05/widgets_app/docs/index.html",
+      "width": 390,
+      "title": "Widgets App · Práctica 05",
+      "cards": 0,
+      "viewer": false,
+      "overflow": false
+    },
+    {
+      "page": "Practica05/widgets_app/docs/diagrams/general.html",
+      "width": 390,
+      "title": "Widgets App · arquitectura general · Diagrama",
+      "cards": 0,
+      "viewer": true,
+      "zoomWorks": true,
+      "overflow": false
+    },
+    {
+      "page": "Practica05/widgets_app/docs/diagrams/especifica.html",
+      "width": 390,
+      "title": "Widgets App · pantallas y dependencias · Diagrama",
+      "cards": 0,
+      "viewer": true,
+      "zoomWorks": true,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "title": "Arquitecturas · Desarrollo Móvil Integral",
+      "cards": 4,
+      "viewer": false,
+      "overflow": false
+    },
+    {
+      "page": "Practica05/widgets_app/docs/index.html",
+      "width": 1440,
+      "title": "Widgets App · Práctica 05",
+      "cards": 0,
+      "viewer": false,
+      "overflow": false
+    },
+    {
+      "page": "Practica05/widgets_app/docs/diagrams/general.html",
+      "width": 1440,
+      "title": "Widgets App · arquitectura general · Diagrama",
+      "cards": 0,
+      "viewer": true,
+      "zoomWorks": true,
+      "overflow": false
+    },
+    {
+      "page": "Practica05/widgets_app/docs/diagrams/especifica.html",
+      "width": 1440,
+      "title": "Widgets App · pantallas y dependencias · Diagrama",
+      "cards": 0,
+      "viewer": true,
+      "zoomWorks": true,
+      "overflow": false
+    }
+  ],
+  "links": [
+    {
+      "path": "/Practicas_DMI_230881/index.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/archify-general/general.visual-check.1440x900.light.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.archify.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/archify-especifica/especifica.visual-check.1440x900.dark.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.archify.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/01-inicio.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/01-inicio.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/02-contador.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/02-contador.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/03-botones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/03-botones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas-imagenes.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas-imagenes.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/05-progreso.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/05-progreso.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-dialogos.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-dialogos.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-confirmacion.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-confirmacion.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-acerca-de.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-acerca-de.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-snackbar.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-snackbar.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/07-animaciones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/07-animaciones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/08-controles.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/08-controles.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-paso-2.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-paso-2.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-final.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-final.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/10-lista-infinita.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/10-lista-infinita.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/11-temas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/11-temas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/12-tema-oscuro.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/12-tema-oscuro.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/13-menu-lateral.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/13-menu-lateral.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/capture-report.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/REVIEW-20261109.md",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/README.md",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/index.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/archify-general/general.visual-check.1440x900.light.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.archify.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/archify-especifica/especifica.visual-check.1440x900.dark.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.archify.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/01-inicio.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/01-inicio.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/02-contador.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/02-contador.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/03-botones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/03-botones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas-imagenes.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/04-tarjetas-imagenes.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/05-progreso.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/05-progreso.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-dialogos.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-dialogos.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-confirmacion.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-confirmacion.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-acerca-de.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-acerca-de.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-snackbar.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/06-snackbar.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/07-animaciones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/07-animaciones.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/08-controles.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/08-controles.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-paso-2.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-paso-2.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-final.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/09-tutorial-final.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/10-lista-infinita.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/10-lista-infinita.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/11-temas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/11-temas.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/12-tema-oscuro.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/12-tema-oscuro.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/13-menu-lateral.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/13-menu-lateral.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/evidence/screenshots/capture-report.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/docs/REVIEW-20261109.md",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/Practica05/widgets_app/README.md",
+      "status": 200
+    }
+  ],
+  "ok": true
+}

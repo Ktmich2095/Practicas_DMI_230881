@@ -1,0 +1,26 @@
+Resolving dependencies...
+Downloading packages...
+  animate_do 4.2.0 (5.1.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  flutter_riverpod 2.6.1 (3.4.3 available)
+  go_router 17.5.0 (18.1.2 available)
+  lints 5.1.1 (6.1.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  riverpod 2.6.1 (3.4.3 available)
+  test_api 0.7.12 (0.7.15 available)
+Got dependencies!
+9 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PC-15/Desktop/Practicas_DMI_230881/Practica05/widgets_app/test/widget_test.dart
+00:00 +0: Home, push/pop and reactive counter
+00:01 +1: Drawer navigates to buttons and enabled action responds
+00:02 +2: Theme controls change actual MaterialApp and keep selected color
+00:03 +3: Every menu route opens, renders and returns
+00:04 +4: Progress remains in range and completes at 100 percent
+00:04 +5: Tutorial local images, next and finish work at narrow width
+00:04 +6: Controls update switch, radio and checkbox
+00:04 +7: Photo failure shows retry without uncaught network exception
+00:04 +8: Pagination appends and refresh replaces photo IDs
+00:04 +9: Dialogs open and dismiss, snackbar is visible
+00:05 +10: All tests passed!

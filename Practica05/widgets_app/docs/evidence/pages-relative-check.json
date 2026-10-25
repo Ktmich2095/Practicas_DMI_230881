@@ -1,0 +1,121 @@
+{
+  "prefix": "/Practicas_DMI_230881/",
+  "pages": [
+    {
+      "page": "index.html",
+      "title": "Widgets App · Práctica 05",
+      "svg": 0,
+      "dependencies": [],
+      "links": [
+        {
+          "href": "diagrams/general.html",
+          "status": 200
+        },
+        {
+          "href": "diagrams/especifica.html",
+          "status": 200
+        },
+        {
+          "href": "AUDIT.md",
+          "status": 200
+        },
+        {
+          "href": "VALIDATION.md",
+          "status": 200
+        },
+        {
+          "href": "evidence/source-manifest.json",
+          "status": 200
+        },
+        {
+          "href": "evidence/app-home.png",
+          "status": 200
+        },
+        {
+          "href": "evidence/app-theme-dark.png",
+          "status": 200
+        },
+        {
+          "href": "evidence/emulator-smoke.json",
+          "status": 200
+        }
+      ],
+      "external": [],
+      "absolute": [],
+      "failures": [],
+      "exceptions": [],
+      "ok": true
+    },
+    {
+      "page": "diagrams/general.html",
+      "title": "Widgets App · arquitectura general · Diagrama",
+      "svg": 2,
+      "dependencies": [],
+      "links": [],
+      "external": [],
+      "absolute": [],
+      "failures": [],
+      "exceptions": [],
+      "ok": true
+    },
+    {
+      "page": "diagrams/especifica.html",
+      "title": "Widgets App · pantallas y dependencias · Diagrama",
+      "svg": 2,
+      "dependencies": [],
+      "links": [],
+      "external": [],
+      "absolute": [],
+      "failures": [],
+      "exceptions": [],
+      "ok": true
+    }
+  ],
+  "requests": [
+    {
+      "path": "/Practicas_DMI_230881/index.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/diagrams/general.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/diagrams/especifica.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/AUDIT.md",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/VALIDATION.md",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/evidence/source-manifest.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/evidence/app-home.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/evidence/app-theme-dark.png",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/evidence/emulator-smoke.json",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/diagrams/general.html",
+      "status": 200
+    },
+    {
+      "path": "/Practicas_DMI_230881/diagrams/especifica.html",
+      "status": 200
+    }
+  ],
+  "ok": true
+}

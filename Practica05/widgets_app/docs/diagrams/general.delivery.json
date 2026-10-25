@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "855c6c41-3142-4708-b5d0-dd07cc819937",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json",
+  "output": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.html",
+  "specification": {
+    "sha256": "b9a1b63ccaf873cbc9ac686ee8ad6246b5b3858fd5671a7617a16c6b7dec8d36",
+    "bytes": 9370
+  },
+  "artifact": {
+    "sha256": "65d4833c00978844f670f94deaa17a70838b54508ef64760063ca6ea2a76baba",
+    "bytes": 860919
+  }
+}

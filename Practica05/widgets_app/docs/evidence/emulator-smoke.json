@@ -1,0 +1,11 @@
+{
+  "device": "emulator-5554",
+  "abi": "x86_64",
+  "checks": [
+    "Counter opens at 5 and increments to 6 on emulator",
+    "Theme screen opens; toggled brightness and selected Color 2",
+    "Tutorial assets visible and exit works",
+    "Infinite gallery opens",
+    "Drawer opens"
+  ]
+}
