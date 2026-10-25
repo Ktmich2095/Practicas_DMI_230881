@@ -1,0 +1,22 @@
+﻿[
+    {
+        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/",
+        "status":  200,
+        "hasPractice05":  true
+    },
+    {
+        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/index.html",
+        "status":  200,
+        "hasPractice05":  true
+    },
+    {
+        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/general.html",
+        "status":  200,
+        "hasPractice05":  true
+    },
+    {
+        "url":  "https://ktmich2095.github.io/Practicas_DMI_230881/Practica05/widgets_app/docs/diagrams/especifica.html",
+        "status":  200,
+        "hasPractice05":  true
+    }
+]

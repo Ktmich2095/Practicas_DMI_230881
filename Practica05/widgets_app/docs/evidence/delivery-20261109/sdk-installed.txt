@@ -1,0 +1,13 @@
+sdkmanager.bat : WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Android CLI will be used instead.
+En línea: 2 Carácter: 53
++ ... k-21.0.11'; & "$env:LOCALAPPDATA/Android/sdk/cmdline-tools/latest/bin ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: The SD...e used instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 
+'sdkmanager'.
+To learn more about the Android CLI and how to use it, see the documentation 
+(https://d.android.com/tools/agents/android-cli)
+
+Downloading Android CLI...

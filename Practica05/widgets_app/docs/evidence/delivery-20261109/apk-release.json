@@ -1,0 +1,14 @@
+{
+  "generated": true,
+  "path": "build/app/outputs/flutter-apk/app-release.apk",
+  "bytes": 48686330,
+  "mib": 46.4309024810791,
+  "abis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86_64"
+  ],
+  "sha256": "a8e48cd46c6d82991315218dd25d994dcaf147935e78972534ce2e1771970191",
+  "zip_integrity": "passed",
+  "includes_x86_64": true
+}

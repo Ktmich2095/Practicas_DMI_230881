@@ -1,0 +1,116 @@
+2500:
+2026-11-09 15:42:02
+Full thread dump OpenJDK 64-Bit Server VM (25.0.3+-15898627-b508.16 mixed mode):
+
+Threads class SMR info:
+_java_thread_list=0x00000240c1b29750, length=11, elements={
+0x000002409ff425b0, 0x00000240bc22e710, 0x00000240bc230050, 0x00000240bc24b4a0,
+0x00000240bc26e3b0, 0x00000240bc24ced0, 0x00000240bc24da90, 0x00000240bc8e8090,
+0x00000240bc8f9ba0, 0x00000240bc90bb10, 0x00000240bca97660
+}
+
+"main" #3 [4564] prio=5 os_prio=0 cpu=968.75ms elapsed=29.07s tid=0x000002409ff425b0 nid=4564 runnable  [0x0000007ca8efe000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.SocketDispatcher.read0(java.base@25.0.3/Native Method)
+	at sun.nio.ch.SocketDispatcher.read(java.base@25.0.3/Unknown Source)
+	at sun.nio.ch.NioSocketImpl.tryRead(java.base@25.0.3/Unknown Source)
+	at sun.nio.ch.NioSocketImpl.implRead(java.base@25.0.3/Unknown Source)
+	at sun.nio.ch.NioSocketImpl.read(java.base@25.0.3/Unknown Source)
+	at sun.nio.ch.NioSocketImpl$1.read(java.base@25.0.3/Unknown Source)
+	at java.net.Socket$SocketInputStream.implRead(java.base@25.0.3/Unknown Source)
+	at java.net.Socket$SocketInputStream.read(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLSocketInputRecord.read(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLSocketInputRecord.decode(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLTransport.decode(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.decode(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(java.base@25.0.3/Unknown Source)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(java.base@25.0.3/Unknown Source)
+	at java.io.BufferedInputStream.read1(java.base@25.0.3/Unknown Source)
+	at java.io.BufferedInputStream.read(java.base@25.0.3/Unknown Source)
+	- locked <0x00000007193a4478> (a java.io.BufferedInputStream)
+	at sun.net.www.MeteredStream.read(java.base@25.0.3/Unknown Source)
+	at java.io.FilterInputStream.read(java.base@25.0.3/Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection$HttpInputStream.read(java.base@25.0.3/Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection$HttpInputStream.read(java.base@25.0.3/Unknown Source)
+	at org.gradle.wrapper.Download.downloadInternal(Download.java:62)
+	at org.gradle.wrapper.Download.download(Download.java:44)
+	at org.gradle.wrapper.Install$1.call(Install.java:61)
+	at org.gradle.wrapper.Install$1.call(Install.java:48)
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:65)
+	at org.gradle.wrapper.Install.createDist(Install.java:48)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:128)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:61)
+
+"Common-Cleaner" #11 [16516] daemon prio=8 os_prio=1 cpu=0.00ms elapsed=29.04s tid=0x00000240bc22e710 nid=16516 in Object.wait()  [0x0000007ca96ff000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait0(java.base@25.0.3/Native Method)
+	- waiting on <0x000000071a61c7d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.Object.wait(java.base@25.0.3/Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove0(java.base@25.0.3/Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(java.base@25.0.3/Unknown Source)
+	- locked <0x000000071a61c7d8> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@25.0.3/Unknown Source)
+	at java.lang.Thread.runWith(java.base@25.0.3/Unknown Source)
+	at java.lang.Thread.run(java.base@25.0.3/Unknown Source)
+	at jdk.internal.misc.InnocuousThread.run(java.base@25.0.3/Unknown Source)
+
+"Reference Handler" #12 [12036] daemon prio=10 os_prio=2 cpu=0.00ms elapsed=29.04s tid=0x00000240bc230050 nid=12036 waiting on condition  [0x0000007ca97ff000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@25.0.3/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@25.0.3/Unknown Source)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@25.0.3/Unknown Source)
+
+"Finalizer" #13 [9072] daemon prio=8 os_prio=1 cpu=0.00ms elapsed=29.04s tid=0x00000240bc24b4a0 nid=9072 in Object.wait()  [0x0000007ca98ff000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait0(java.base@25.0.3/Native Method)
+	- waiting on <0x000000071a60a7e8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.Object.wait(java.base@25.0.3/Unknown Source)
+	at java.lang.Object.wait(java.base@25.0.3/Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove0(java.base@25.0.3/Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(java.base@25.0.3/Unknown Source)
+	- locked <0x000000071a60a7e8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@25.0.3/Unknown Source)
+
+"Signal Dispatcher" #14 [8364] daemon prio=9 os_prio=2 cpu=0.00ms elapsed=29.04s tid=0x00000240bc26e3b0 nid=8364 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" #15 [3132] daemon prio=5 os_prio=2 cpu=0.00ms elapsed=29.04s tid=0x00000240bc24ced0 nid=3132 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #16 [13336] daemon prio=9 os_prio=0 cpu=0.00ms elapsed=29.04s tid=0x00000240bc24da90 nid=13336 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Deflation Thread" #17 [10640] daemon prio=9 os_prio=0 cpu=0.00ms elapsed=29.04s tid=0x00000240bc8e8090 nid=10640 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #18 [6468] daemon prio=9 os_prio=2 cpu=468.75ms elapsed=29.04s tid=0x00000240bc8f9ba0 nid=6468 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #21 [18032] daemon prio=9 os_prio=2 cpu=203.12ms elapsed=29.04s tid=0x00000240bc90bb10 nid=18032 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Notification Thread" #22 [2820] daemon prio=9 os_prio=0 cpu=0.00ms elapsed=29.02s tid=0x00000240bca97660 nid=2820 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"VM Thread" os_prio=2 cpu=0.00ms elapsed=29.05s tid=0x00000240bc2065a0 nid=15328 runnable  
+
+"VM Periodic Task Thread" os_prio=2 cpu=0.00ms elapsed=29.07s tid=0x00000240bc1ca0c0 nid=8268 waiting on condition  
+
+"G1 Service" os_prio=2 cpu=0.00ms elapsed=29.07s tid=0x00000240bc09e3d0 nid=2680 runnable  
+
+"G1 Refine#0" os_prio=2 cpu=0.00ms elapsed=29.07s tid=0x00000240bc09d9c0 nid=15596 runnable  
+
+"G1 Conc#0" os_prio=2 cpu=0.00ms elapsed=29.07s tid=0x00000240a24a9180 nid=15616 runnable  
+
+"G1 Main Marker" os_prio=2 cpu=0.00ms elapsed=29.07s tid=0x00000240a24a70f0 nid=1568 runnable  
+
+"GC Thread#0" os_prio=2 cpu=0.00ms elapsed=29.07s tid=0x00000240a248d1d0 nid=8596 runnable  
+
+JNI global refs: 19, weak refs: 0
+
+JNI global refs memory usage: 835, weak refs: 201
+

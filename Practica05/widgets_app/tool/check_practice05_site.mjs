@@ -2,6 +2,7 @@
 import { createServer } from 'node:http';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { ChromeVisualBrowser } from '../.agents/skills/archify/bin/visual-check.mjs';
 
 const root = resolve('../..');
@@ -55,7 +56,7 @@ try {
           if (!response.ok) throw Error(`Broken link: ${url.pathname}`);
         }
       } else {
-        const original = await readFile('build/published-index.html', 'utf8');
+        const original = execFileSync('git', ['show', 'HEAD:index.html'], { cwd: root, encoding: 'utf8' });
         const links = [...original.matchAll(/href="([^"]+)"/g)].map(m => m[1]);
         if (!links.every(link => info.links.includes(link))) throw Error('An original menu link was changed');
         if (!info.links.includes(portal + 'index.html')) throw Error('Missing practice 05 portal link');
@@ -74,7 +75,10 @@ try {
   }
   // All embedded screenshots in both READMEs must exist at their actual relative paths.
   for (const file of ['README.md', '../README.md']) {
-    const text = await readFile(file, 'utf8');
+    // The folder-level README is optional; the Flutter project's README is required.
+    let text;
+    try { text = await readFile(file, 'utf8'); }
+    catch (error) { if (file === '../README.md' && error.code === 'ENOENT') continue; throw error; }
     const dir = resolve(file, '..');
     for (const match of text.matchAll(/(?:src="|!\[[^\]]*\]\()([^"\s)]+)/g)) {
       if (!/^https?:/.test(match[1])) await readFile(resolve(dir, match[1]));

@@ -1,0 +1,166 @@
+{
+  "screenshots": [
+    {
+      "path": "docs/evidence/screenshots/01-inicio.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "9899066634935edebfbc01f2c6a9d354db5393673d6c4d626e8dba0b28618ba1",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/02-contador.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "0301cb3129bbec9b434ceb054ffe5f245ec45059fb865ebee24c23409c914068",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/03-botones.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "c883e4ea797e61b263acaf62436ce02e9cd5d3ea532e46544b397cb7a335b2df",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/04-tarjetas.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "b854cff1be76fed9b845e32709b6187dff3858f570674b6898d180434a9ba5c1",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/04-tarjetas-imagenes.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "bdc36cea1779268fdf3c2414bdc5216ddc9b6ae7fd919860429ecaaad81cbb00",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/05-progreso.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "3a9280c418865f4228ec05c13fa0e5ae00442b3a98783f68368c7c58befa3b16",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/06-dialogos.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "f2abbb0f63d09f021472b289a9ea283f2c90910c959e299f285184dad29f658b",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/06-confirmacion.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "0e2975677df9fbf8f0779b65a7999fd8a7e45d7424ae43c8838ef57b75c674e7",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/06-acerca-de.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "ceed8d1bb6b12c15f0ee5b3636b97c7ab883903801779491814efa29659f5a82",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/06-snackbar.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "8c77152c1818326f76f0326e7e38681c2082221550718668de5c027694d3e33d",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/07-animaciones.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "cd1028e6684868bc982dbc63064f73995fec3c36097eab12f580d66fc0197356",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/08-controles.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "1ba56ea679411d077a96e07b3c39d31d8540c717d098644c2546ab44166f1a3b",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/09-tutorial.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "5fc0bbb71f65f5fc731fd7992cce49a843349599afdd9ce0bfd5261ad19f212e",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/09-tutorial-paso-2.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "2da6281612017a1195885af2283fe37c723b6c96f32b9b39f13b8616ebadf601",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/09-tutorial-final.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "516b93feb6e0b514f00ccdfd48977337b83f42303cee02ef6ee86d757783b44a",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/10-lista-infinita.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "63e28708e752ec99f4f906e31815ea5df6195586b15c964bb9a37c786a3c7d56",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/11-temas.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "2ab366d16e028027a13816ffa599bf109856166863c065eb39b4c8eb4ed5b97a",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/12-tema-oscuro.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "a3d72a45937342b7898b85e174133e0d6d7c1d55b65a7b2e9163a3892d6b4eac",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "path": "docs/evidence/screenshots/13-menu-lateral.png",
+      "width": 430,
+      "height": 932,
+      "sha256": "223b57a320180a7f66ed10bab66a702fa856a2c0ee2e77f764cbcd0600d8f61d",
+      "unchanged_from_HEAD": true
+    }
+  ],
+  "diagrams": [
+    {
+      "path": "docs/diagrams/general.html",
+      "sha256": "22975b07119fc2232b02fa116366c2bd7aaff945a903eb509fc209b2ac3feac0",
+      "same_content_as_HEAD_ignoring_checkout_line_endings": true,
+      "editable_source": true
+    },
+    {
+      "path": "docs/diagrams/especifica.html",
+      "sha256": "36d87ffff58ff9cbc145b1f76771b43ee815e19173c08f65157607520f07da3a",
+      "same_content_as_HEAD_ignoring_checkout_line_endings": true,
+      "editable_source": true
+    }
+  ],
+  "routes": [
+    "/",
+    "/buttons",
+    "/cards",
+    "/progress",
+    "/snackbars",
+    "/animated",
+    "/ui-controls",
+    "/tutorial",
+    "/infinite",
+    "/counter-river",
+    "/theme-changer"
+  ],
+  "missing": [],
+  "ok": true
+}

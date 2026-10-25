@@ -1,0 +1,6 @@
+{
+  "command": "flutter build apk --release",
+  "exitCode": 0,
+  "summary": "APROBADO, salida 0; APK release generado y comprobado.",
+  "log": "docs/evidence/delivery-20261109/build-release-final.txt"
+}

@@ -1,0 +1,165 @@
+{
+  "ok": true,
+  "checked": [
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/gradle-download.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/doctor.txt"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/pub-get.txt"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/analyze.txt"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/tests.txt"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/build-outcome.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/screenshots/site-check.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/apk-release.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/screenshots/capture-report.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/pages-live.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/diagrams/general.archify.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/diagrams/especifica.archify.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/screenshots/archify-general/general.visual-check.1440x900.light.png"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/screenshots/archify-especifica/especifica.visual-check.1440x900.dark.png"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evidence/delivery-20261109/appetize-link.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/APPETIZE.md"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/01-inicio.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/02-contador.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/03-botones.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/04-tarjetas.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/04-tarjetas-imagenes.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/05-progreso.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/06-dialogos.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/06-confirmacion.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/06-acerca-de.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/06-snackbar.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/07-animaciones.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/08-controles.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/09-tutorial.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/09-tutorial-paso-2.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/09-tutorial-final.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/10-lista-infinita.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/11-temas.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/12-tema-oscuro.png"
+    },
+    {
+      "document": "README.md",
+      "image": "docs/evidence/screenshots/13-menu-lateral.png"
+    },
+    {
+      "document": "docs/APPETIZE.md",
+      "target": "evidence/delivery-20261109/appetize-link.json"
+    },
+    {
+      "document": "docs/APPETIZE.md",
+      "target": "evidence/delivery-20261109/apk-release.json"
+    },
+    {
+      "document": "docs/APPETIZE.md",
+      "target": "evidence/delivery-20261109/build-outcome.json"
+    },
+    {
+      "document": "docs/APPETIZE.md",
+      "target": "evidence/delivery-20261109/apk-signature.txt"
+    },
+    {
+      "document": "docs/APPETIZE.md",
+      "target": "evidence/delivery-20261109/apk-badging.txt"
+    }
+  ]
+}
