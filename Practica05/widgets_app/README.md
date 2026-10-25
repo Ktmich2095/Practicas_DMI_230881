@@ -1,152 +1,87 @@
 # Widgets App · Práctica 05
 
-Aplicación de Desarrollo Móvil Integral para explorar Material Design 3, navegación declarativa, estado reactivo, animaciones y galerías con carga progresiva. Conserva el proyecto existente y sus once pantallas.
+Aplicación académica de Desarrollo Móvil Integral para explorar componentes de Material Design 3, navegación declarativa con GoRouter y estado reactivo con Riverpod. Se conserva y completa el proyecto existente en la rama `Practica05`.
 
-## Tecnologías verificadas
+Objetivo: demostrar widgets visuales e interactivos en once pantallas con temas personalizables, tutorial y galería con carga progresiva.
 
-Flutter 3.47.2, Dart 3.13.2 (requisito SDK ^3.9.2), flutter_riverpod 2.6.1, go_router 17.5.0, animate_do 4.2.0 y flutter_lints 5.0.0. Versiones resueltas en pubspec.lock.
-
-Riverpod permanece en 2.x: StateProvider, StateNotifierProvider y StateNotifier se importan desde flutter_riverpod.dart. No se sustituyeron las APIs académicas. Se conservan ConsumerWidget, ref.watch y ref.read. RadioListTile utiliza RadioGroup para evitar APIs obsoletas en el Flutter instalado.
-
-## Estructura
+## Arquitectura y estructura
 
 ```text
 lib/
-  main.dart                     ProviderScope y MaterialApp.router
+  main.dart                      ProviderScope y MaterialApp.router
   config/
-    menu/menu_items.dart        Catálogo central del menú
-    router/app_router.dart      Rutas y recuperación de rutas desconocidas
-    theme/app_theme.dart        Material 3, ColorSchemeSeed y brillo
+    menu/menu_items.dart         Catálogo compartido por inicio y drawer
+    router/app_router.dart       Rutas y recuperación de ruta desconocida
+    theme/app_theme.dart         Material 3, colores y brillo
   presentation/
-    screens/                    Once pantallas agrupadas por función
-    providers/                  Contador y ThemeNotifier
-    widgets/                    SideMenu y RemoteImage
-assets/images/                  Tres PNG originales y GIF local animado
-test/widget_test.dart           Pruebas funcionales y de widgets
-docs/                           Portal estático, diagnóstico y evidencias
-.archify/                       Candidatos reproducibles de diagramas
+    screens/                     Once pantallas por funcionalidad
+    providers/                   counterProvider y ThemeNotifier
+    widgets/                     SideMenu y RemoteImage
+assets/images/                   Tres PNG del tutorial y GIF de carga
+integration_test/                Prueba de imágenes por HTTPS real
+test/widget_test.dart            Pruebas automatizadas
+docs/                            Portal estático, diagramas y evidencias
+.archify/                        Candidatos JSON editables
 ```
 
-Se conserva presentation como contenedor de screens, providers y widgets. El estado es local y en memoria; se restablece al reiniciar. La paginación simula latencia de catálogo; la descarga de imágenes sí utiliza HTTPS real.
+Se conserva `presentation/` como contenedor de screens, providers y widgets. GoRouter construye las pantallas; los providers administran contador y tema, y MainApp observa el tema. Las pantallas de tarjetas y galería comparten RemoteImage con carga, error y reintento. No existe backend; la paginación simula latencia y las fotos usan HTTPS real.
 
-## Veinte requisitos de entrega
+## Instalación y ejecución
 
-La solicitud enumera quince funciones. Para esta tabla se agregan cinco criterios transversales: arquitectura, calidad, validación, diagramas y documentación/publicación; no se supone una rúbrica externa.
-
-| # | Requisito | Estado | Evidencia |
-|---|---|---|---|
-| 1 | Scaffold, AppBar, ListView.builder y ListTile | Completado | HomeScreen |
-| 2 | NavigationDrawer funcional | Completado | SideMenu, catálogo compartido |
-| 3 | Seis botones, iconos, deshabilitados y Material + InkWell | Completado | ButtonsScreen, acciones con SnackBar |
-| 4 | Cards con elevación, borde, color e imágenes | Completado | CardsScreen, cuatro variantes |
-| 5 | Progreso circular/lineal, determinado/indeterminado y Stream | Completado | Stream.periodic y StreamBuilder, rango 0–1 |
-| 6 | SnackBar, ScaffoldMessenger y diálogos | Completado | SnackbarScreen, AlertDialog y AboutDialog |
-| 7 | AnimatedContainer con azar y curvas | Completado | StatefulWidget y tamaño limitado al viewport |
-| 8 | Switch, radio, checkbox y ExpansionTile | Completado | UiControlsScreen, enumeración y setState |
-| 9 | Tutorial PageView, PageController, PNG y FadeInRight | Completado | Siguiente, salir y comenzar |
-| 10 | Lista infinita, ScrollController, FadeInImage, NetworkImage y GIF | Completado | InfiniteScrollScreen y RemoteImage |
-| 11 | RefreshIndicator con renovación real | Completado | Sustituye IDs y descarta cargas anteriores |
-| 12 | Contador reactivo con APIs Riverpod solicitadas | Completado | counterProvider, valor inicial 5 |
-| 13 | Tema claro/oscuro, colores y ThemeNotifier | Completado | StateNotifierProvider y RadioListTile |
-| 14 | context.push y context.pop | Completado | Menú, drawer, botones y tutorial |
-| 15 | Assets declarados | Completado | pubspec.yaml y assets/images/ |
-| 16 | Arquitectura modular y configuración central | Completado | config/ y presentation/ |
-| 17 | Calidad, carga/error/reintento y pruebas principales | Completado | RemoteImage, 10 pruebas y comprobación ADB en emulador |
-| 18 | Validación y APK debug | Parcial | APK x86_64 generado y ejecutado; multi-ABI pendiente por descarga ARM64 |
-| 19 | Dos diagramas interactivos Archify | Completado | HTML y recibos de validación/navegador |
-| 20 | Documentación y publicación | Parcial | Preparada; Pages y Appetize sin publicar |
-
-## Pantallas
-
-| Ruta | Pantalla |
-|---|---|
-| / | HomeScreen |
-| /counter-river | CounterScreen |
-| /buttons | ButtonsScreen |
-| /cards | CardsScreen |
-| /progress | ProgressScreen |
-| /snackbars | SnackbarScreen |
-| /animated | AnimatedScreen |
-| /ui-controls | UiControlsScreen |
-| /tutorial | AppTutorialScreen |
-| /infinite | InfiniteScrollScreen |
-| /theme-changer | ThemeChangerScreen |
-
-Tocar una opción del inicio o del drawer para navegar. Atrás regresa a la pantalla anterior. Las rutas desconocidas muestran una acción para volver al inicio. La galería carga cinco fotos al acercarse al final; arrastrar hacia abajo desde el inicio renueva las cinco fotos. Su botón flotante desplaza al principio. Las fotos fallidas permiten reintentar.
-
-## Instalación, ejecución y validación
-
-Desde Practica05/widgets_app, con Flutter y SDK Android configurados:
+Clonar el [repositorio GitHub](https://github.com/Ktmich2095/Practicas_DMI_230881.git), seleccionar la rama `Practica05` y entrar en `Practica05/widgets_app`:
 
 ```powershell
 flutter pub get
 flutter run
-dart format lib test
 flutter analyze
 flutter test
+flutter build web --no-wasm-dry-run
 flutter build apk --debug
 ```
 
-Se necesita conexión para dependencias y fotos. Las demás demostraciones y tutorial usan recursos locales. INTERNET está declarado en el manifiesto Android principal.
+## Pantallas implementadas
 
-En este equipo Flutter selecciona Java 25 de Android Studio, incompatible con Gradle 8.14. Hay un JDK 21 instalado. Para seleccionar el JDK del daemon solo en la terminal actual, sin cambiar versiones ni configuración global:
-
-```powershell
-$env:GRADLE_OPTS='"-Dorg.gradle.java.home=C:/Program Files/Java/jdk-21.0.10"'
-flutter build apk --debug
-```
-
-El proyecto fija NDK 27.0.12077973, ya instalado en este equipo y suficiente para sus dependencias Dart; así evita la instalación automática del NDK 28 solicitado por defecto por Flutter. No se cambiaron Flutter, Gradle, AGP ni Kotlin. Adaptar la ruta del JDK en otros equipos. Si aparecen licencias Android pendientes, el propietario debe revisarlas con flutter doctor --android-licenses. No se aceptaron licencias automáticamente. Se generó y ejecutó un APK debug x86_64 con `flutter build apk --debug --target-platform android-x64`. Está en `build/app/outputs/flutter-apk/app-debug.apk`; es para emuladores x86_64 y no sirve como APK universal para teléfonos ARM. El build predeterminado multi-ABI quedó bloqueado por la descarga del motor ARM64. Para repetirlo, usar JDK 21 como se indica arriba y completar la descarga. El hash, tamaño y ABI del APK están en [apk.json](docs/evidence/apk.json). No se versionan binarios de compilación.
-
-## Diagramas y evidencias
-
-- [Portal de documentación](docs/index.html).
-- [Arquitectura general](docs/diagrams/general.html): SDK, paquetes, capas, estado y assets.
-- [Arquitectura específica](docs/diagrams/especifica.html): rutas, grupos de pantallas, providers y widgets.
-- [Auditoría inicial](docs/AUDIT.md) y [validación real](docs/VALIDATION.md).
-- [Pruebas](docs/evidence/flutter-test.txt) y [análisis estático](docs/evidence/flutter-analyze.txt).
-
-Los HTML son independientes; abrirlos localmente o mediante Pages. GitHub muestra su código, por lo que se deben descargar para interactuar antes de publicar. Incluyen controles de tema y exploración del visor Archify.
-
-Archify 3.2.0 pasó doctor y generación de demo. Ambos diagramas pasaron validate, deliver, check y browser-check. Candidatos: .archify/architecture-*-20261030/candidate.json. Recibos vigentes: docs/evidence/archify-general-final/ y docs/evidence/archify-specific-final/.
-
-Describen el árbol local inspeccionado sin commit. No se atribuyen cambios locales a HEAD: se documentan fuentes en tarjetas y SHA-256 en docs/evidence/source-manifest.json. Las pantallas se agrupan por responsabilidad y las tarjetas enumeran las once rutas. No existe backend ni persistencia.
-
-Se generaron e inspeccionaron capturas reales de los diagramas en claro/oscuro a 1440×900; sus recibos incluyen otras a 2048×1320.
-
-También se instaló y abrió el APK en emulator-5554 (Android 17, x86_64). La comprobación ADB verificó contador 5→6, navegación, color/tema oscuro y salida del tutorial. Se inspeccionaron estas capturas reales:
-
-| Evidencia | Captura |
+| Ruta | Pantalla y demostración |
 |---|---|
-| Inicio claro | [Inicio](docs/evidence/app-home.png) |
-| Contador en 6 | [Contador](docs/evidence/app-counter.png) |
-| Color 2 y tema oscuro | [Tema](docs/evidence/app-theme-dark.png) |
-| Tutorial y asset original | [Tutorial](docs/evidence/app-tutorial.png) |
-| Galería en carga | [Galería](docs/evidence/app-gallery.png) |
-| Drawer oscuro | [Drawer](docs/evidence/app-drawer.png) |
+| / | HomeScreen: catálogo y menú lateral agrupado |
+| /counter-river | CounterScreen: incrementar, disminuir y reiniciar al valor inicial 5 |
+| /buttons | ButtonsScreen: variantes Material, deshabilitados y botón personalizado |
+| /cards | CardsScreen: elevaciones, contornos, colores y fotos remotas |
+| /progress | ProgressScreen: indicadores determinados e indeterminados con Stream |
+| /snackbars | SnackbarScreen: notificaciones, confirmación y licencias |
+| /animated | AnimatedScreen: formas, colores y bordes aleatorios |
+| /ui-controls | UiControlsScreen: switch, radios, checkboxes y expansión |
+| /tutorial | AppTutorialScreen: imágenes locales, anterior, siguiente, comenzar y salir |
+| /infinite | InfiniteScrollScreen: paginación, refresco y regreso al inicio |
+| /theme-changer | ThemeChangerScreen: nueve colores y modo claro/oscuro |
 
-[Registro de comprobación ADB](docs/evidence/emulator-smoke.json). Las fotos no terminaron de descargar durante la captura de la galería; la evidencia muestra el GIF de carga, no una descarga exitosa. El manejo de error y reintento está cubierto por flutter_test con HTTP simulado. Los PNG del tutorial son assets originales, no capturas.
+El inicio y el drawer usan `context.push`; el tutorial utiliza `context.pop` cuando hay una ruta anterior y vuelve al inicio en acceso directo. Las fotos se agregan de cinco en cinco, con bloqueo de cargas duplicadas, descarte de respuestas anteriores tras refrescar y protección al desmontar el widget.
 
 
-## Publicar en GitHub Pages
 
-No se publicó ni se configuró un workflow en la raíz del repositorio, porque el alcance es solo esta práctica.
+### Capturas
 
-1. Revisar y publicar posteriormente los archivos mediante el procedimiento del propietario.
-2. En Settings → Pages, elegir GitHub Actions para publicar esta subcarpeta. El modo de rama solo admite raíz o /docs de la raíz del repositorio, no esta carpeta anidada.
-3. Preparar posteriormente un workflow en la raíz que haga checkout, configure Pages, cargue Practica05/widgets_app/docs con actions/upload-pages-artifact y despliegue con actions/deploy-pages. Permisos pages: write e id-token: write, entorno github-pages. Verificar versiones vigentes de las acciones al implementarlo.
-4. Confirmar el despliegue en Actions y abrir la URL que GitHub entregue. Probar diagrams/general.html y diagrams/especifica.html.
+| Pantalla | Pantalla | Pantalla |
+|---|---|---|
+| **Inicio**<br><img src="docs/evidence/screenshots/01-inicio.png" width="240" alt="Captura real: Inicio"> | **Contador Riverpod**<br><img src="docs/evidence/screenshots/02-contador.png" width="240" alt="Captura real: Contador Riverpod"> | **Botones**<br><img src="docs/evidence/screenshots/03-botones.png" width="240" alt="Captura real: Botones"> |
+| **Tarjetas**<br><img src="docs/evidence/screenshots/04-tarjetas.png" width="240" alt="Captura real: Tarjetas"> | **Tarjetas con imágenes**<br><img src="docs/evidence/screenshots/04-tarjetas-imagenes.png" width="240" alt="Captura real: Tarjetas con imágenes"> | **Progreso**<br><img src="docs/evidence/screenshots/05-progreso.png" width="240" alt="Captura real: Progreso"> |
+| **Notificaciones y diálogos**<br><img src="docs/evidence/screenshots/06-dialogos.png" width="240" alt="Captura real: Notificaciones y diálogos"> | **Confirmación**<br><img src="docs/evidence/screenshots/06-confirmacion.png" width="240" alt="Captura real: Confirmación"> | **Acerca de**<br><img src="docs/evidence/screenshots/06-acerca-de.png" width="240" alt="Captura real: Acerca de"> |
+| **SnackBar**<br><img src="docs/evidence/screenshots/06-snackbar.png" width="240" alt="Captura real: SnackBar"> | **Animaciones**<br><img src="docs/evidence/screenshots/07-animaciones.png" width="240" alt="Captura real: Animaciones"> | **Controles interactivos**<br><img src="docs/evidence/screenshots/08-controles.png" width="240" alt="Captura real: Controles interactivos"> |
+| **Tutorial · inicio**<br><img src="docs/evidence/screenshots/09-tutorial.png" width="240" alt="Captura real: Tutorial · inicio"> | **Tutorial · paso 2**<br><img src="docs/evidence/screenshots/09-tutorial-paso-2.png" width="240" alt="Captura real: Tutorial · paso 2"> | **Tutorial · finalizar**<br><img src="docs/evidence/screenshots/09-tutorial-final.png" width="240" alt="Captura real: Tutorial · finalizar"> |
+| **Lista infinita y refresco**<br><img src="docs/evidence/screenshots/10-lista-infinita.png" width="240" alt="Captura real: Lista infinita y refresco"> | **Colores**<br><img src="docs/evidence/screenshots/11-temas.png" width="240" alt="Captura real: Colores"> | **Tema oscuro**<br><img src="docs/evidence/screenshots/12-tema-oscuro.png" width="240" alt="Captura real: Tema oscuro"> |
+| **Menú lateral**<br><img src="docs/evidence/screenshots/13-menu-lateral.png" width="240" alt="Captura real: Menú lateral"> |  |  |
 
-Este portal no publica automáticamente Flutter web. No hay URL pública confirmada. [Documentación oficial de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
-## Generar APK y publicar en Appetize
 
-1. Para repetir el APK validado, usar `flutter build apk --debug --target-platform android-x64` con JDK 21. Para un APK multi-ABI, completar primero la descarga ARM64 y ejecutar `flutter build apk --debug`. El APK x86_64 ya fue probado en el emulador local; confirmar que el entorno Android seleccionado en Appetize sea compatible con esa ABI.
-2. Entrar a la cuenta Appetize y abrir la opción de carga de aplicaciones.
-3. Subir build/app/outputs/flutter-apk/app-debug.apk, seleccionar Android y esperar procesamiento. Appetize admite APK; no sustituirlo por AAB.
-4. Iniciar una sesión y comprobar navegación, tutorial, tema e imágenes remotas.
-5. Copiar el enlace realmente generado y añadirlo aquí junto con capturas y fecha de comprobación.
+## Diagramas Archify
 
-No se cargó la aplicación ni hay enlace Appetize confirmado. No incluir tokens o credenciales en el repositorio. [Documentación oficial Android de Appetize](https://docs.appetize.io/platform/app-management/uploading-apps/android).
+- [Portal listo para publicación](docs/index.html).
+- [Diagrama general](docs/diagrams/general.html).
+- [Diagrama específico](docs/diagrams/especifica.html).
 
-Inventario completo: [archivos creados y modificados](docs/CHANGES.md).
+
+### Vistas previas de Archify
+
+[![Arquitectura general](docs/evidence/screenshots/archify-general/general.visual-check.1440x900.light.png)](docs/diagrams/general.html)
+
+[![Pantallas y dependencias](docs/evidence/screenshots/archify-especifica/especifica.visual-check.1440x900.dark.png)](docs/diagrams/especifica.html)

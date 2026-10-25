@@ -21,6 +21,15 @@ void main() {
     await tester.tap(find.byIcon(Icons.add));
     await tester.pump();
     expect(find.text('Valor: 6'), findsOneWidget);
+    await tester.tap(find.text('Disminuir'));
+    await tester.pump();
+    expect(find.text('Valor: 5'), findsOneWidget);
+    await tester.tap(find.text('Disminuir'));
+    await tester.pump();
+    expect(find.text('Valor: 4'), findsOneWidget);
+    await tester.tap(find.text('Reiniciar'));
+    await tester.pump();
+    expect(find.text('Valor: 5'), findsOneWidget);
     await tester.pageBack();
     await tester.pumpAndSettle();
     expect(find.text('Flutter + Material 3'), findsOneWidget);
@@ -150,6 +159,11 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Siguiente'));
     await tester.pumpAndSettle();
+    await tester.tap(find.text('Anterior'));
+    await tester.pumpAndSettle();
+    expect(find.text('Explora los widgets'), findsOneWidget);
+    await tester.tap(find.text('Siguiente'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Siguiente'));
     await tester.pumpAndSettle();
     expect(find.text('Comenzar'), findsOneWidget);
@@ -157,6 +171,58 @@ void main() {
     await tester.tap(find.text('Comenzar'));
     await tester.pumpAndSettle();
     expect(router.routerDelegate.currentConfiguration.uri.path, '/');
+  });
+
+  testWidgets('Animation changes shape within a small landscape viewport', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(480, 320);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(const MaterialApp(home: AnimatedScreen()));
+    final before = tester.widget<AnimatedContainer>(
+      find.byType(AnimatedContainer),
+    );
+    await tester.tap(find.byIcon(Icons.play_arrow_rounded));
+    await tester.pumpAndSettle();
+    final after = tester.widget<AnimatedContainer>(
+      find.byType(AnimatedContainer),
+    );
+    expect(after.constraints, isNot(before.constraints));
+    expect(after.duration, const Duration(milliseconds: 400));
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('Refresh invalidates an in-flight page and disposal is safe', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const MaterialApp(home: InfiniteScrollScreen()));
+    final position = tester
+        .state<ScrollableState>(find.byType(Scrollable).first)
+        .position;
+    position.jumpTo(position.maxScrollExtent);
+    await tester.pump();
+    final refresh = tester
+        .widget<RefreshIndicator>(find.byType(RefreshIndicator))
+        .onRefresh();
+    await tester.pump(const Duration(seconds: 2));
+    await refresh;
+    await tester.pump();
+    expect(
+      tester
+          .widget<ListView>(find.byType(ListView))
+          .childrenDelegate
+          .estimatedChildCount,
+      6,
+    );
+    final pending = tester
+        .widget<RefreshIndicator>(find.byType(RefreshIndicator))
+        .onRefresh();
+    await tester.pumpWidget(const SizedBox());
+    await tester.pump(const Duration(seconds: 2));
+    await pending;
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('Controls update switch, radio and checkbox', (tester) async {

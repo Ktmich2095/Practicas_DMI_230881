@@ -40,6 +40,7 @@ class AppTutorialScreen extends StatefulWidget {
 class _AppTutorialScreenState extends State<AppTutorialScreen> {
   final PageController pageviewController = PageController();
   bool endReached = false;
+  int currentPage = 0;
 
   @override
   void dispose() {
@@ -56,8 +57,10 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
           children: [
             PageView(
               controller: pageviewController,
-              onPageChanged: (page) =>
-                  setState(() => endReached = page == slides.length - 1),
+              onPageChanged: (page) => setState(() {
+                currentPage = page;
+                endReached = page == slides.length - 1;
+              }),
               physics: const BouncingScrollPhysics(),
               children: slides
                   .map(
@@ -70,6 +73,20 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                   .toList(),
             ),
 
+            Positioned(
+              bottom: 80,
+              left: 24,
+              child: TextButton.icon(
+                onPressed: currentPage == 0
+                    ? null
+                    : () => pageviewController.previousPage(
+                        duration: const Duration(milliseconds: 350),
+                        curve: Curves.easeInOut,
+                      ),
+                icon: const Icon(Icons.arrow_back),
+                label: const Text('Anterior'),
+              ),
+            ),
             Positioned(
               bottom: 24,
               left: 24,
@@ -104,7 +121,6 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                     right: 30,
                     child: FadeInRight(
                       from: 15,
-                      delay: const Duration(seconds: 1),
                       child: FilledButton(
                         onPressed: () {
                           if (context.canPop()) {
@@ -142,7 +158,7 @@ class _Slide extends StatelessWidget {
     final captionStyle = Theme.of(context).textTheme.bodySmall;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.fromLTRB(30, 90, 30, 140),
       child: Center(
         child: SingleChildScrollView(
           child: Column(

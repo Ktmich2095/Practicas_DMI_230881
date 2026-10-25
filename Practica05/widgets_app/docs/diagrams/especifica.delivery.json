@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "receiptId": "dcedc844-0bd0-4868-b128-a2c1671da549",
+  "receiptId": "f8b0748d-ea7e-412a-9265-4ba92374877c",
   "status": "current",
   "command": "deliver",
   "type": "architecture",
-  "input": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-especifica-20261030\\candidate.json",
-  "output": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\especifica.html",
+  "input": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-especifica-20261030\\candidate.json",
+  "output": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\especifica.html",
   "specification": {
     "sha256": "ef3dd93d60453d2d9fe36a78881dc9cb73b170769627f9c20262867cca3d3023",
     "bytes": 5108

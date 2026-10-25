@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-especifica-20261030\\candidate.json",
+    "sha256": "ef3dd93d60453d2d9fe36a78881dc9cb73b170769627f9c20262867cca3d3023",
+    "bytes": 5108
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\especifica.html",
+    "sha256": "aad487db6d933b27ed21c6bfcdfc7410b48cc3e54aed1aa86c2847fc40c30b19",
+    "bytes": 860971
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\review-20261109-specific\\especifica.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\review-20261109-specific\\especifica.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\review-20261109-specific\\especifica.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-09T20:41:44.147Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 4367,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

@@ -1,7 +1,9 @@
-# Manual template. Review, then copy to the repository root:
+# Manual template for the WHOLE existing practices site. Review its current
+# Pages source before enabling; do not replace another working deployment.
+# Copy to the repository root only when GitHub Actions is the chosen source:
 # .github/workflows/widgets-app-pages.yml
 # This file is deliberately inert inside the Flutter project.
-name: Publish Widgets App documentation
+name: Publish practices portfolio
 on:
   workflow_dispatch:
 permissions:
@@ -22,10 +24,10 @@ jobs:
         uses: actions/checkout@v6
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Upload documentation
+      - name: Upload portfolio and all practices
         uses: actions/upload-pages-artifact@v4
         with:
-          path: Practica05/widgets_app/docs
+          path: .
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

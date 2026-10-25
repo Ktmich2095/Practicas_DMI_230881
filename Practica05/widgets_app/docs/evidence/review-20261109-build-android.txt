@@ -1,0 +1,9 @@
+﻿2026-11-09: intento flutter build apk --debug --target-platform android-x64.
+JDK seleccionado para Gradle: C:/Program Files/Java/jdk-21.0.11.
+Primer intento: sin progreso ni salida útil, interrumpido.
+Reintento con permisos de red y timeouts HTTP: Running Gradle task 'assembleDebug'...
+No se obtuvo resultado de compilación; se interrumpió tras permanecer sin progreso.
+No se generó ni se verificó un APK nuevo. Causa raíz no confirmada.
+Flutter doctor: licencias Android con estado desconocido; no se aceptaron automáticamente.
+Medium_Phone listado; tras intentar iniciarlo no apareció conectado en flutter devices.
+Resultado: validación Android PENDIENTE. El build web sí terminó con código 0.

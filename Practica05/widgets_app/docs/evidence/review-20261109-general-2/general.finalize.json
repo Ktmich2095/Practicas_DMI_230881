@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-11-09T20:45:35.322Z",
+  "specification": {
+    "path": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json",
+    "sha256": "8a83314c2360e9f5434abe813b7a10b966f2465a7915c79e0f4c736a0c46d2bc",
+    "bytes": 9373
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.html",
+    "sha256": "7fec337b9ee47ff76cfbcc89051a291eb6ef9dcc7747899f2390e1cc7a65ce21",
+    "bytes": 856369
+  },
+  "stages": {
+    "validate": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": null,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json",
+        "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "deliver",
+        "receiptId": "cfa84f9e-10ff-4535-bc16-aeba088a5e18",
+        "stage": "input",
+        "type": "architecture",
+        "input": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json",
+        "output": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\general.html",
+        "error": "Could not read delivery input \"C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json\": Unexpected token ﻿ in JSON at position 0",
+        "diagnostics": [
+          {
+            "code": "input/json-parse",
+            "severity": "error",
+            "message": "Input JSON could not be parsed: Unexpected token ﻿ in JSON at position 0",
+            "subject": {
+              "input": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json"
+            },
+            "evidence": {
+              "reason": "Unexpected token ﻿ in JSON at position 0"
+            },
+            "supportedFixes": [
+              "repair the JSON syntax and run validation again"
+            ]
+          }
+        ],
+        "provenance": "failed"
+      },
+      "execution": "embedded-in-deliver"
+    },
+    "deliver": {
+      "status": "not-run",
+      "execution": "blocked-by-validate"
+    }
+  },
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  },
+  "diagnostics": [
+    {
+      "code": "input/json-parse",
+      "severity": "error",
+      "message": "Input JSON could not be parsed: Unexpected token ﻿ in JSON at position 0",
+      "subject": {
+        "input": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-general-20261030\\candidate.json"
+      },
+      "evidence": {
+        "reason": "Unexpected token ﻿ in JSON at position 0"
+      },
+      "supportedFixes": [
+        "repair the JSON syntax and run validation again"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\review-20261109-general-2\\general.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-11\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\review-20261109-general-2\\general.finalize-summary.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "validate",
+  "finishedAt": "2026-11-09T20:45:35.907Z",
+  "durationMs": 584,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-09T20:41:44.147Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

@@ -1,3 +1,5 @@
+> Informe histórico del 30 de octubre. Para la revisión actual consultar [REVIEW-20261109.md](REVIEW-20261109.md). No valida los cambios posteriores.
+
 # Validación real
 
 Entorno: Flutter 3.47.2, Dart 3.13.2, Windows, comprobado el 30 de octubre de 2026. Solo se intervino Practica05/widgets_app.

@@ -1,0 +1,404 @@
+{
+  "capturedAt": "2026-11-09T20:59:56.596Z",
+  "platform": "Flutter web / headless Chrome",
+  "viewport": {
+    "width": 430,
+    "height": 932,
+    "deviceScaleFactor": 1
+  },
+  "screenshots": [
+    {
+      "file": "01-inicio.png",
+      "route": "/",
+      "note": "",
+      "labels": [
+        "Open navigation menuFlutter + Material 3Riverpod Counter\nIntroducción a riverpodBotones\nVarios botones en FlutterTarjetas\nUn contenedor estilizadoProgress Indicators\nGenerales y controladosSnackbars y diálogos\nIndicadores en pantallaAnimated container\nStateful widget animadoUI Controls + Tiles\nUna serie de controles de FlutterIntroducción a la aplicación\nPequeño tutorial introductorioInfiniteScroll y Pull\nListas infinitas y pull to refreshCambiar tema\nCambiar tema de la aplicación",
+        "Open navigation menuFlutter + Material 3Riverpod Counter\nIntroducción a riverpodBotones\nVarios botones en FlutterTarjetas\nUn contenedor estilizadoProgress Indicators\nGenerales y controladosSnackbars y diálogos\nIndicadores en pantallaAnimated container\nStateful widget animadoUI Controls + Tiles\nUna serie de controles de FlutterIntroducción a la aplicación\nPequeño tutorial introductorioInfiniteScroll y Pull\nListas infinitas y pull to refreshCambiar tema\nCambiar tema de la aplicación",
+        "Open navigation menuFlutter + Material 3Riverpod Counter\nIntroducción a riverpodBotones\nVarios botones en FlutterTarjetas\nUn contenedor estilizadoProgress Indicators\nGenerales y controladosSnackbars y diálogos\nIndicadores en pantallaAnimated container\nStateful widget animadoUI Controls + Tiles\nUna serie de controles de FlutterIntroducción a la aplicación\nPequeño tutorial introductorioInfiniteScroll y Pull\nListas infinitas y pull to refreshCambiar tema\nCambiar tema de la aplicación",
+        "Open navigation menuFlutter + Material 3",
+        "Open navigation menu",
+        "Riverpod Counter\nIntroducción a riverpodBotones\nVarios botones en FlutterTarjetas\nUn contenedor estilizadoProgress Indicators\nGenerales y controladosSnackbars y diálogos\nIndicadores en pantallaAnimated container\nStateful widget animadoUI Controls + Tiles\nUna serie de controles de FlutterIntroducción a la aplicación\nPequeño tutorial introductorioInfiniteScroll y Pull\nListas infinitas y pull to refreshCambiar tema\nCambiar tema de la aplicación",
+        "Riverpod Counter\nIntroducción a riverpodBotones\nVarios botones en FlutterTarjetas\nUn contenedor estilizadoProgress Indicators\nGenerales y controladosSnackbars y diálogos\nIndicadores en pantallaAnimated container\nStateful widget animadoUI Controls + Tiles\nUna serie de controles de FlutterIntroducción a la aplicación\nPequeño tutorial introductorioInfiniteScroll y Pull\nListas infinitas y pull to refreshCambiar tema\nCambiar tema de la aplicación",
+        "Riverpod Counter\nIntroducción a riverpod",
+        "Riverpod Counter\nIntroducción a riverpod",
+        "Botones\nVarios botones en Flutter",
+        "Botones\nVarios botones en Flutter",
+        "Tarjetas\nUn contenedor estilizado",
+        "Tarjetas\nUn contenedor estilizado",
+        "Progress Indicators\nGenerales y controlados",
+        "Progress Indicators\nGenerales y controlados",
+        "Snackbars y diálogos\nIndicadores en pantalla",
+        "Snackbars y diálogos\nIndicadores en pantalla",
+        "Animated container\nStateful widget animado",
+        "Animated container\nStateful widget animado",
+        "UI Controls + Tiles\nUna serie de controles de Flutter",
+        "UI Controls + Tiles\nUna serie de controles de Flutter",
+        "Introducción a la aplicación\nPequeño tutorial introductorio",
+        "Introducción a la aplicación\nPequeño tutorial introductorio",
+        "InfiniteScroll y Pull\nListas infinitas y pull to refresh",
+        "InfiniteScroll y Pull\nListas infinitas y pull to refresh",
+        "Cambiar tema\nCambiar tema de la aplicación",
+        "Cambiar tema\nCambiar tema de la aplicación"
+      ]
+    },
+    {
+      "file": "02-contador.png",
+      "route": "/counter-river",
+      "note": "",
+      "labels": [
+        "Counter ScreenValor: 5DisminuirReiniciarIncrementar",
+        "Counter ScreenValor: 5DisminuirReiniciarIncrementar",
+        "Counter ScreenValor: 5DisminuirReiniciarIncrementar",
+        "Counter Screen",
+        "Valor: 5",
+        "Disminuir",
+        "Reiniciar",
+        "Incrementar"
+      ]
+    },
+    {
+      "file": "03-botones.png",
+      "route": "/buttons",
+      "note": "",
+      "labels": [
+        "Buttons ScreenElevatedElevated DisabledElevated IconFilledFilled IconOutlineOutline IconTextText IconFilled DisabledOutline DisabledText DisabledHola Mundo",
+        "Buttons ScreenElevatedElevated DisabledElevated IconFilledFilled IconOutlineOutline IconTextText IconFilled DisabledOutline DisabledText DisabledHola Mundo",
+        "Buttons ScreenElevatedElevated DisabledElevated IconFilledFilled IconOutlineOutline IconTextText IconFilled DisabledOutline DisabledText DisabledHola Mundo",
+        "Buttons Screen",
+        "ElevatedElevated DisabledElevated IconFilledFilled IconOutlineOutline IconTextText IconFilled DisabledOutline DisabledText DisabledHola Mundo",
+        "Elevated",
+        "Elevated Disabled",
+        "Elevated Icon",
+        "Filled",
+        "Filled Icon",
+        "Outline",
+        "Outline Icon",
+        "Text",
+        "Text Icon",
+        "Filled Disabled",
+        "Outline Disabled",
+        "Text Disabled",
+        "Hola Mundo"
+      ]
+    },
+    {
+      "file": "04-tarjetas.png",
+      "route": "/cards",
+      "note": "",
+      "labels": [
+        "Cards Screen",
+        "Cards Screen",
+        "Cards Screen",
+        "Cards Screen",
+        "Elevation 0",
+        "Elevation 1",
+        "Elevation 2",
+        "Elevation 3",
+        "Elevation 4",
+        "Elevation 5",
+        "Elevation 0 - outline",
+        "Elevation 1 - outline",
+        "Elevation 2 - outline",
+        "Elevation 3 - outline",
+        "Elevation 4 - outline",
+        "Elevation 5 - outline",
+        "Elevation 0 - Filled",
+        "Elevation 1 - Filled",
+        "Elevation 2 - Filled",
+        "Elevation 3 - Filled",
+        "Elevation 4 - Filled",
+        "Elevation 5 - Filled"
+      ]
+    },
+    {
+      "file": "04-tarjetas-imagenes.png",
+      "route": "/cards",
+      "note": "Scrolled to remote-image cards; network state is captured as rendered.",
+      "labels": [
+        "Cards Screen",
+        "Cards Screen",
+        "Cards Screen",
+        "Cards Screen",
+        "Elevation 0",
+        "Elevation 1",
+        "Elevation 2",
+        "Elevation 3",
+        "Elevation 4",
+        "Elevation 5",
+        "Elevation 0 - outline",
+        "Elevation 1 - outline",
+        "Elevation 2 - outline",
+        "Elevation 3 - outline",
+        "Elevation 4 - outline",
+        "Elevation 5 - outline",
+        "Elevation 0 - Filled",
+        "Elevation 1 - Filled",
+        "Elevation 2 - Filled",
+        "Elevation 3 - Filled",
+        "Elevation 4 - Filled",
+        "Elevation 5 - Filled"
+      ]
+    },
+    {
+      "file": "05-progreso.png",
+      "route": "/progress",
+      "note": "",
+      "labels": [
+        "Progress IndicatorsCircular indeterminadoCircular y Linear controlado14%14%",
+        "Progress IndicatorsCircular indeterminadoCircular y Linear controlado14%14%",
+        "Progress IndicatorsCircular indeterminadoCircular y Linear controlado14%14%",
+        "Progress Indicators",
+        "Circular indeterminado",
+        "Circular y Linear controlado",
+        "14%",
+        "14%"
+      ]
+    },
+    {
+      "file": "06-dialogos.png",
+      "route": "/snackbars",
+      "note": "",
+      "labels": [
+        "Snackbars y DiálogosLicencias usadasMostrar diálogoMostrar Snackbar",
+        "Snackbars y DiálogosLicencias usadasMostrar diálogoMostrar Snackbar",
+        "Snackbars y DiálogosLicencias usadasMostrar diálogoMostrar Snackbar",
+        "Snackbars y Diálogos",
+        "Licencias usadas",
+        "Mostrar diálogo",
+        "Mostrar Snackbar"
+      ]
+    },
+    {
+      "file": "06-confirmacion.png",
+      "route": "/snackbars",
+      "note": "",
+      "labels": [
+        "¿Estás seguro?Puedes aceptar esta demostración o volver sin realizar cambios.CancelarAceptar",
+        "¿Estás seguro?Puedes aceptar esta demostración o volver sin realizar cambios.CancelarAceptar",
+        "¿Estás seguro?Puedes aceptar esta demostración o volver sin realizar cambios.CancelarAceptar",
+        "¿Estás seguro?Puedes aceptar esta demostración o volver sin realizar cambios.CancelarAceptar",
+        "Alert",
+        "¿Estás seguro?",
+        "Puedes aceptar esta demostración o volver sin realizar cambios.",
+        "Puedes aceptar esta demostración o volver sin realizar cambios.",
+        "Cancelar",
+        "Aceptar"
+      ]
+    },
+    {
+      "file": "06-acerca-de.png",
+      "route": "/snackbars",
+      "note": "",
+      "labels": [
+        "Flutter WidgetsWidgets App · Práctica 05. Ejemplos de Material Design 3, navegación y estado reactivo.View licensesClose",
+        "Flutter WidgetsWidgets App · Práctica 05. Ejemplos de Material Design 3, navegación y estado reactivo.View licensesClose",
+        "Flutter WidgetsWidgets App · Práctica 05. Ejemplos de Material Design 3, navegación y estado reactivo.View licensesClose",
+        "Flutter WidgetsWidgets App · Práctica 05. Ejemplos de Material Design 3, navegación y estado reactivo.View licensesClose",
+        "Alert",
+        "Flutter WidgetsWidgets App · Práctica 05. Ejemplos de Material Design 3, navegación y estado reactivo.",
+        "Flutter WidgetsWidgets App · Práctica 05. Ejemplos de Material Design 3, navegación y estado reactivo.",
+        "Flutter Widgets",
+        "Widgets App · Práctica 05. Ejemplos de Material Design 3, navegación y estado reactivo.",
+        "View licenses",
+        "Close"
+      ]
+    },
+    {
+      "file": "06-snackbar.png",
+      "route": "/snackbars",
+      "note": "",
+      "labels": [
+        "Snackbars y DiálogosLicencias usadasMostrar diálogoMostrar SnackbarOk!",
+        "Snackbars y DiálogosLicencias usadasMostrar diálogoMostrar SnackbarOk!",
+        "Snackbars y DiálogosLicencias usadasMostrar diálogoMostrar SnackbarOk!",
+        "Snackbars y Diálogos",
+        "Licencias usadas",
+        "Mostrar diálogo",
+        "Mostrar Snackbar",
+        "Hola Mundo",
+        "Ok!"
+      ]
+    },
+    {
+      "file": "07-animaciones.png",
+      "route": "/animated",
+      "note": "",
+      "labels": [
+        "Animated Container",
+        "Animated Container",
+        "Animated Container",
+        "Animated Container"
+      ]
+    },
+    {
+      "file": "08-controles.png",
+      "route": "/ui-controls",
+      "note": "",
+      "labels": [
+        "UI Controls",
+        "UI Controls",
+        "UI Controls",
+        "UI Controls",
+        "Developer Mode\nControles adicionales",
+        "Vehículo de transporte\nTransportation.car",
+        "car",
+        "plane",
+        "boat",
+        "submarine",
+        "¿Desayuno?",
+        "Almuerzo?",
+        "Cena?"
+      ]
+    },
+    {
+      "file": "09-tutorial.png",
+      "route": "/tutorial",
+      "note": "",
+      "labels": [
+        "Explora los widgetsDescubre botones, tarjetas y controles de Material Design 3.SalirAnteriorSiguiente",
+        "Explora los widgetsDescubre botones, tarjetas y controles de Material Design 3.SalirAnteriorSiguiente",
+        "Explora los widgetsDescubre botones, tarjetas y controles de Material Design 3.SalirAnteriorSiguiente",
+        "Explora los widgetsDescubre botones, tarjetas y controles de Material Design 3.",
+        "Explora los widgetsDescubre botones, tarjetas y controles de Material Design 3.",
+        "Explora los widgetsDescubre botones, tarjetas y controles de Material Design 3.",
+        "Explora los widgetsDescubre botones, tarjetas y controles de Material Design 3.",
+        "Explora los widgets",
+        "Descubre botones, tarjetas y controles de Material Design 3.",
+        "Salir",
+        "Anterior",
+        "Siguiente"
+      ]
+    },
+    {
+      "file": "09-tutorial-paso-2.png",
+      "route": "/tutorial",
+      "note": "",
+      "labels": [
+        "Interactúa y aprendePrueba animaciones, navegación y listas infinitas.SalirAnteriorSiguiente",
+        "Interactúa y aprendePrueba animaciones, navegación y listas infinitas.SalirAnteriorSiguiente",
+        "Interactúa y aprendePrueba animaciones, navegación y listas infinitas.SalirAnteriorSiguiente",
+        "Interactúa y aprendePrueba animaciones, navegación y listas infinitas.",
+        "Interactúa y aprendePrueba animaciones, navegación y listas infinitas.",
+        "Interactúa y aprendePrueba animaciones, navegación y listas infinitas.",
+        "Interactúa y aprendePrueba animaciones, navegación y listas infinitas.",
+        "Interactúa y aprende",
+        "Prueba animaciones, navegación y listas infinitas.",
+        "Salir",
+        "Anterior",
+        "Siguiente"
+      ]
+    },
+    {
+      "file": "09-tutorial-final.png",
+      "route": "/tutorial",
+      "note": "",
+      "labels": [
+        "Hazla tuyaPersonaliza los colores y alterna entre tema claro y oscuro.SalirAnteriorComenzar",
+        "Hazla tuyaPersonaliza los colores y alterna entre tema claro y oscuro.SalirAnteriorComenzar",
+        "Hazla tuyaPersonaliza los colores y alterna entre tema claro y oscuro.SalirAnteriorComenzar",
+        "Hazla tuyaPersonaliza los colores y alterna entre tema claro y oscuro.",
+        "Hazla tuyaPersonaliza los colores y alterna entre tema claro y oscuro.",
+        "Hazla tuyaPersonaliza los colores y alterna entre tema claro y oscuro.",
+        "Hazla tuyaPersonaliza los colores y alterna entre tema claro y oscuro.",
+        "Hazla tuya",
+        "Personaliza los colores y alterna entre tema claro y oscuro.",
+        "Salir",
+        "Anterior",
+        "Comenzar"
+      ]
+    },
+    {
+      "file": "10-lista-infinita.png",
+      "route": "/infinite",
+      "note": "",
+      "labels": [
+        "Galería infinitaVolver al inicio de la lista",
+        "Galería infinitaVolver al inicio de la lista",
+        "Galería infinitaVolver al inicio de la lista",
+        "Galería infinita",
+        "Fotografía 1\nDesliza hacia abajo para renovar la galería",
+        "Fotografía 2\nDesliza hacia abajo para renovar la galería",
+        "Fotografía 3\nDesliza hacia abajo para renovar la galería",
+        "Volver al inicio de la lista"
+      ]
+    },
+    {
+      "file": "11-temas.png",
+      "route": "/theme-changer",
+      "note": "",
+      "labels": [
+        "Theme changer",
+        "Theme changer",
+        "Theme changer",
+        "Theme changer",
+        "Color 1\n4280391411",
+        "Color 2\n4278228616",
+        "Color 3\n4283215696",
+        "Color 4\n4294198070",
+        "Color 5\n4288423856",
+        "Color 6\n4284955319",
+        "Color 7\n4294940672",
+        "Color 8\n4293467747",
+        "Color 9\n4294918273"
+      ]
+    },
+    {
+      "file": "12-tema-oscuro.png",
+      "route": "/theme-changer",
+      "note": "",
+      "labels": [
+        "Theme changer",
+        "Theme changer",
+        "Theme changer",
+        "Theme changer",
+        "Color 1\n4280391411",
+        "Color 2\n4278228616",
+        "Color 3\n4283215696",
+        "Color 4\n4294198070",
+        "Color 5\n4288423856",
+        "Color 6\n4284955319",
+        "Color 7\n4294940672",
+        "Color 8\n4293467747",
+        "Color 9\n4294918273"
+      ]
+    },
+    {
+      "file": "13-menu-lateral.png",
+      "route": "/",
+      "note": "",
+      "labels": [
+        "DismissMainRiverpod Counter\nTab 1 of 10Botones\nTab 2 of 10Tarjetas\nTab 3 of 10More optionsProgress Indicators\nTab 4 of 10Snackbars y diálogos\nTab 5 of 10Animated container\nTab 6 of 10UI Controls + Tiles\nTab 7 of 10Introducción a la aplicación\nTab 8 of 10InfiniteScroll y Pull\nTab 9 of 10Cambiar tema\nTab 10 of 10",
+        "DismissMainRiverpod Counter\nTab 1 of 10Botones\nTab 2 of 10Tarjetas\nTab 3 of 10More optionsProgress Indicators\nTab 4 of 10Snackbars y diálogos\nTab 5 of 10Animated container\nTab 6 of 10UI Controls + Tiles\nTab 7 of 10Introducción a la aplicación\nTab 8 of 10InfiniteScroll y Pull\nTab 9 of 10Cambiar tema\nTab 10 of 10",
+        "DismissMainRiverpod Counter\nTab 1 of 10Botones\nTab 2 of 10Tarjetas\nTab 3 of 10More optionsProgress Indicators\nTab 4 of 10Snackbars y diálogos\nTab 5 of 10Animated container\nTab 6 of 10UI Controls + Tiles\nTab 7 of 10Introducción a la aplicación\nTab 8 of 10InfiniteScroll y Pull\nTab 9 of 10Cambiar tema\nTab 10 of 10",
+        "Dismiss",
+        "Navigation menu",
+        "MainRiverpod Counter\nTab 1 of 10Botones\nTab 2 of 10Tarjetas\nTab 3 of 10More optionsProgress Indicators\nTab 4 of 10Snackbars y diálogos\nTab 5 of 10Animated container\nTab 6 of 10UI Controls + Tiles\nTab 7 of 10Introducción a la aplicación\nTab 8 of 10InfiniteScroll y Pull\nTab 9 of 10Cambiar tema\nTab 10 of 10",
+        "MainRiverpod Counter\nTab 1 of 10Botones\nTab 2 of 10Tarjetas\nTab 3 of 10More optionsProgress Indicators\nTab 4 of 10Snackbars y diálogos\nTab 5 of 10Animated container\nTab 6 of 10UI Controls + Tiles\nTab 7 of 10Introducción a la aplicación\nTab 8 of 10InfiniteScroll y Pull\nTab 9 of 10Cambiar tema\nTab 10 of 10",
+        "Main",
+        "Riverpod Counter\nTab 1 of 10",
+        "Riverpod Counter\nTab 1 of 10",
+        "Botones\nTab 2 of 10",
+        "Botones\nTab 2 of 10",
+        "Tarjetas\nTab 3 of 10",
+        "Tarjetas\nTab 3 of 10",
+        "More options",
+        "Progress Indicators\nTab 4 of 10",
+        "Progress Indicators\nTab 4 of 10",
+        "Snackbars y diálogos\nTab 5 of 10",
+        "Snackbars y diálogos\nTab 5 of 10",
+        "Animated container\nTab 6 of 10",
+        "Animated container\nTab 6 of 10",
+        "UI Controls + Tiles\nTab 7 of 10",
+        "UI Controls + Tiles\nTab 7 of 10",
+        "Introducción a la aplicación\nTab 8 of 10",
+        "Introducción a la aplicación\nTab 8 of 10",
+        "InfiniteScroll y Pull\nTab 9 of 10",
+        "InfiniteScroll y Pull\nTab 9 of 10",
+        "Cambiar tema\nTab 10 of 10",
+        "Cambiar tema\nTab 10 of 10"
+      ]
+    }
+  ],
+  "exceptions": [],
+  "ok": true
+}
