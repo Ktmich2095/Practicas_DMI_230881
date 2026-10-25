@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Widgets App · pantallas y dependencias",
+    "locale": "es",
+    "output": "docs/diagrams/especifica.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "menu",
+      "type": "frontend",
+      "label": "HomeScreen · SideMenu",
+      "sublabel": "ListView · NavigationDrawer",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        240,
+        72
+      ]
+    },
+    {
+      "id": "router",
+      "type": "frontend",
+      "label": "app_router.dart",
+      "sublabel": "GoRouter · context.push / pop",
+      "pos": [
+        390,
+        40
+      ],
+      "size": [
+        250,
+        72
+      ]
+    },
+    {
+      "id": "local",
+      "type": "frontend",
+      "label": "Demostraciones locales",
+      "sublabel": "Buttons · Progress · Snackbar",
+      "pos": [
+        40,
+        240
+      ],
+      "size": [
+        250,
+        72
+      ]
+    },
+    {
+      "id": "controls",
+      "type": "frontend",
+      "label": "Estado local",
+      "sublabel": "Animated · UiControls · Tutorial",
+      "pos": [
+        40,
+        440
+      ],
+      "size": [
+        250,
+        72
+      ]
+    },
+    {
+      "id": "gallery",
+      "type": "frontend",
+      "label": "Galerías",
+      "sublabel": "Cards · InfiniteScroll",
+      "pos": [
+        390,
+        440
+      ],
+      "size": [
+        240,
+        72
+      ]
+    },
+    {
+      "id": "reactive",
+      "type": "frontend",
+      "label": "Pantallas reactivas",
+      "sublabel": "Counter · ThemeChanger",
+      "pos": [
+        750,
+        40
+      ],
+      "size": [
+        240,
+        72
+      ]
+    },
+    {
+      "id": "providers",
+      "type": "backend",
+      "label": "Providers Riverpod",
+      "sublabel": "counterProvider · ThemeNotifier",
+      "pos": [
+        750,
+        240
+      ],
+      "size": [
+        240,
+        72
+      ]
+    },
+    {
+      "id": "remote",
+      "type": "frontend",
+      "label": "RemoteImage",
+      "sublabel": "FadeInImage · retry · GIF",
+      "pos": [
+        390,
+        640
+      ],
+      "size": [
+        240,
+        72
+      ]
+    },
+    {
+      "id": "theme",
+      "type": "backend",
+      "label": "AppTheme",
+      "sublabel": "ColorSchemeSeed · brillo",
+      "pos": [
+        750,
+        440
+      ],
+      "size": [
+        250,
+        72
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "menu-router",
+      "from": "menu",
+      "to": "router"
+    },
+    {
+      "id": "router-local",
+      "from": "router",
+      "to": "local"
+    },
+    {
+      "id": "router-gallery",
+      "from": "router",
+      "to": "gallery"
+    },
+    {
+      "id": "router-reactive",
+      "from": "router",
+      "to": "reactive"
+    },
+    {
+      "id": "router-controls",
+      "from": "router",
+      "to": "controls",
+      "label": "otras rutas"
+    },
+    {
+      "id": "reactive-providers",
+      "from": "reactive",
+      "to": "providers",
+      "label": "watch / read"
+    },
+    {
+      "id": "gallery-remote",
+      "from": "gallery",
+      "to": "remote"
+    },
+    {
+      "id": "providers-theme",
+      "from": "providers",
+      "to": "theme"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Evidencia local sin commit",
+      "items": [
+        "Código inspeccionado en el árbol de trabajo de Práctica 05.",
+        "Hashes: docs/evidence/source-manifest.json.",
+        "No se atribuyen los cambios locales al commit base."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Rutas de demostración",
+      "items": [
+        "HomeScreen /; ButtonsScreen /buttons; CardsScreen /cards.",
+        "ProgressScreen /progress; SnackbarScreen /snackbars.",
+        "AnimatedScreen /animated; UiControlsScreen /ui-controls.",
+        "AppTutorialScreen /tutorial; InfiniteScrollScreen /infinite.",
+        "CounterScreen /counter-river; ThemeChangerScreen /theme-changer."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Dependencias observadas",
+      "items": [
+        "app_router.dart importa screens.dart y construye las 11 pantallas.",
+        "MainApp observa themeNotifierProvider y aplica AppTheme.",
+        "CounterScreen observa counterProvider y themeNotifierProvider.",
+        "ThemeChangerScreen observa colorListProvider y themeNotifierProvider.",
+        "CardsScreen e InfiniteScrollScreen importan RemoteImage.",
+        "Tutorial usa PageController, AssetImage y FadeInRight."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Alcance de agrupación",
+      "items": [
+        "Los grupos reúnen pantallas afines; no son llamadas entre pantallas.",
+        "GoRouter construye cada pantalla; las pantallas locales no se invocan entre sí.",
+        "El estado vive en memoria; no existe persistencia entre ejecuciones."
+      ]
+    }
+  ]
+}

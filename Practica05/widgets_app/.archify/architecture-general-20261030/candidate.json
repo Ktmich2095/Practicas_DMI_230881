@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Widgets App · arquitectura general",
+    "locale": "es",
+    "output": "docs/diagrams/general.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "runtime",
+      "type": "frontend",
+      "label": "Flutter y Dart",
+      "sublabel": "SDK · Android",
+      "pos": [
+        40,
+        220
+      ],
+      "size": [
+        210,
+        72
+      ]
+    },
+    {
+      "id": "main",
+      "type": "frontend",
+      "label": "MainApp",
+      "sublabel": "MaterialApp.router · Material 3",
+      "pos": [
+        365,
+        220
+      ],
+      "size": [
+        240,
+        72
+      ]
+    },
+    {
+      "id": "router",
+      "type": "frontend",
+      "label": "GoRouter",
+      "sublabel": "Rutas declarativas",
+      "pos": [
+        735,
+        220
+      ],
+      "size": [
+        210,
+        72
+      ]
+    },
+    {
+      "id": "state",
+      "type": "backend",
+      "label": "Riverpod 2.6.1",
+      "sublabel": "ProviderScope · estado en memoria",
+      "pos": [
+        365,
+        40
+      ],
+      "size": [
+        240,
+        72
+      ]
+    },
+    {
+      "id": "screens",
+      "type": "frontend",
+      "label": "Presentación",
+      "sublabel": "screens/ · widgets/",
+      "pos": [
+        735,
+        430
+      ],
+      "size": [
+        210,
+        72
+      ]
+    },
+    {
+      "id": "assets",
+      "type": "database",
+      "label": "Assets locales",
+      "sublabel": "Tutorial PNG · carga GIF",
+      "pos": [
+        735,
+        640
+      ],
+      "size": [
+        210,
+        72
+      ]
+    },
+    {
+      "id": "packages",
+      "type": "backend",
+      "label": "animate_do",
+      "sublabel": "FadeInRight · tutorial",
+      "pos": [
+        410,
+        430
+      ],
+      "size": [
+        210,
+        72
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "runtime-main",
+      "from": "runtime",
+      "to": "main"
+    },
+    {
+      "id": "main-router",
+      "from": "main",
+      "to": "router"
+    },
+    {
+      "id": "main-state",
+      "from": "main",
+      "to": "state",
+      "label": "observa"
+    },
+    {
+      "id": "router-screens",
+      "from": "router",
+      "to": "screens",
+      "label": "construye"
+    },
+    {
+      "id": "screens-assets",
+      "from": "screens",
+      "to": "assets",
+      "label": "AssetImage"
+    },
+    {
+      "id": "screens-packages",
+      "from": "screens",
+      "to": "packages"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Evidencia local sin commit",
+      "items": [
+        "Código inspeccionado en el árbol de trabajo de Práctica 05.",
+        "Hashes: docs/evidence/source-manifest.json.",
+        "No se atribuyen los cambios locales al commit base."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Configuración y capas",
+      "items": [
+        "lib/main.dart: ProviderScope y MaterialApp.router.",
+        "lib/config/: router, menú y AppTheme.",
+        "lib/presentation/: screens, providers y widgets.",
+        "pubspec.lock: go_router 17.5.0; animate_do 4.2.0."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Recursos y red",
+      "items": [
+        "assets/images/1.png, 2.png, 3.png: ilustraciones locales originales.",
+        "jar-loading.gif: indicador local animado.",
+        "Cards e InfiniteScroll usan fotos HTTPS de picsum.photos.",
+        "AndroidManifest.xml declara INTERNET; no hay servidor propio."
+      ]
+    }
+  ]
+}

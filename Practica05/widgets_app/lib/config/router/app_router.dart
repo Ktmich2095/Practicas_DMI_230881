@@ -1,11 +1,22 @@
 import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
 import 'package:widgets_app/presentation/screens/screens.dart';
 
 // GoRouter configuration
-final appRouter = GoRouter(
-  initialLocation: '/',
-  routes: [
+final appRouter = createAppRouter();
 
+GoRouter createAppRouter() => GoRouter(
+  initialLocation: '/',
+  errorBuilder: (context, state) => Scaffold(
+    appBar: AppBar(title: const Text('Ruta no encontrada')),
+    body: Center(
+      child: FilledButton(
+        onPressed: () => context.go('/'),
+        child: const Text('Volver al inicio'),
+      ),
+    ),
+  ),
+  routes: [
     GoRoute(
       path: '/',
       name: HomeScreen.name,

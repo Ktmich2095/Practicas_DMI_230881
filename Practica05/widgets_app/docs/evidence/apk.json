@@ -1,0 +1,10 @@
+{
+  "artifact": "build/app/outputs/flutter-apk/app-debug.apk",
+  "build_command": "flutter build apk --debug --target-platform android-x64",
+  "abis": [
+    "x86_64"
+  ],
+  "bytes": 64063484,
+  "sha256": "c612abba4b72f6d0edda1589f8b084419660ae05506c30f172488a09a969712c",
+  "installed_on": "emulator-5554"
+}

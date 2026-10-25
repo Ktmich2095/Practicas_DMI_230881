@@ -1,0 +1,37 @@
+{
+  "base_repository": {
+    "url": "https://github.com/Ktmich2095/Practicas_DMI_230881.git",
+    "revision": "84553c6dc2652746798afe39ebc75aa665e2559c"
+  },
+  "evidence": "Working tree, not committed bytes at HEAD",
+  "sha256": {
+    "pubspec.yaml": "4e1c59c49fe55460cb3f28872773ca2eb58469977a2958f6157e1f4aeb19c646",
+    "pubspec.lock": "8b0b1ed347b8a2a9dd0760e430b748cec07842571c5d29d43a0b774217d3882e",
+    "lib/main.dart": "e4a29efee11b22a418800ebae9dfe62c3d8dc711dd1aed8893c487f3b7d49815",
+    "lib/presentation/providers/counter_provider.dart": "f99e2fc4a9ed3a6051bd7bf23053ed7ced9790e19a45340f7c185acf489669ad",
+    "lib/presentation/providers/theme_provider.dart": "3024f5058081b4bc6b7b4514ea132556e768a7b364946f8193f189e790372caa",
+    "lib/presentation/screens/screens.dart": "6ecef8f96db9fcd6a00ff3fc53b4c82c905c1b520466db68488a7828ba83fe98",
+    "lib/presentation/widgets/remote_image.dart": "274ab117c20e3c30bb3dbec57f7dd3fb4e2be364e1c74300090e2bc6c27af955",
+    "lib/presentation/widgets/side_menu.dart": "d1b27b8aabdd99bc6e6ab24959b3dfb1a585d69a04686b709589fa9e62e3fc25",
+    "lib/presentation/screens/animated/animated_screen.dart": "d1c0a46a9bf18c9ca40a0745bcca8e19d5b00fcefde774c24e280897d2ad7916",
+    "lib/presentation/screens/app_tutorial/app_tutorial_screen.dart": "4368b528c772eccc5d5def01fe28596fb3d07316275c7c172ebd930fa7c27636",
+    "lib/presentation/screens/buttons/buttons_screen.dart": "68fc81fb085e596cba858f76994f4f5faee0d0d9ff3e8b20fbc5f210a4b0498c",
+    "lib/presentation/screens/cards/cards_screen.dart": "2cf800de65762e9b39558fef1323ea9453b08f6f01a22d1a0ef0b8e07c98dfe1",
+    "lib/presentation/screens/counter/counter_screen.dart": "5aa920635c37baee86407d88940f374eaf94f81beeb1af0a8092f3146b8e1bfd",
+    "lib/presentation/screens/home/home_screen.dart": "4bba144386bc1538085c9d546c359c177ddb3338782d0752a689e731f03e24e2",
+    "lib/presentation/screens/infinite_scroll/infinite_scroll_screen.dart": "5c8e53fa20612de24abbbc9e6b40afbcee95111221359dfdb45b5e39421b58ec",
+    "lib/presentation/screens/progress/progress_screen.dart": "e8d6c81c3b32664ea4777b7fcce379d4f902adf5c5a5ff3e608017fa20c62938",
+    "lib/presentation/screens/snackbar/snackbar_screen.dart": "dceb5e4e181637ebd6121096e3887c4d34bdc990f11feb4e7a2b6e0d85cc22f1",
+    "lib/presentation/screens/theme_changer/theme_changer_screen.dart": "e2e205d3a0e5f1504a54eeae707f48f82d9e151f64b0c4b3ef87566eaeed7028",
+    "lib/presentation/screens/ui_controls/ui_controls_screen.dart": "30610e9d21088be676cc61b68d1918fa00668fbdb38c934edbdbc6e8948da873",
+    "lib/config/menu/menu_items.dart": "766e4c59efed464bc1aa976f0a51731e2aff7c51ce96426c5125e095ff4ed087",
+    "lib/config/router/app_router.dart": "4216a4d26c994445de24fb25300d9c48d2404f79c1e817aa1780271526bf03d7",
+    "lib/config/theme/app_theme.dart": "d59a89d854510dbabdd92ba81d72be2a559e8a4f2a813082ccf812d5cdcea538",
+    "assets/images/1.png": "cdcba21aa72632dfe38b4dc58504a045c87ba5e2a196372cefc44d6c1e63479b",
+    "assets/images/2.png": "2c0cc20a89fe85f545513023a95ef5ee759cbd6f39f47bd20cb99b6be3c554bf",
+    "assets/images/3.png": "de60f02a60eedc7dbb0f6eda1507f4fbca2091c4d9c0fee53f1936272a63a2ac",
+    "assets/images/jar-loading.gif": "3706a5a812fec31f52297f270d3b370a0894deab80ac27b55a1568e9d6a1b8db",
+    "android/app/build.gradle.kts": "52bd795b3f5be6c6799d6d5094ce0fe7d11b56f7511854c11d3101080786cfff",
+    "android/app/src/main/AndroidManifest.xml": "761aebd77a57d119600246445f3f8774ab0857bad4d7283f78c8ccd92de2f17a"
+  }
+}

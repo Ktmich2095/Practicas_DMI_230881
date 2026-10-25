@@ -1,0 +1,128 @@
+
+Welcome to Gradle 8.14!
+
+Here are the highlights of this release:
+ - Java 24 support
+ - GraalVM Native Image toolchain selection
+ - Enhancements to test reporting
+ - Build Authoring improvements
+
+For more details see https://docs.gradle.org/8.14/release-notes.html
+
+Starting a Gradle Daemon, 2 busy and 1 incompatible Daemons could not be reused, use --status for details
+
+> Configure project :gradle
+WARNING: Unsupported Kotlin plugin version.
+The `embedded-kotlin` and `kotlin-dsl` plugins rely on features of Kotlin `2.0.21` that might work differently than in the requested version `2.2.20`.
+
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Configure project :app
+.\gradlew.bat : Warning: Flutter support for your project's Gradle version (8.14.0) will soon be dropped. Please 
+upgrade your Gradle version to a version of at least 9.1.0 soon.
+En línea: 2 Carácter: 53
++ ... k-21.0.10'; .\gradlew.bat --offline assembleDebug *> ../docs/evidence ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: Flutte...ast 9.1.0 soon.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's gradle version is typically defined in the gradle wrapper file. By default, this can be 
+found at 
+C:\Users\PC-15\Desktop\Practicas_DMI_230881\Practica05\widgets_app\android/gradle/wrapper/gradle-wrapper.properties. 
+For more information, see https://docs.gradle.org/current/userguide/gradle_wrapper.html.
+
+Warning: Flutter support for your project's Android Gradle Plugin version (Android Gradle Plugin version 8.11.1) will 
+soon be dropped. Please upgrade your Android Gradle Plugin version to a version of at least Android Gradle Plugin 
+version 9.0.1 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file 
+(C:\Users\PC-15\Desktop\Practicas_DMI_230881\Practica05\widgets_app\android/settings.gradle), by a plugin with the id 
+of com.android.application. 
+If you don't see a plugins block, your project was likely created with an older template version. In this case it is 
+most likely defined in the top-level build.gradle file 
+(C:\Users\PC-15\Desktop\Practicas_DMI_230881\Practica05\widgets_app\android/build.gradle) by the following line in the 
+dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+
+Warning: Flutter support for your project's Kotlin version (2.2.20) will soon be dropped. Please upgrade your Kotlin 
+version to a version of at least 2.3.20 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file 
+(C:\Users\PC-15\Desktop\Practicas_DMI_230881\Practica05\widgets_app\android/settings.gradle), by a plugin with the id 
+of org.jetbrains.kotlin.android. 
+If you don't see a plugins block, your project was likely created with an older template version, in which case it is 
+most likely defined in the top-level build.gradle file 
+(C:\Users\PC-15\Desktop\Practicas_DMI_230881\Practica05\widgets_app\android/build.gradle) by the ext.kotlin_version 
+property.
+
+w: file:///C:/Users/PC-15/Desktop/Practicas_DMI_230881/Practica05/widgets_app/android/app/build.gradle.kts:20:9: 'jvmTarget: String' is deprecated. Please migrate to the compilerOptions DSL. More details are here: https://kotl.in/u1r8ln
+
+> Task :app:DebugMinSdkCheck
+> Task :app:validateCompileSdkVersion
+> Task :app:preBuild
+> Task :app:preDebugBuild
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:cleanMergeDebugAssets
+> Task :app:compileFlutterBuildDebug
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:copyFlutterAssetsDebug
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:outputDebugAppLinkSettings UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses FAILED
+> Task :app:processDebugManifestForPackage
+> Task :app:compressDebugAssets
+
+[Incubating] Problems report is available at: file:///C:/Users/PC-15/Desktop/Practicas_DMI_230881/Practica05/widgets_app/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:checkDebugDuplicateClasses'.
+> Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
+   > Failed to transform arm64_v8a_debug-1.0.0-a804b261645ef8c13eb3d5c44a5c2fb0340c5539.jar 
+(io.flutter:arm64_v8a_debug:1.0.0-a804b261645ef8c13eb3d5c44a5c2fb0340c5539) to match attributes 
+{artifactType=enumerated-runtime-classes, org.gradle.category=library, org.gradle.libraryelements=jar, 
+org.gradle.status=release, org.gradle.usage=java-runtime}.
+      > Could not download arm64_v8a_debug-1.0.0-a804b261645ef8c13eb3d5c44a5c2fb0340c5539.jar 
+(io.flutter:arm64_v8a_debug:1.0.0-a804b261645ef8c13eb3d5c44a5c2fb0340c5539): No cached version available for offline 
+mode
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 44s
+27 actionable tasks: 9 executed, 18 up-to-date

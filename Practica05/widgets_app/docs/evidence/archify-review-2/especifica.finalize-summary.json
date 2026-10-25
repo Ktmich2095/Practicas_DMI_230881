@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\.archify\\architecture-especifica-20261030\\candidate.json",
+    "sha256": "683e954405944defdae3a79fa08ced318d50b09f00f9ed4feefa6b3aa4458061",
+    "bytes": 5086
+  },
+  "artifact": {
+    "path": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\diagrams\\especifica.html",
+    "sha256": "1bcb7a7aea0ef7a894e7a2efd0ca35928669dd992777c42c1cc1e65bc436f8b3",
+    "bytes": 860905
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\archify-review-2\\especifica.finalize.json",
+    "summaryReceipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\archify-review-2\\especifica.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\PC-15\\Desktop\\Practicas_DMI_230881\\Practica05\\widgets_app\\docs\\evidence\\archify-review-2\\especifica.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-30T21:00:24.673Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 7863,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

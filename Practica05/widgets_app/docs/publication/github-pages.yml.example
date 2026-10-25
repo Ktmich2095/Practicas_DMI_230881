@@ -1,0 +1,31 @@
+# Manual template. Review, then copy to the repository root:
+# .github/workflows/widgets-app-pages.yml
+# This file is deliberately inert inside the Flutter project.
+name: Publish Widgets App documentation
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: widgets-app-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload documentation
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: Practica05/widgets_app/docs
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
