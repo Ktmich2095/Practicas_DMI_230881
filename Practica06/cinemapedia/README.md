@@ -33,10 +33,21 @@ Los datos e imágenes requieren conexión y una clave TMDB válida. El tráiler 
 
 ## Diagramas de arquitectura
 
-| Diagrama interactivo | Qué muestra |
-|---|---|
-| [Arquitectura base](architecture/base/index.html) | El flujo de películas en cartelera de la versión inicial. HomeScreen usa Riverpod, el repositorio delega en el datasource y el mapper convierte la respuesta de TMDB en entidades Movie. |
-| [Arquitectura actual](architecture/actual/index.html) | El flujo de la aplicación actual. Las pantallas consultan a CinemaState, que usa Dio para acceder a TMDB y SharedPreferences para guardar favoritos y ajustes. El detalle integra tráileres de YouTube. |
+### Arquitectura base
+
+El flujo de películas en cartelera de la versión inicial. HomeScreen usa Riverpod, el repositorio delega en el datasource y el mapper convierte la respuesta de TMDB en entidades Movie.
+
+[![Captura de arquitectura base de Cinemapedia](docs/evidencias/diagramas/arquitectura-base.png)](https://ktmich2095.github.io/Practicas_DMI_230881/Practica06/cinemapedia/architecture/base/index.html)
+
+[Abrir arquitectura base interactiva](https://ktmich2095.github.io/Practicas_DMI_230881/Practica06/cinemapedia/architecture/base/index.html)
+
+### Arquitectura actual
+
+El flujo de la aplicación actual. Las pantallas consultan a CinemaState, que usa Dio para acceder a TMDB y SharedPreferences para guardar favoritos y ajustes. El detalle integra tráileres de YouTube.
+
+[![Captura de arquitectura actual de Cinemapedia](docs/evidencias/diagramas/arquitectura-actual.png)](https://ktmich2095.github.io/Practicas_DMI_230881/Practica06/cinemapedia/architecture/actual/index.html)
+
+[Abrir arquitectura actual interactiva](https://ktmich2095.github.io/Practicas_DMI_230881/Practica06/cinemapedia/architecture/actual/index.html)
 
 La arquitectura base referencia la revisión registrada en el diagrama. La arquitectura actual refleja el [punto de entrada](lib/main.dart) y la [implementación de Cinemapedia](lib/cinema_app.dart) de esta práctica.
 
