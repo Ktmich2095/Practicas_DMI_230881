@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "e0e1e03c-1fc4-4604-95d4-4dbe85b5c79e",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\otero\\OneDrive\\Desktop\\UTXJ\\10mo Cuatrimestre\\Desarrollo Movil Integral\\Practicas_DMI_230881\\Practica06\\cinemapedia\\architecture\\actual\\candidate.json",
+  "output": "C:\\Users\\otero\\OneDrive\\Desktop\\UTXJ\\10mo Cuatrimestre\\Desarrollo Movil Integral\\Practicas_DMI_230881\\Practica06\\cinemapedia\\architecture\\actual\\index.html",
+  "specification": {
+    "sha256": "638a7dc33f45d4568e1cb1b7f36ef41d49644d344bb5b9266f0c0826644e053c",
+    "bytes": 32792
+  },
+  "artifact": {
+    "sha256": "ccd003ed3b3639d0eb173d838ddd151d445dd981271b3833c76de1055e3b0338",
+    "bytes": 757261
+  }
+}

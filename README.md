@@ -30,6 +30,7 @@ Durante las prácticas se trabajará con diferentes conceptos y herramientas par
 | 2 | Mi Primera Aplicación Móvil con Flutter | Codificar una aplicación móvil utilizando Flutter y manejando `StatelessWidget` y `StatefulWidget`. | 25 firmas | ✅ Concluida | [Ver práctica](Practica02/hello_world_app/README.md) |
 | 3 | Chat de respuestas Sí/No | Desarrollar una aplicación de chat que consulte una API y muestre respuestas automáticas con GIF. | 30 firmas | ✅ Concluida | [Ver práctica](Practica03/yes_no_app/README.md) |
 | 4 | TokTik | Videos verticales con arquitectura CLEAN, APIs, favoritos y temas de temporada. | 30 Firmas | ✅ Concluida | [Ver práctica](Practica04/toktik/README.md) |
+| 6 | Cinemapedia | Aplicación de películas y series con TMDB, búsqueda, favoritos e idiomas. | 100 firmas | ✅ Concluida | [Ver práctica](Practica06/cinemapedia/README.md) |
 
 ---
 

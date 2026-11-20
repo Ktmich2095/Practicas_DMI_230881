@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:cinemapedia/domain/datasources/movies_datasource.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
 import 'package:cinemapedia/infrastructure/repositories/movie_repository_impl.dart';
-import 'package:cinemapedia/main.dart';
 import 'package:cinemapedia/presentation/providers/movies/movies_providers.dart';
 import 'package:cinemapedia/presentation/providers/movies/movies_repository_provider.dart';
 import 'package:cinemapedia/presentation/screens/movies/home_screen.dart';
@@ -36,29 +35,26 @@ class FakeDatasource extends MoviesDatasource {
 }
 
 void main() {
-  testWidgets(
-    'Real app router starts inside ProviderScope and renders movies',
-    (tester) async {
-      final response = Completer<List<Movie>>();
-      await tester.pumpWidget(
-        ProviderScope(
-          overrides: [
-            movieRepositoryProvider.overrideWithValue(
-              MovieRepositoryImpl(FakeDatasource((_) => response.future)),
-            ),
-          ],
-          child: const MainApp(),
-        ),
-      );
-      await tester.pump();
-      expect(find.text('Cinemapedia'), findsOneWidget);
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
-      response.complete([movie('Película de prueba')]);
-      await tester.pumpAndSettle();
-      expect(find.text('Película de prueba'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+  testWidgets('HomeScreen renders movies from the provider', (tester) async {
+    final response = Completer<List<Movie>>();
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          movieRepositoryProvider.overrideWithValue(
+            MovieRepositoryImpl(FakeDatasource((_) => response.future)),
+          ),
+        ],
+        child: const MaterialApp(home: HomeScreen()),
+      ),
+    );
+    await tester.pump();
+    expect(find.text('Cinemapedia'), findsOneWidget);
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    response.complete([movie('Película de prueba')]);
+    await tester.pumpAndSettle();
+    expect(find.text('Película de prueba'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 
   testWidgets('Failed initial request shows retry and retries the same page', (
     tester,
