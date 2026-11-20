@@ -31,8 +31,8 @@ Durante las prácticas se trabajará con diferentes conceptos y herramientas par
 | 3 | Chat de respuestas Sí/No | Desarrollar una aplicación de chat que consulte una API y muestre respuestas automáticas con GIF. | 30 firmas | ✅ Concluida | [Ver práctica](Practica03/yes_no_app/README.md) |
 | 4 | TokTik | Videos verticales con arquitectura CLEAN, APIs, favoritos y temas de temporada. | 30 Firmas | ✅ Concluida | [Ver práctica](Practica04/toktik/README.md) |
 | 5 | Widgets App | Catálogo de componentes Material 3, navegación con GoRouter, contador y temas con Riverpod, tutorial y lista infinita. |40 Firmas | ✅ Concluida | [Ver práctica](Practica05/widgets_app/README.md) · [Probar en Appetize](https://appetize.io/app/b_pa45jpzvescit46pg4b3kq6dvy) |
+| 6 | Cinemapedia | Aplicación de películas y series con TMDB, búsqueda, favoritos e idiomas. | 100 firmas | ✅ Concluida | [Ver práctica](Practica06/cinemapedia/README.md) |
 | — | Manual de instalación de Flutter | Guía para instalar y configurar el entorno de desarrollo Flutter para Android. | -- | ✅ Concluida | [Ver manual](ManualFlutter/README.md) |
-
 ---
 
 ##  Diagramas de arquitectura
